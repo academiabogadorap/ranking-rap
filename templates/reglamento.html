@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reglamento Oficial – RAP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .logo-header {
+            height: 60px;
+            object-fit: contain;
+        }
+        .card-custom {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container py-4">
+
+    <!-- Encabezado con logos -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado" class="logo-header">
+        <h2 class="text-center flex-grow-1">📘 Reglamento Oficial – Sistema RAP</h2>
+        <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="RAP Ranking" class="logo-header">
+    </div>
+
+    <div class="bg-white p-4 rounded shadow-sm">
+        <h4 class="mb-4">🏆 Objetivo del Sistema RAP</h4>
+        <p>El sistema RAP busca evaluar de forma objetiva el rendimiento individual de los jugadores durante el año, asignando puntos según la instancia alcanzada y el nivel del torneo.</p>
+
+        <hr>
+
+        <h4 class="mb-3">📅 Fechas y superposiciones</h4>
+        <ul>
+            <li>Los torneos deben tener una <strong>fecha válida y real</strong>.</li>
+            <li>Un jugador <strong>no puede figurar en más de un torneo el mismo día</strong>.</li>
+            <li>Si ocurre, solo se conservará el torneo con mayor puntaje y se anulará el otro.</li>
+        </ul>
+
+        <h4 class="mt-4">🎯 Sistema de puntajes</h4>
+        <p>Los torneos otorgan un puntaje base según el nivel RAP:</p>
+        <ul>
+            <li><strong>RAP 1000</strong> (Nivel A)</li>
+            <li><strong>RAP 600</strong> (Nivel B)</li>
+            <li><strong>RAP 300</strong> (Nivel C)</li>
+            <li><strong>RAP 150</strong> (Nivel D)</li>
+        </ul>
+        <p>Multiplicadores según la instancia alcanzada:</p>
+        <table class="table table-bordered table-sm w-75 mx-auto text-center">
+            <thead class="table-secondary">
+                <tr><th>Instancia</th><th>Multiplicador</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Campeón</td><td>1.00x</td></tr>
+                <tr><td>Finalista</td><td>0.60x</td></tr>
+                <tr><td>Semifinalista</td><td>0.36x</td></tr>
+                <tr><td>Cuartos de final</td><td>0.18x</td></tr>
+            </tbody>
+        </table>
+        <p class="text-muted">Los puntos se dividen en partes iguales entre ambos jugadores de la pareja.</p>
+
+        <h4 class="mt-4">🛡️ Validación de categoría</h4>
+        <ul>
+            <li>Los jugadores deben participar en su categoría correspondiente o superior.</li>
+            <li>Si una pareja, o un integrante de la pareja, compiten en una categoría inferior, su participación se invalida y no recibe puntos.</li>
+            <li>Esto queda registrado con una observación en el historial del jugador.</li>
+        </ul>
+
+        <h4 class="mt-4">📊 Ranking anual</h4>
+        <ul>
+            <li>Se cuentan los <strong>6 mejores torneos</strong> del jugador durante el año calendario.</li>
+            <li>Desempates:
+                <ol>
+                    <li>Mayor cantidad de puntos.</li>
+                    <li>Mayor número de torneos válidos.</li>
+                    <li>Mayor puntaje en un solo torneo.</li>
+                    <li>Orden alfabético.</li>
+                </ol>
+            </li>
+        </ul>
+
+        <h4 class="mt-4">🧾 Resultados y reclamos</h4>
+        <ul>
+            <li>Los torneos deben cargarse en un plazo máximo de <strong>7 días hábiles</strong>.</li>
+            <li>Los reclamos deben hacerse dentro de los <strong>5 días posteriores</strong> a la publicación.</li>
+        </ul>
+
+        <h4 class="mt-4">⚠️ Excepciones especiales</h4>
+        <ul>
+            <li>La organización RAP podrá otorgar puntos especiales a torneos <strong>estratégicos o promocionales</strong>, aun si no cumplen con todos los criterios habituales.</li>
+            <li>RAP se reserva el derecho de validar manualmente torneos o modificar puntajes por causas justificadas.</li>
+        </ul>
+
+        <h4 class="mt-5">📋 Supervisión y fiscalización de categorías</h4>
+        <p>
+            RAP cuenta con la figura de un <strong>Fiscal Categorizador</strong>, encargado de garantizar el equilibrio competitivo del sistema.
+            Este fiscal puede revisar el rendimiento de los jugadores y, en caso de detectar una <u>categorización inferior injustificada</u>, tiene la facultad de:
+        </p>
+        <ul>
+            <li>Reclasificar a un jugador en una categoría superior para futuros torneos RAP.</li>
+            <li>Emitir advertencias a jugadores u organizadores cuando detecte uso incorrecto del sistema de inscripción.</li>
+            <li>Solicitar evidencias como resultados, informes o material audiovisual para respaldar decisiones.</li>
+        </ul>
+        <p>
+            Esta función permite mantener la transparencia, evitar ventajas injustas y fomentar una competencia justa.
+            El dictamen del fiscal tendrá validez oficial dentro del circuito RAP.
+        </p>
+
+        <div class="text-center mt-5">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">⬅ Volver al ranking</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

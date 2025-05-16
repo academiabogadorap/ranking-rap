@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Importar Resultados Externos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .logo-header {
+            height: 60px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+
+    <!-- Encabezado con logos -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado" class="logo-header">
+        <h1 class="text-center flex-grow-1">Importar Resultados Completos de un Torneo</h1>
+        <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="RAP Ranking" class="logo-header">
+    </div>
+
+    <form action="/importar_resultado_externo_mejorado" method="POST" class="bg-white p-4 rounded shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Nombre del torneo:</label>
+            <input type="text" name="torneo" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fecha del torneo:</label>
+            <input type="date" name="fecha" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nivel del torneo:</label>
+            <select name="nivel" class="form-select" required>
+                <option value="">-- Elegí nivel --</option>
+                <option value="S">Nivel S</option>
+                <option value="A">Nivel A</option>
+                <option value="B">Nivel B</option>
+                <option value="C">Nivel C</option>
+                <option value="D">Nivel D</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Categoría del torneo (ej: 4ta cab, 5ta damas):</label>
+            <input type="text" name="categoria_torneo" class="form-control" required>
+        </div>
+
+        <!-- Campeones -->
+        <h4>Campeones</h4>
+        <div class="row g-2 mb-3">
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador 1" oninput="this.value = this.value.toUpperCase();"></div>
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador 2" oninput="this.value = this.value.toUpperCase();"></div>
+        </div>
+        <input type="hidden" name="instancia[]" value="Campeon">
+
+        <!-- Finalistas -->
+        <h4>Finalistas</h4>
+        <div class="row g-2 mb-3">
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador 1" oninput="this.value = this.value.toUpperCase();"></div>
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador 2" oninput="this.value = this.value.toUpperCase();"></div>
+        </div>
+        <input type="hidden" name="instancia[]" value="Finalista">
+
+        <!-- Semifinalistas -->
+        <h4>Semifinalistas</h4>
+        {% for i in range(2) %}
+        <div class="row g-2 mb-2">
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador {{ i*2 + 1 }}" oninput="this.value = this.value.toUpperCase();"></div>
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador {{ i*2 + 2 }}" oninput="this.value = this.value.toUpperCase();"></div>
+        </div>
+        <input type="hidden" name="instancia[]" value="Semifinalista">
+        {% endfor %}
+
+        <!-- Cuartofinalistas -->
+        <h4>Cuartofinalistas</h4>
+        {% for i in range(4) %}
+        <div class="row g-2 mb-2">
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador {{ i*2 + 1 }}" oninput="this.value = this.value.toUpperCase();"></div>
+            <div class="col"><input type="text" name="jugadores[]" class="form-control" list="nombres_sugeridos" placeholder="Jugador {{ i*2 + 2 }}" oninput="this.value = this.value.toUpperCase();"></div>
+        </div>
+        <input type="hidden" name="instancia[]" value="Cuartos">
+        {% endfor %}
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success px-4">Importar todos los resultados</button>
+        </div>
+    </form>
+
+    <datalist id="nombres_sugeridos">
+        {% for jugador in jugadores %}
+            <option value="{{ jugador.nombre.upper() }}">
+        {% endfor %}
+    </datalist>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">⬅ Volver al ranking</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar entrada del historial</title>
+</head>
+<body>
+    <h1>Editar historial de {{ jugador.nombre }}</h1>
+
+    <form method="POST">
+        <label>Fecha:</label><br>
+        <input type="date" name="fecha" value="{{ item.fecha }}" required><br><br>
+
+        <label>Nombre del torneo:</label><br>
+        <input type="text" name="torneo" value="{{ item.torneo }}" required><br><br>
+
+        <label>Nivel:</label><br>
+        <input type="text" name="nivel" value="{{ item.nivel }}" required><br><br>
+
+        <label>Compañero/a:</label><br>
+        <input type="text" name="pareja" value="{{ item.pareja }}" required><br><br>
+
+        <label>Ronda:</label><br>
+        <select name="ronda" required>
+            <option value="Campeon" {% if item.ronda == "Campeon" %}selected{% endif %}>Campeón</option>
+            <option value="Finalista" {% if item.ronda == "Finalista" %}selected{% endif %}>Finalista</option>
+            <option value="Semifinalista" {% if item.ronda == "Semifinalista" %}selected{% endif %}>Semifinalista</option>
+            <option value="Cuartos" {% if item.ronda == "Cuartos" %}selected{% endif %}>Cuartos</option>
+            <option value="Octavos" {% if item.ronda == "Octavos" %}selected{% endif %}>Octavos</option>
+            <option value="Primera ronda" {% if item.ronda == "Primera ronda" %}selected{% endif %}>Primera ronda</option>
+        </select><br><br>
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('historial', nombre=jugador.nombre) }}">Cancelar</a>
+</body>
+</html>

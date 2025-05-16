@@ -1,0 +1,886 @@
+[
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Campeon",
+        "jugadores": [
+            "VERDINELLI, MARINA",
+            "GORRITI, FLORENCIA"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Finalista",
+        "jugadores": [
+            "GARCIA, FERNANDA",
+            "MALDONADO, BELEN"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "LE FEUVRE,",
+            "FORCHINO, GABRIELA"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "PROST, ROSA",
+            "FERNANDEZ, JULIANA"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "FORCHINO, GABRIELA",
+            "LE FEUVRE, JEANETTE"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MU\u00d1OZ, MAGDALENA",
+            "ACOSTA, NATALIA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MOYANO, LETICIA",
+            "MORTADA, JAZMIN"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "SANDOVAL, JESSICA",
+            "ZALAZAR, MAYRA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "4TA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "BOIOCCHI, GIULIANO",
+            "ERMANTRAU, MARCELO"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "4TA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "SIERRA, SEBASTIAN",
+            "PULICHINO, EXEQUIEL"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "4TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "PAREDES, JONATHAN",
+            "DIAZ, EMANUEL"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "4TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "HOLGADO, ALAN",
+            "CASTILLO, MAXIMO"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "4TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "GORRITI, SILVIO",
+            "RICHMOND, MARIANO"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "4TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "BARRIOS, ANGEL",
+            "MARTINEZ, JOAQUIN"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Campeon",
+        "jugadores": [
+            "GIORDANO, LUCIA",
+            "CAMPORA, DESIRE"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Finalista",
+        "jugadores": [
+            "BICHARA, EUGENIA",
+            "BICHARA, CECILIA"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "CALVO, JESSICA",
+            "QUILEN,JANET"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "HUENTELAF, MAYRA",
+            "MORENO, MARIA"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MENECHELLA, JOSEFINA",
+            "PUGNANOLI, JULIANA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "DEL CARRIL, MARCELA",
+            "RIFFO, DAIANA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "LARRALDE,SOLEDAD",
+            "FRANCIONI, LUISINA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "SANTAMARINA, VANESA",
+            "PITTO, PAULA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "LUCERO, AMALIA",
+            "MUSSI, FANY"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "MARINO,",
+            "MARCELETTI,"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "DEL CASTILLO, GUSTAVO",
+            "LAMAS, NICOLAS"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "CALVO,",
+            "ALONSO,"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "MALICKI, LUIS",
+            "SCARPINO, IGNACIO"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "RODRIGUEZ,",
+            "PULICHINO,"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "RODRIGUEZ,G",
+            "GIANI,"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "IURINO,",
+            "PERALTA,"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "KUCICH,",
+            "SACHETI,"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "ARGUELLES, JOAQUIN",
+            "GALLARDO, PABLO"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "REYES",
+            "MILLER"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "ANDRACA, CHRISTIAN",
+            "CALFIN"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "RAFFLER",
+            "PICAVIA"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "KREITZ, JUAN",
+            "GARCIA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "CARDENAS,",
+            "NAVARRETE"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MARADONA",
+            "BERNARDI"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. FAP)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "CONTRERAS",
+            "MELLAMACI"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "PORCEL",
+            "LUQUET"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "FORNASIER",
+            "GUZMAN"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "HERRERA",
+            "MEYADO"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "HEREDIA",
+            "MENENDEZ"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MATUCCI",
+            "FURCH"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "CENTENO",
+            "PINCHULEF"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "PALAVECINO",
+            "\u00d1ANCO"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-10",
+        "nivel": "A",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "CASAS",
+            "LOPEZ"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "MORAN, MIGUEL",
+            "SEGURA"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "STABILE, PASCUAL",
+            "STABILE, NASIF"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "CARDENAS",
+            "NEME"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "AYALEF, JUAN CARLOS",
+            "HERRERA, GABRIEL"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "CALDERON",
+            "ROUMEC"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "PENDRAGA",
+            "ARCE"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "OVIEDO, SEBASTIAN",
+            "DEL CASTILLO, ANIBAL"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "ARENA, FELIPE",
+            "RAMUNDINI,"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "3RA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "ORAZI, JUAN MARIA",
+            "ELOSEGUI,"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "3RA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "OTERMIN, JOSE",
+            "RODRIGUEZ, KEVIN"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "3RA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "VELASQUEZ, RODRIGO",
+            "LOPEZ, FERNANDO"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "3RA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "ORTIZ, LEAN",
+            "ROMERO, TITO"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Campeon",
+        "jugadores": [
+            "MONTENEGRO",
+            "ESANDI"
+        ],
+        "puntos_totales": 1000.0,
+        "puntos_por_jugador": 500.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Finalista",
+        "jugadores": [
+            "BLACKHALL",
+            "SANDOVAL, 6TA DAMA"
+        ],
+        "puntos_totales": 600.0,
+        "puntos_por_jugador": 300.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "TREJO",
+            "STANGEN, ERIKA"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "FISCHOV",
+            "MIRANO"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "DIAZ",
+            "ALEJANDRO"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MIRANDA",
+            "MARCANTONI"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "VEGA, JULIETA",
+            "ANAYA, GABRIELA"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "ESTEFENELLI",
+            "GARAT"
+        ],
+        "puntos_totales": 360.0,
+        "puntos_por_jugador": 180.0
+    },
+    {
+        "torneo": "Padel Animales (C.N. PAF)",
+        "fecha": "2025-05-09",
+        "nivel": "A",
+        "categoria_torneo": "6TA DAM",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "FISCHOV",
+            "MIRANO"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    }
+]

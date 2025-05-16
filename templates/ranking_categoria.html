@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking - {{ categoria_actual }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .logo-header {
+            height: 60px;
+            object-fit: contain;
+        }
+        .card-custom {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+
+    <!-- Encabezado con logos -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado" class="logo-header">
+        <h1 class="text-center flex-grow-1">Ranking – {{ categoria_actual }}</h1>
+        <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="RAP Ranking" class="logo-header">
+    </div>
+
+    <div class="card card-custom p-4 bg-white">
+
+        <!-- Filtros -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="filtro-nombre" class="form-label">Buscar por nombre:</label>
+                <input type="text" id="filtro-nombre" class="form-control" placeholder="Nombre...">
+            </div>
+            <div class="col-md-4">
+                <label for="filtro-localidad" class="form-label">Filtrar por localidad:</label>
+                <input type="text" id="filtro-localidad" class="form-control" placeholder="Localidad...">
+            </div>
+            <div class="col-md-4">
+                <label for="filtro-provincia" class="form-label">Filtrar por provincia:</label>
+                <input type="text" id="filtro-provincia" class="form-control" placeholder="Provincia...">
+            </div>
+        </div>
+
+        {% if jugadores %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Localidad</th>
+                        <th>Provincia</th>
+                        <th>Puntos</th>
+                        <th>Torneos contados</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                        <th>Historial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for jugador in jugadores %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ jugador.nombre }}</td>
+                        <td>{{ jugador.localidad or '–' }}</td>
+                        <td>{{ jugador.provincia or '–' }}</td>
+                        <td>{{ jugador.puntos }}</td>
+                        <td>{{ jugador.torneos_contados }}</td>
+
+                        {% if session.get('es_admin') %}
+                        <td>
+                            <a class="btn btn-warning btn-sm" href="{{ url_for('editar_jugador', nombre=jugador.nombre) }}">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{ url_for('eliminar_jugador', nombre=jugador.nombre) }}" method="get" onsubmit="return confirm('¿Estás seguro de eliminar a {{ jugador.nombre }}?');">
+                                <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                        {% else %}
+                        <td>–</td>
+                        <td>–</td>
+                        {% endif %}
+
+                        <td>
+                            <a class="btn btn-outline-primary btn-sm" href="{{ url_for('historial', nombre=jugador.nombre) }}">Historial</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="alert alert-warning text-center">
+            No hay jugadores registrados en esta categoría.
+        </div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">⬅ Volver al ranking general</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS + Filtro en tiempo real -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const inputNombre = document.getElementById('filtro-nombre');
+        const inputLocalidad = document.getElementById('filtro-localidad');
+        const inputProvincia = document.getElementById('filtro-provincia');
+        const filas = document.querySelectorAll('tbody tr');
+
+        function filtrar() {
+            const nombre = inputNombre.value.toLowerCase();
+            const localidad = inputLocalidad.value.toLowerCase();
+            const provincia = inputProvincia.value.toLowerCase();
+
+            filas.forEach((fila) => {
+                const nombreJugador = fila.children[1].textContent.toLowerCase();
+                const localidadJugador = fila.children[2].textContent.toLowerCase();
+                const provinciaJugador = fila.children[3].textContent.toLowerCase();
+
+                const coincideNombre = nombreJugador.includes(nombre);
+                const coincideLocalidad = localidadJugador.includes(localidad);
+                const coincideProvincia = provinciaJugador.includes(provincia);
+
+                fila.style.display = (coincideNombre && coincideLocalidad && coincideProvincia) ? '' : 'none';
+            });
+        }
+
+        inputNombre.addEventListener('input', filtrar);
+        inputLocalidad.addEventListener('input', filtrar);
+        inputProvincia.addEventListener('input', filtrar);
+    });
+</script>
+
+</body>
+</html>

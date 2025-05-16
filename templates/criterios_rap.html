@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Criterios de Clasificación – RAP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+
+    <!-- Encabezado con logos -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado" height="60">
+        <h2 class="text-center flex-grow-1">📋 Criterios de Clasificación de Torneos – RAP</h2>
+        <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="RAP Ranking" height="60">
+    </div>
+
+    <div class="bg-white p-4 rounded shadow-sm">
+        <h4 class="mb-3">✅ Requisitos evaluados (1 punto cada uno)</h4>
+        <div class="table-responsive mb-4">
+            <table class="table table-bordered table-striped align-middle text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>N°</th>
+                        <th>Criterio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Es clasificatorio a una instancia superior (Provincial, Nacional, etc.)</td></tr>
+                    <tr><td>2</td><td>Participan <strong>96 parejas o más</strong> en total</td></tr>
+                    <tr><td>3</td><td>Se disputan <strong>6 o más categorías</strong> distintas</td></tr>
+                    <tr><td>4</td><td>Incluye ambas ramas: masculina y femenina</td></tr>
+                    <tr><td>5</td><td>El organizador realiza 4 o más torneos al año con estructura formal</td></tr>
+                    <tr><td>6</td><td>Se entregan premios económicos o de alto valor real</td></tr>
+                    <tr><td>7</td><td>Participan jugadores de distintas localidades o provincias</td></tr>
+                    <tr><td>8</td><td>El torneo garantiza mínimo 3 partidos por pareja</td></tr>
+                    <tr><td>9</td><td>La organización tiene trayectoria y reconocimiento en el circuito</td></tr>
+                    <tr><td>10</td><td>Incluye categorías especiales: menores, veteranos o principiantes</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4 class="mb-3">🎯 Asignación del nivel según puntaje obtenido</h4>
+        <table class="table table-bordered table-hover text-center w-50 mx-auto">
+            <thead class="table-success">
+                <tr>
+                    <th>Criterios cumplidos</th>
+                    <th>Nivel asignado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>8 a 10</strong></td><td class="text-success fw-bold">RAP 1000</td></tr>
+                <tr><td><strong>6 a 7</strong></td><td class="text-warning fw-bold">RAP 600</td></tr>
+                <tr><td><strong>4 a 5</strong></td><td class="fw-bold" style="color: #fd7e14;">RAP 300</td></tr>
+                <tr><td><strong>0 a 3</strong></td><td class="text-danger fw-bold">RAP 150</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Nota institucional -->
+        <div class="alert alert-info mt-5 text-center">
+            <strong>ℹ️ Nota:</strong> La organización <strong>RAP</strong> se reserva el derecho de asignar una categoría especial a torneos destacados
+            por su <u>relevancia, impacto social, trayectoria histórica o proyección regional</u>, incluso si no se cumplen todos los criterios previamente establecidos.
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">⬅ Volver al ranking</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

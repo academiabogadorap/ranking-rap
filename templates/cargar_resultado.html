@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Resultado</title>
+</head>
+<body>
+    <h1>Cargar Resultado de Partido</h1>
+
+    <form action="/guardar_resultado" method="POST">
+        <label>Torneo:</label>
+        <select name="torneo" required>
+            {% for torneo in torneos %}
+                <option value="{{ loop.index0 }}">{{ torneo.nombre }} (Nivel {{ torneo.nivel }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Jugador 1:</label>
+        <select name="jugador1" required>
+            {% for jugador in jugadores %}
+                <option value="{{ jugador.nombre }}">{{ jugador.nombre }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Jugador 2:</label>
+        <select name="jugador2" required>
+            {% for jugador in jugadores %}
+                <option value="{{ jugador.nombre }}">{{ jugador.nombre }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Ronda alcanzada:</label>
+        <select name="ronda" required>
+            {% for ronda in rondas %}
+                <option value="{{ ronda }}">{{ ronda }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Guardar Resultado</button>
+    </form>
+
+    <br>
+    <a href="/">Volver al ranking</a>
+</body>
+</html>

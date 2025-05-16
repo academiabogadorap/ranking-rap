@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Corregir Nombre de Torneo</title>
+</head>
+<body>
+    <h1>Corregir Nombre de Torneo</h1>
+    <form action="/corregir_nombre_torneo" method="POST">
+        <label>Nombre actual del torneo:</label><br>
+        <input type="text" name="nombre_actual" required><br><br>
+
+        <label>Nombre nuevo del torneo:</label><br>
+        <input type="text" name="nombre_nuevo" required><br><br>
+
+        <input type="submit" value="Corregir">
+    </form>
+</body>
+</html>
+<hr>
+<h2>Corregir Categoría de Torneo</h2>
+<form action="/corregir_categoria_torneo" method="POST">
+    <label>Categoría actual del torneo:</label><br>
+    <input type="text" name="categoria_actual" required><br><br>
+
+    <label>Nueva categoría:</label><br>
+    <input type="text" name="categoria_nueva" required><br><br>
+
+    <input type="submit" value="Corregir categoría">
+</form>
+
+
