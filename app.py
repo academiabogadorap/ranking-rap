@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from collections import defaultdict
 from datetime import datetime
 import json
+import os
 
 app = Flask(__name__)
 app.secret_key = 'clave_super_secreta'
@@ -92,6 +93,14 @@ def index():
     provincias_disponibles = sorted(set(j.get('provincia') for j in jugadores if j.get('provincia')))
     localidades_disponibles = sorted(set(j.get('localidad') for j in jugadores if j.get('localidad')))
 
+    # Obtener lista de logos de torneos desde la carpeta static/img/torneos
+    ruta_logos = os.path.join('static', 'img', 'torneos')
+    logos_torneos = []
+    if os.path.exists(ruta_logos):
+        logos_torneos = [f for f in os.listdir(ruta_logos) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
+
+    print("LOGOS DETECTADOS:", logos_torneos)
+
     return render_template(
         'index.html',
         jugadores=ranking,
@@ -100,8 +109,10 @@ def index():
         localidades=localidades_disponibles,
         categoria_actual=categoria_filtrada,
         provincia_actual=provincia_filtrada,
-        localidad_actual=localidad_filtrada
+        localidad_actual=localidad_filtrada,
+        logos_torneos=logos_torneos  # 🔥 Agregado para mostrar los logos en el HTML
     )
+
 
 
 @app.route('/agregar_jugador', methods=['POST'])
