@@ -66,12 +66,16 @@
                             {% endif %}
                         </td>
                         <td>
+                            {% if session.get('es_admin') %}
                             <div class="d-flex flex-column gap-1">
                                 <a class="btn btn-sm btn-warning" href="{{ url_for('editar_historial', nombre=jugador.nombre, index=loop.index0) }}">Editar</a>
                                 <a class="btn btn-sm btn-danger"
                                    href="{{ url_for('borrar_historial_item', nombre=jugador.nombre, index=loop.index0) }}"
                                    onclick="return confirm('¿Estás seguro de que querés borrar esta entrada del historial?')">Borrar</a>
                             </div>
+                            {% else %}
+                            <span class="text-muted">–</span>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
