@@ -362,7 +362,7 @@
     {
         "nombre": "MALDONADO, BELEN",
         "categoria": "7MA DAM",
-        "puntos": 300.0,
+        "puntos": 375.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -372,6 +372,15 @@
                 "pareja": "GARCIA, FERNANDA",
                 "ronda": "Finalista",
                 "puntos": 300.0
+            },
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CENDRA, FERNANDA",
+                "ronda": "Campeon",
+                "puntos": 75.0
             }
         ],
         "localidad": "Sin especificar",
@@ -2482,5 +2491,131 @@
         "provincia": "Rio Negro",
         "puntos": 0,
         "historial": []
+    },
+    {
+        "nombre": "CERDA, VERONICA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "IBA\u00d1EZ, MAUREN",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
+    },
+    {
+        "nombre": "IBA\u00d1EZ, MAUREN",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CERDA, VERONICA",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
+    },
+    {
+        "nombre": "VILLALBA, A",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "FERNANDEZ VILLALBA, ANA",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "FERNANDEZ VILLALBA, ANA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "VILLALBA, A",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "DORADO, DALMA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CARRA, R",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "CARRA, R",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "DORADO, DALMA",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "CENDRA, FERNANDA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 75.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MALDONADO, BELEN",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ]
     }
 ]

@@ -921,5 +921,57 @@
         ],
         "puntos_totales": 54.0,
         "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Campeon",
+        "jugadores": [
+            "MALDONADO, BELEN",
+            "CENDRA, FERNANDA"
+        ],
+        "puntos_totales": 150.0,
+        "puntos_por_jugador": 75.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Finalista",
+        "jugadores": [
+            "CERDA, VERONICA",
+            "IBA\u00d1EZ, MAUREN"
+        ],
+        "puntos_totales": 90.0,
+        "puntos_por_jugador": 45.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "VILLALBA, A",
+            "FERNANDEZ VILLALBA, ANA"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "7MA DAM",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "DORADO, DALMA",
+            "CARRA, R"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
     }
 ]
