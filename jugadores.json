@@ -2466,5 +2466,21 @@
                 "puntos": 27.0
             }
         ]
+    },
+    {
+        "nombre": "GATICA, PAOLA",
+        "categoria": "4TA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 0,
+        "historial": []
+    },
+    {
+        "nombre": "BONGIOVANNI, ROSANA",
+        "categoria": "4TA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 0,
+        "historial": []
     }
 ]
