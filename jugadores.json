@@ -1368,9 +1368,9 @@
         "provincia": "Sin especificar"
     },
     {
-        "nombre": "HERRERA",
+        "nombre": "HERRERA J.",
         "categoria": "7MA CAB",
-        "puntos": 180.0,
+        "puntos": 255.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1380,10 +1380,21 @@
                 "pareja": "MEYADO",
                 "ronda": "Semifinalista",
                 "puntos": 180.0
+            },
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "QUINI, FABIAN",
+                "ronda": "Campeon",
+                "puntos": 75.0
             }
         ],
-        "localidad": "Sin especificar",
-        "provincia": "Sin especificar"
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "torneos": [],
+        "evolucion": []
     },
     {
         "nombre": "MEYADO",
@@ -1460,7 +1471,7 @@
     {
         "nombre": "\u00d1ANCO",
         "categoria": "7MA CAB",
-        "puntos": 90.0,
+        "puntos": 117.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1470,6 +1481,15 @@
                 "pareja": "PALAVECINO",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "GOMEZ, DAMIAN",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
             }
         ],
         "localidad": "Sin especificar",
@@ -1922,8 +1942,8 @@
                 "puntos": 500.0
             }
         ],
-        "localidad": "Sin especificar",
-        "provincia": "Sin especificar"
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
     },
     {
         "nombre": "MORAN, MIGUEL",
@@ -2374,5 +2394,77 @@
         ],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ALONSO, OMAR",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "TEVES, TOMAS",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "TEVES, TOMAS",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "ALONSO, OMAR",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "QUINI, FABIAN",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 75.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "HERRERA, J",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ]
+    },
+    {
+        "nombre": "GOMEZ, DAMIAN",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "\u00d1ANCO",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
     }
 ]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unificar jugadores</title>
+</head>
+<body>
+    <h1>Unificar jugadores</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% elif success %}
+        <p style="color: green;">{{ success }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label>Jugador base (el que queda):</label><br>
+        <select name="jugador_base" required>
+            <option value="">-- Seleccionar jugador base --</option>
+            {% for j in jugadores %}
+                <option value="{{ j.nombre }}">{{ j.nombre }} ({{ j.categoria }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Jugador duplicado (el que se elimina):</label><br>
+        <select name="jugador_duplicado" required>
+            <option value="">-- Seleccionar duplicado --</option>
+            {% for j in jugadores %}
+                <option value="{{ j.nombre }}">{{ j.nombre }} ({{ j.categoria }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Unificar jugadores">
+    </form>
+
+    <hr>
+    <h3>Lista de jugadores actuales</h3>
+    <ul>
+        {% for jugador in jugadores %}
+            <li>{{ jugador.nombre }} - {{ jugador.categoria }} - {{ jugador.puntos }} pts</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/admin">Volver al panel</a>
+</body>
+</html>

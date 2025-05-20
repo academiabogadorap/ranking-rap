@@ -69,8 +69,9 @@ def index():
     categoria_filtrada = request.args.get('categoria', default=None)
     provincia_filtrada = request.args.get('provincia', default=None)
     localidad_filtrada = request.args.get('localidad', default=None)
+    nombre_filtrado = request.args.get('nombre', default=None)
 
-    # Filtrar por categoría, provincia y localidad
+    # Filtrar por categoría, provincia, localidad y nombre
     jugadores_filtrados = jugadores
     if categoria_filtrada:
         jugadores_filtrados = [j for j in jugadores_filtrados if j['categoria'] == categoria_filtrada]
@@ -78,22 +79,43 @@ def index():
         jugadores_filtrados = [j for j in jugadores_filtrados if j.get('provincia', '').lower() == provincia_filtrada.lower()]
     if localidad_filtrada:
         jugadores_filtrados = [j for j in jugadores_filtrados if j.get('localidad', '').lower() == localidad_filtrada.lower()]
+    if nombre_filtrado:
+        jugadores_filtrados = [j for j in jugadores_filtrados if nombre_filtrado.lower() in j['nombre'].lower()]
 
-    # Ranking con los mejores 6 torneos
-    ranking = calcular_ranking_temporada(jugadores_filtrados, cantidad_maxima=6)
+    # 👇 Condición especial: si se está filtrando por nombre, mostrar jugadores tal cual
+    if nombre_filtrado:
+        ranking = []
+        anio_actual = datetime.today().year
+        for j in jugadores_filtrados:
+            historial = j.get("historial", [])
+            anuales = [h for h in historial if datetime.strptime(h["fecha"], "%Y-%m-%d").year == anio_actual]
+            mejores = sorted(anuales, key=lambda x: x["puntos"], reverse=True)[:6]
+            total = sum(h["puntos"] for h in mejores)
+            mejor_torneo = mejores[0]["puntos"] if mejores else 0
 
-    # Añadir localidad y provincia al resultado
-    for r in ranking:
-        original = next((j for j in jugadores if j['nombre'] == r['nombre']), {})
-        r['localidad'] = original.get('localidad', '–')
-        r['provincia'] = original.get('provincia', '–')
+            ranking.append({
+                "nombre": j["nombre"],
+                "categoria": j["categoria"],
+                "puntos": total,
+                "torneos_contados": len(mejores),
+                "mejor_torneo": mejor_torneo,
+                "localidad": j.get("localidad", "–"),
+                "provincia": j.get("provincia", "–")
+            })
+    else:
+        # Ranking tradicional con los mejores 6 torneos
+        ranking = calcular_ranking_temporada(jugadores_filtrados, cantidad_maxima=6)
+        for r in ranking:
+            original = next((j for j in jugadores_filtrados if j['nombre'] == r['nombre']), {})
+            r['localidad'] = original.get('localidad', '–')
+            r['provincia'] = original.get('provincia', '–')
 
     # Filtros disponibles
     categorias_disponibles = sorted(set(j['categoria'] for j in jugadores if j.get('categoria')))
     provincias_disponibles = sorted(set(j.get('provincia') for j in jugadores if j.get('provincia')))
     localidades_disponibles = sorted(set(j.get('localidad') for j in jugadores if j.get('localidad')))
 
-    # Obtener lista de logos de torneos desde la carpeta static/img/torneos
+    # Logos de torneos
     ruta_logos = os.path.join('static', 'img', 'torneos')
     logos_torneos = []
     if os.path.exists(ruta_logos):
@@ -110,8 +132,10 @@ def index():
         categoria_actual=categoria_filtrada,
         provincia_actual=provincia_filtrada,
         localidad_actual=localidad_filtrada,
-        logos_torneos=logos_torneos  # 🔥 Agregado para mostrar los logos en el HTML
+        nombre_actual=nombre_filtrado,
+        logos_torneos=logos_torneos
     )
+
 
 
 
@@ -611,6 +635,52 @@ def corregir_categoria_torneo():
     actualizar_ranking_json(jugadores)
 
     return f"Categoría '{categoria_actual}' fue corregida a '{categoria_nueva}' exitosamente."
+
+@app.route('/unificar_jugadores', methods=['GET', 'POST'])
+def unificar_jugadores():
+    if request.method == 'POST':
+        nombre_base = request.form['jugador_base'].strip().upper()
+        nombre_duplicado = request.form['jugador_duplicado'].strip().upper()
+
+        base = next((j for j in jugadores if j['nombre'] == nombre_base), None)
+        duplicado = next((j for j in jugadores if j['nombre'] == nombre_duplicado), None)
+
+        if not base or not duplicado:
+            return render_template('unificar_jugadores.html', jugadores=jugadores, error="Jugador no encontrado")
+
+        # Sumar puntos
+        base['puntos'] = base.get('puntos', 0) + duplicado.get('puntos', 0)
+
+        # Unificar historial sin duplicados (comparando por torneo + fecha)
+        base_historial = base.get('historial', [])
+        duplicado_historial = duplicado.get('historial', [])
+        claves_existentes = {(h['torneo'], h['fecha']) for h in base_historial}
+        nuevo_historial = [h for h in duplicado_historial if (h['torneo'], h['fecha']) not in claves_existentes]
+        base['historial'] = base_historial + nuevo_historial
+
+        # Unificar torneos (si existen)
+        base['torneos'] = list(set(base.get('torneos', []) + duplicado.get('torneos', []))) if base.get('torneos') or duplicado.get('torneos') else []
+
+        # Unificar evolución (si existe)
+        base['evolucion'] = base.get('evolucion', []) + duplicado.get('evolucion', []) if base.get('evolucion') or duplicado.get('evolucion') else []
+
+        # Unificar campos faltantes: categoría, localidad, provincia
+        for campo in ['categoria', 'localidad', 'provincia']:
+            if not base.get(campo) and duplicado.get(campo):
+                base[campo] = duplicado[campo]
+
+        # Eliminar jugador duplicado
+        jugadores.remove(duplicado)
+
+        # Guardar cambios
+        with open('jugadores.json', 'w') as f:
+            json.dump(jugadores, f, indent=2)
+
+        return render_template('unificar_jugadores.html', jugadores=jugadores, success="Jugadores unificados con éxito")
+
+    return render_template('unificar_jugadores.html', jugadores=jugadores)
+
+
 
 @app.route('/actualizar_jugadores_localidad_provincia')
 def actualizar_jugadores_localidad_provincia():

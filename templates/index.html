@@ -90,7 +90,7 @@
             </div>
             <div class="col-md-3">
                 <label for="filtro-nombre" class="form-label">Buscar por nombre:</label>
-                <input type="text" name="nombre" id="filtro-nombre" class="form-control" placeholder="Buscar jugador..." value="{{ request.args.get('nombre', '') }}">
+                <input type="text" name="nombre" id="filtro-nombre" class="form-control" placeholder="Buscar jugador..." value="{{ nombre_actual or '' }}">
             </div>
             <div class="col-12 text-end">
                 <button type="submit" class="btn btn-primary">Aplicar filtros</button>

@@ -882,5 +882,44 @@
         ],
         "puntos_totales": 180.0,
         "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "HERRERA, J",
+            "QUINI, FABIAN"
+        ],
+        "puntos_totales": 150.0,
+        "puntos_por_jugador": 75.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "\u00d1ANCO",
+            "GOMEZ, DAMIAN"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "La Costa Padel",
+        "fecha": "2025-05-16",
+        "nivel": "D",
+        "categoria_torneo": "6TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "TEVES, TOMAS",
+            "ALONSO, OMAR"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
     }
 ]
