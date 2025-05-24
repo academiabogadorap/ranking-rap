@@ -31,17 +31,22 @@ def calcular_ranking_temporada(jugadores, cantidad_maxima=10, ignorar_liga=False
     for jugador in jugadores:
         historial = jugador.get("historial", [])
 
-        # Filtrar torneos del año actual (y excluir LIGA si se solicita)
+        # Torneos del año actual
         anuales = [
             h for h in historial
             if datetime.strptime(h["fecha"], "%Y-%m-%d").year == anio_actual
-            and (not ignorar_liga or h.get("categoria_torneo", "") != "LIGA")
         ]
 
-        # Ordenar por puntos y tomar los mejores
-        mejores = sorted(anuales, key=lambda x: x["puntos"], reverse=True)[:cantidad_maxima]
+        # Separar LIGA y no-LIGA si se necesita
+        torneos_no_liga = [h for h in anuales if h.get("categoria_torneo", "") != "LIGA"]
+        torneos_para_top = torneos_no_liga if ignorar_liga else anuales
+
+        # Mejores torneos (para puntos principales del ranking)
+        mejores = sorted(torneos_para_top, key=lambda x: x["puntos"], reverse=True)[:cantidad_maxima]
         total = sum(h["puntos"] for h in mejores)
         mejor_torneo = mejores[0]["puntos"] if mejores else 0
+
+        # Puntos totales del año (incluyendo LIGA siempre)
         puntos_totales_anuales = sum(h["puntos"] for h in anuales)
 
         ranking.append({
