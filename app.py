@@ -24,44 +24,48 @@ mult_puntos = {
     "Primera ronda": 0.0
 }
 
-def calcular_ranking_temporada(jugadores, cantidad_maxima=10):
+def calcular_ranking_temporada(jugadores, cantidad_maxima=10, ignorar_liga=False):
     ranking = []
     anio_actual = datetime.today().year
 
     for jugador in jugadores:
         historial = jugador.get("historial", [])
 
-        # Filtrar torneos del año actual
+        # Filtrar torneos del año actual (y excluir LIGA si se solicita)
         anuales = [
             h for h in historial
             if datetime.strptime(h["fecha"], "%Y-%m-%d").year == anio_actual
+            and (not ignorar_liga or h.get("categoria_torneo", "") != "LIGA")
         ]
 
         # Ordenar por puntos y tomar los mejores
         mejores = sorted(anuales, key=lambda x: x["puntos"], reverse=True)[:cantidad_maxima]
         total = sum(h["puntos"] for h in mejores)
         mejor_torneo = mejores[0]["puntos"] if mejores else 0
+        puntos_totales_anuales = sum(h["puntos"] for h in anuales)
 
         ranking.append({
             "nombre": jugador["nombre"],
             "categoria": jugador["categoria"],
             "puntos": total,
             "torneos_contados": len(mejores),
-            "mejor_torneo": mejor_torneo
+            "mejor_torneo": mejor_torneo,
+            "puntos_totales_anuales": puntos_totales_anuales
         })
 
     # Ordenar el ranking con criterios de desempate
     ranking_ordenado = sorted(
         ranking,
         key=lambda x: (
-            -x["puntos"],            # 1️⃣ Más puntos
-            -x["torneos_contados"], # 2️⃣ Más torneos válidos
-            -x["mejor_torneo"],     # 3️⃣ Mayor puntaje en un solo torneo
-            x["nombre"]             # 4️⃣ Orden alfabético (último recurso)
+            -x["puntos"],
+            -x["torneos_contados"],
+            -x["mejor_torneo"],
+            x["nombre"]
         )
     )
 
     return ranking_ordenado
+
 
 
 @app.route('/')
@@ -185,12 +189,13 @@ def importar_resultado_externo_mejorado():
     instancias_form = request.form.getlist('instancia[]')
     jugadores_form = request.form.getlist('jugadores[]')
 
+    coincidencias = []
+
     for i in range(0, len(jugadores_form), 2):
         jugador1 = jugadores_form[i].strip().upper()
         jugador2 = jugadores_form[i + 1].strip().upper()
         instancia = instancias_form[i // 2].strip()
 
-        # 🔒 Validar si está incompleto (algún jugador vacío)
         if not jugador1 or not jugador2:
             continue
 
@@ -199,38 +204,50 @@ def importar_resultado_externo_mejorado():
         puntos_totales = puntos_base * multiplicador
         puntos_por_jugador = puntos_totales / 2
 
-        # Validar si alguno tiene categoría superior a la del torneo
-        jugador1_data = next((j for j in jugadores if j['nombre'] == jugador1), None)
-        jugador2_data = next((j for j in jugadores if j['nombre'] == jugador2), None)
+        # 💡 Si el torneo es LIGA, no se penaliza a nadie
+        torneo_es_liga = categoria_torneo == "LIGA"
 
-        jugador1_cat = jugador1_data['categoria'].upper() if jugador1_data else "SIN CATEGORIA"
-        jugador2_cat = jugador2_data['categoria'].upper() if jugador2_data else "SIN CATEGORIA"
+        if not torneo_es_liga:
+            jugador1_data = next((j for j in jugadores if j['nombre'] == jugador1), None)
+            jugador2_data = next((j for j in jugadores if j['nombre'] == jugador2), None)
 
-        jugadores_invalidos = []
+            jugador1_cat = jugador1_data['categoria'].upper() if jugador1_data else "SIN CATEGORIA"
+            jugador2_cat = jugador2_data['categoria'].upper() if jugador2_data else "SIN CATEGORIA"
 
-        if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
-            jugadores_invalidos.append(jugador1)
-        if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
-            jugadores_invalidos.append(jugador2)
+            jugadores_invalidos = []
 
-        # 🟥 Penalizar a ambos si uno está mal
-        if jugadores_invalidos:
-            for nombre in [jugador1, jugador2]:
-                jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-                if jugador:
-                    jugador.setdefault('historial', []).append({
-                        'torneo': torneo,
-                        'fecha': fecha,
-                        'nivel': nivel,
-                        'categoria_torneo': categoria_torneo,
-                        'pareja': jugador2 if nombre == jugador1 else jugador1,
-                        'ronda': instancia,
-                        'puntos': 0,
-                        'observacion': 'No válido: un jugador estaba en categoría inferior (pareja penalizada)'
-                    })
-            continue  # se saltea la carga normal para esta pareja
+            if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
+                jugadores_invalidos.append(jugador1)
+            if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
+                jugadores_invalidos.append(jugador2)
 
-        # ✅ Si no hay jugadores inválidos, continúa como siempre
+            if jugadores_invalidos:
+                for nombre in [jugador1, jugador2]:
+                    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+                    if jugador:
+                        jugador.setdefault('historial', []).append({
+                            'torneo': torneo,
+                            'fecha': fecha,
+                            'nivel': nivel,
+                            'categoria_torneo': categoria_torneo,
+                            'pareja': jugador2 if nombre == jugador1 else jugador1,
+                            'ronda': instancia,
+                            'puntos': 0,
+                            'observacion': 'No válido: un jugador estaba en categoría inferior (pareja penalizada)'
+                        })
+                continue  # Salta esta pareja por penalización
+
+        # 🔎 Buscar posibles coincidencias por apellido
+        for nombre in [jugador1, jugador2]:
+            apellido_ingresado = nombre.split()[-1]
+            similares = [j['nombre'] for j in jugadores if apellido_ingresado in j['nombre'] and j['nombre'] != nombre]
+            if similares:
+                coincidencias.append({
+                    "nombre_ingresado": nombre,
+                    "coincidencias": similares
+                })
+
+        # ✅ Si es LIGA o no hay penalización, continúa normal
         for nombre in [jugador1, jugador2]:
             jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
 
@@ -274,12 +291,14 @@ def importar_resultado_externo_mejorado():
         }
         guardar_resultado_en_historial(resultado)
 
+    if coincidencias:
+        session['coincidencias_apellido'] = coincidencias
+    else:
+        session.pop('coincidencias_apellido', None)
+
     actualizar_ranking_json(jugadores)
     guardar_jugadores_en_json()
     return redirect(url_for('index'))
-
-
-
 
 @app.route('/eliminar_jugador/<nombre>')
 def eliminar_jugador(nombre):
@@ -376,6 +395,38 @@ def cargar_jugadores_desde_json(archivo='jugadores.json'):
     except FileNotFoundError:
         jugadores = []
 
+    # Leer resultados guardados
+    try:
+        with open('resultados.json', 'r') as f:
+            resultados = json.load(f)
+    except FileNotFoundError:
+        resultados = []
+
+    # Vaciar historial antes de reconstruirlo
+    for j in jugadores:
+        j['historial'] = []
+
+    # Agregar los resultados al historial de cada jugador
+    for resultado in resultados:
+        for nombre in resultado['jugadores']:
+            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+            if jugador:
+                pareja = next(n for n in resultado['jugadores'] if n != nombre)
+                jugador['historial'].append({
+                    'torneo': resultado['torneo'],
+                    'fecha': resultado['fecha'],
+                    'nivel': resultado['nivel'],
+                    'categoria_torneo': resultado.get('categoria_torneo', 'SIN CATEGORIA'),
+                    'pareja': pareja,
+                    'ronda': resultado['instancia'],
+                    'puntos': resultado['puntos_por_jugador']
+                })
+
+    # Recalcular puntos totales para cada jugador
+    for j in jugadores:
+        j['puntos'] = sum(item['puntos'] for item in j['historial'])
+
+
 @app.route('/login_admin', methods=['GET', 'POST'])
 def login_admin():
     if request.method == 'POST':
@@ -392,7 +443,7 @@ def login_admin():
 def ranking_por_categoria(categoria):
     jugadores_categoria = [j for j in jugadores if j['categoria'] == categoria]
 
-    ranking_base = calcular_ranking_temporada(jugadores_categoria, cantidad_maxima=6)
+    ranking_base = calcular_ranking_temporada(jugadores_categoria, cantidad_maxima=6, ignorar_liga=True)
 
     # Agregar localidad y provincia al ranking final
     for r in ranking_base:
@@ -552,10 +603,14 @@ def agregar_jugadores():
 
     # Separar por líneas, limpiar y pasar a mayúsculas
     nombres = [n.strip().upper() for n in nombres_raw.split('\n') if n.strip()]
+    
+    nombres_existentes = []
+    nombres_agregados = []
+    posibles_coincidencias = {}
 
     for nombre in nombres:
-        # Evitar duplicados
         if any(j['nombre'] == nombre for j in jugadores):
+            nombres_existentes.append(nombre)
             continue
 
         jugadores.append({
@@ -566,11 +621,23 @@ def agregar_jugadores():
             'puntos': 0,
             'historial': []
         })
+        nombres_agregados.append(nombre)
+
+        # Si se ingresó solo un apellido, buscar coincidencias con jugadores registrados
+        if ' ' not in nombre:  # solo un apellido
+            coincidencias = [j['nombre'] for j in jugadores if nombre in j['nombre'] and j['nombre'] != nombre]
+            if coincidencias:
+                posibles_coincidencias[nombre] = coincidencias
 
     guardar_jugadores_en_json()
     actualizar_ranking_json(jugadores)
 
+    session['nombres_existentes'] = nombres_existentes
+    session['nombres_agregados'] = nombres_agregados
+    session['coincidencias_apellido'] = posibles_coincidencias
+
     return redirect(url_for('index'))
+
 
 @app.route('/corregir_nombre_torneo', methods=['POST'])
 def corregir_nombre_torneo():

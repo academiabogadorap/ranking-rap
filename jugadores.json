@@ -218,8 +218,17 @@
     {
         "nombre": "FORCHINO, GABRIELA",
         "categoria": "7MA DAM",
-        "puntos": 90.0,
+        "puntos": 270.0,
         "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "LE FEUVRE,",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            },
             {
                 "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-09",
@@ -803,36 +812,16 @@
     {
         "nombre": "MARINO, NICOLAS",
         "categoria": "5TA CAB",
-        "puntos": 500.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "5TA CAB",
-                "pareja": "MARCELETTI,",
-                "ronda": "Campeon",
-                "puntos": 500.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
     {
         "nombre": "MARCELETTI, MAURICIO",
         "categoria": "5TA CAB",
-        "puntos": 500.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "5TA CAB",
-                "pareja": "MARINO,",
-                "ronda": "Campeon",
-                "puntos": 500.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -1127,36 +1116,16 @@
     {
         "nombre": "REYES, GASTON",
         "categoria": "7MA CAB",
-        "puntos": 300.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. FAP)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "MILLER",
-                "ronda": "Finalista",
-                "puntos": 300.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
     {
         "nombre": "MILLER, JORGE",
         "categoria": "7MA CAB",
-        "puntos": 300.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. FAP)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "REYES",
-                "ronda": "Finalista",
-                "puntos": 300.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -1379,27 +1348,8 @@
     {
         "nombre": "HERRERA J.",
         "categoria": "7MA CAB",
-        "puntos": 255.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-10",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "MEYADO",
-                "ronda": "Semifinalista",
-                "puntos": 180.0
-            },
-            {
-                "torneo": "La Costa Padel",
-                "fecha": "2025-05-16",
-                "nivel": "D",
-                "categoria_torneo": "6TA CAB",
-                "pareja": "QUINI, FABIAN",
-                "ronda": "Campeon",
-                "puntos": 75.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Rio Colorado",
         "provincia": "Rio Negro",
         "torneos": [],
@@ -1507,36 +1457,16 @@
     {
         "nombre": "FORNASIER, SILVIO",
         "categoria": "7MA CAB",
-        "puntos": 300.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-10",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "GUZMAN",
-                "ronda": "Finalista",
-                "puntos": 300.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
     {
         "nombre": "GUZMAN, SEBASTIAN",
         "categoria": "7MA CAB",
-        "puntos": 300.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-10",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "FORNASIER",
-                "ronda": "Finalista",
-                "puntos": 300.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -1579,36 +1509,16 @@
     {
         "nombre": "PORCEL, MARCOS",
         "categoria": "7MA CAB",
-        "puntos": 500.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-10",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "LUQUET",
-                "ronda": "Campeon",
-                "puntos": 500.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
     {
         "nombre": "LUQUET, ALFREDO",
         "categoria": "7MA CAB",
-        "puntos": 500.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-10",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "PORCEL",
-                "ronda": "Campeon",
-                "puntos": 500.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -1939,18 +1849,8 @@
     {
         "nombre": "SEGURA, HORACIO",
         "categoria": "6TA CAB",
-        "puntos": 500.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "6TA CAB",
-                "pareja": "MORAN, MIGUEL",
-                "ronda": "Campeon",
-                "puntos": 500.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Viedma",
         "provincia": "Rio Negro"
     },
@@ -2047,18 +1947,8 @@
     {
         "nombre": "ELOSEGUI, VALENTIN",
         "categoria": "3RA CAB",
-        "puntos": 500.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "3RA CAB",
-                "pareja": "ORAZI, JUAN MARIA",
-                "ronda": "Campeon",
-                "puntos": 500.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -2353,26 +2243,25 @@
     {
         "nombre": "ALEJANDRO, FERNANDA",
         "categoria": "6TA DAM",
-        "puntos": 90.0,
-        "historial": [
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-09",
-                "nivel": "A",
-                "categoria_torneo": "6TA DAM",
-                "pareja": "DIAZ",
-                "ronda": "Cuartos",
-                "puntos": 90.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
     {
         "nombre": "FISCHOV",
         "categoria": "6TA DAM",
-        "puntos": 90.0,
+        "puntos": 270.0,
         "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "MIRANO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            },
             {
                 "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-09",
@@ -2389,8 +2278,17 @@
     {
         "nombre": "MIRANO",
         "categoria": "6TA DAM",
-        "puntos": 90.0,
+        "puntos": 270.0,
         "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "FISCHOV",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            },
             {
                 "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-09",

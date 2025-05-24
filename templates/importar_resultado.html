@@ -48,8 +48,23 @@
         </div>
 
         <div class="mb-4">
-            <label class="form-label">Categoría del torneo (ej: 4ta cab, 5ta damas):</label>
-            <input type="text" name="categoria_torneo" class="form-control" required>
+            <label class="form-label">Categoría del torneo:</label>
+            <select name="categoria_torneo" class="form-select" required>
+                <option value="">-- Elegí categoría --</option>
+                <option value="3RA CAB">3RA CAB</option>
+                <option value="4TA CAB">4TA CAB</option>
+                <option value="5TA CAB">5TA CAB</option>
+                <option value="6TA CAB">6TA CAB</option>
+                <option value="7MA CAB">7MA CAB</option>
+                <option value="3RA DAM">3RA DAM</option>
+                <option value="4TA DAM">4TA DAM</option>
+                <option value="5TA DAM">5TA DAM</option>
+                <option value="6TA DAM">6TA DAM</option>
+                <option value="7MA DAM">7MA DAM</option>
+                <option value="PRINCIPIANTES CAB">PRINCIPIANTES CAB</option>
+                <option value="PRINCIPIANTES DAM">PRINCIPIANTES DAM</option>
+                <option value="LIGA">LIGA (torneo libre)</option>
+            </select>
         </div>
 
         <!-- Campeones -->
