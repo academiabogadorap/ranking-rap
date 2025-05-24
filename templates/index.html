@@ -174,7 +174,7 @@
 
                         <td>
                             <a class="btn btn-outline-primary btn-sm" href="{{ url_for('historial', nombre=jugador.nombre) }}">Historial</a>
-                            <a class="btn btn-outline-success btn-sm" href="{{ url_for('grafico_jugador', nombre=jugador.nombre) }}">Evolución</a>
+                            <a class="btn btn-outline-info btn-sm" href="{{ url_for('perfil_jugador', nombre=jugador.nombre) }}">Ver perfil</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -200,7 +200,7 @@
             <ul>
                 {% if session.get('es_admin') %}
                     <li><a href="/agregar_jugadores" class="link-primary">➕ Agregar jugadores</a></li>
-                    <li><a href="/importar_resultado_externo" class="link-primary">📥 Importar resultados externos</a></li>
+                    <li><a href="/importar_resultado_externo" class="link-primary">📅 Importar resultados externos</a></li>
                 {% endif %}
                 <li><a href="/torneos" class="link-primary">📄 Historial general de torneos</a></li>
                 <li><a href="{{ url_for('criterios_rap') }}" class="link-primary">📘 Ver criterios de Torneos RAP</a></li>

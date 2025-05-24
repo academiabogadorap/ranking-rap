@@ -769,25 +769,34 @@ def actualizar_jugadores_localidad_provincia():
     return f"✅ Jugadores actualizados correctamente. Se realizaron {cambios} cambios."
 
 
-@app.route('/grafico/<nombre>')
-def grafico_jugador(nombre):
+@app.route('/perfil/<nombre>')
+def perfil_jugador(nombre):
     jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
     if not jugador:
         return "Jugador no encontrado", 404
 
     historial = sorted(jugador.get('historial', []), key=lambda x: x['fecha'])
     fechas = [h['fecha'] for h in historial]
-    
+
     acumulado = []
     total = 0
     for h in historial:
         total += h['puntos']
         acumulado.append(total)
 
-    return render_template('grafico_jugador.html',
-                           nombre=nombre,
+    puntos_totales = sum(h['puntos'] for h in historial)
+    mejor_torneo = max((h['puntos'] for h in historial), default=0)
+    torneos_jugados = len(historial)
+
+    return render_template('perfil_jugador.html',
+                           jugador=jugador,
+                           historial=historial,
                            fechas=fechas,
-                           puntos=acumulado)
+                           puntos=acumulado,
+                           puntos_totales=puntos_totales,
+                           mejor_torneo=mejor_torneo,
+                           torneos_jugados=torneos_jugados)
+
 
 @app.route('/criterios_rap')
 def criterios_rap():
