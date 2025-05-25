@@ -806,6 +806,50 @@ def criterios_rap():
 def reglamento():
     return render_template('reglamento.html')
 
+@app.route('/calendario')
+def calendario_torneos():
+    try:
+        with open('torneos_futuros.json', 'r') as f:
+            torneos = json.load(f)
+    except FileNotFoundError:
+        torneos = []
+
+    # Ordenar por fecha
+    torneos = sorted(torneos, key=lambda x: x['fecha'])
+
+    return render_template('calendario.html', torneos=torneos)
+
+@app.route('/agregar_torneo_futuro', methods=['GET', 'POST'])
+def agregar_torneo_futuro():
+    if not session.get('es_admin'):
+        return "Acceso denegado", 403
+
+    if request.method == 'POST':
+        nuevo_torneo = {
+            'nombre': request.form['nombre'].strip(),
+            'fecha': request.form['fecha'],
+            'localidad': request.form['localidad'].strip(),
+            'provincia': request.form['provincia'].strip(),
+            'instagram': request.form.get('instagram', '').strip(),
+            'nivel': request.form['nivel'].strip().upper()
+        }
+
+        try:
+            with open('torneos_futuros.json', 'r') as f:
+                torneos = json.load(f)
+        except FileNotFoundError:
+            torneos = []
+
+        torneos.append(nuevo_torneo)
+
+        with open('torneos_futuros.json', 'w') as f:
+            json.dump(torneos, f, indent=4)
+
+        return redirect(url_for('calendario_torneos'))
+
+    return render_template('agregar_torneo_futuro.html')
+
+
 if __name__ == '__main__':
     cargar_jugadores_desde_json()
     app.run(host='0.0.0.0', port=10000)
