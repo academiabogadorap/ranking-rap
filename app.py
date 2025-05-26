@@ -130,6 +130,15 @@ def index():
     if os.path.exists(ruta_logos):
         logos_torneos = [f for f in os.listdir(ruta_logos) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
 
+    # Torneos futuros
+    try:
+        with open('torneos_futuros.json', 'r') as f:
+            torneos_futuros = json.load(f)
+    except FileNotFoundError:
+        torneos_futuros = []
+
+    torneos_futuros = sorted(torneos_futuros, key=lambda x: x['fecha'])
+
     print("LOGOS DETECTADOS:", logos_torneos)
 
     return render_template(
@@ -142,8 +151,10 @@ def index():
         provincia_actual=provincia_filtrada,
         localidad_actual=localidad_filtrada,
         nombre_actual=nombre_filtrado,
-        logos_torneos=logos_torneos
+        logos_torneos=logos_torneos,
+        torneos_futuros=torneos_futuros  # ✅ nuevo
     )
+
 
 
 

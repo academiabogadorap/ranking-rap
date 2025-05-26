@@ -973,5 +973,109 @@
         ],
         "puntos_totales": 54.0,
         "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "MALASPINA, SANTIAGO",
+            "BENITEZ, CIELO"
+        ],
+        "puntos_totales": 150.0,
+        "puntos_por_jugador": 75.0
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "GOLDARACENA, JULIAN",
+            "BOUHABEN, FEDERICO"
+        ],
+        "puntos_totales": 90.0,
+        "puntos_por_jugador": 45.0
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "MARADONA, JOAN",
+            "CAMPETTI, LEO"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "GARAT, FRANCO",
+            "RUIZ, JUAN IGNACIO"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "FIORI, JULIO",
+            "PICAVIA, ARIEL"
+        ],
+        "puntos_totales": 27.0,
+        "puntos_por_jugador": 13.5
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "LEONARDI, DANIEL",
+            "LEONARDI, NICOLAS"
+        ],
+        "puntos_totales": 27.0,
+        "puntos_por_jugador": 13.5
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "SANCHEZ, ELIAS",
+            "MU\u00d1OZ, JAVIER"
+        ],
+        "puntos_totales": 27.0,
+        "puntos_por_jugador": 13.5
+    },
+    {
+        "torneo": "Guanches Padel",
+        "fecha": "2025-05-23",
+        "nivel": "D",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "FLEHR, AXEL",
+            "MERI\u00d1O, BRIAN"
+        ],
+        "puntos_totales": 27.0,
+        "puntos_por_jugador": 13.5
     }
 ]
