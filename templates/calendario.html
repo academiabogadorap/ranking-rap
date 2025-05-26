@@ -9,7 +9,7 @@
 <body class="bg-light">
 <div class="container py-5">
     <div class="card shadow-sm p-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
             <h2 class="mb-0">🗓️ Calendario de Torneos</h2>
             {% if session.get('es_admin') %}
                 <a href="{{ url_for('agregar_torneo_futuro') }}" class="btn btn-primary">➕ Agregar Torneo</a>
