@@ -95,7 +95,7 @@
                     {% for torneo in torneos_futuros %}
                         <div class="slide">
                             {% if torneo.instagram %}
-                                <a href="{{ torneo.instagram }}" target="_blank" style="text-decoration: none; color: inherit;">
+                                <a href="{{ url_for('calendario_torneos') }}" style="text-decoration: none; color: inherit;">
                             {% endif %}
                             <div class="torneo-card">
                                 <strong>{{ torneo.nombre }}</strong><br>
