@@ -94,18 +94,15 @@
                 <div class="slider-wrapper">
                     {% for torneo in torneos_futuros %}
                         <div class="slide">
-                            {% if torneo.instagram %}
-                                <a href="{{ url_for('calendario_torneos') }}" style="text-decoration: none; color: inherit;">
-                            {% endif %}
-                            <div class="torneo-card">
-                                <strong>{{ torneo.nombre }}</strong><br>
-                                🗓 {{ torneo.fecha }}<br>
-                                📍 {{ torneo.localidad }}, {{ torneo.provincia }}
-                            </div>
-                            {% if torneo.instagram %}
-                                </a>
-                            {% endif %}
-                        </div>
+    <a href="{{ url_for('calendario_torneos') }}" style="text-decoration: none; color: inherit;">
+        <div class="torneo-card">
+            <strong>{{ torneo.nombre }}</strong><br>
+            🗓 {{ torneo.fecha }}<br>
+            📍 {{ torneo.localidad }}, {{ torneo.provincia }}
+        </div>
+    </a>
+</div>
+
                     {% endfor %}
                 </div>
                 <div class="d-flex justify-content-between mt-2">
