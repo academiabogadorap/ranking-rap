@@ -220,7 +220,6 @@ def importar_resultado_externo_mejorado():
         puntos_totales = puntos_base * multiplicador
         puntos_por_jugador = puntos_totales / 2
 
-        # 💡 Si el torneo es LIGA, no se penaliza a nadie
         torneo_es_liga = categoria_torneo == "LIGA"
 
         if not torneo_es_liga:
@@ -231,7 +230,6 @@ def importar_resultado_externo_mejorado():
             jugador2_cat = jugador2_data['categoria'].upper() if jugador2_data else "SIN CATEGORIA"
 
             jugadores_invalidos = []
-
             if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
                 jugadores_invalidos.append(jugador1)
             if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
@@ -251,9 +249,9 @@ def importar_resultado_externo_mejorado():
                             'puntos': 0,
                             'observacion': 'No válido: un jugador estaba en categoría inferior (pareja penalizada)'
                         })
-                continue  # Salta esta pareja por penalización
+                continue
 
-        # 🔎 Buscar posibles coincidencias por apellido
+        # Validar coincidencias por apellido
         for nombre in [jugador1, jugador2]:
             apellido_ingresado = nombre.split()[-1]
             similares = [j['nombre'] for j in jugadores if apellido_ingresado in j['nombre'] and j['nombre'] != nombre]
@@ -263,7 +261,7 @@ def importar_resultado_externo_mejorado():
                     "coincidencias": similares
                 })
 
-        # ✅ Si es LIGA o no hay penalización, continúa normal
+        # Asignar puntos e historial
         for nombre in [jugador1, jugador2]:
             jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
 
@@ -272,25 +270,32 @@ def importar_resultado_externo_mejorado():
                     'nombre': nombre,
                     'categoria': 'Sin categoría',
                     'puntos': puntos_por_jugador,
-                    'historial': [{
-                        'torneo': torneo,
-                        'fecha': fecha,
-                        'nivel': nivel,
-                        'categoria_torneo': categoria_torneo,
-                        'pareja': jugador2 if nombre == jugador1 else jugador1,
-                        'ronda': instancia,
-                        'puntos': puntos_por_jugador
-                    }]
+                    'historial': []
                 }
                 jugadores.append(jugador)
-            else:
-                jugador['puntos'] += puntos_por_jugador
-                jugador.setdefault('historial', []).append({
+
+            jugador['puntos'] += puntos_por_jugador
+            jugador.setdefault('historial', []).append({
+                'torneo': torneo,
+                'fecha': fecha,
+                'nivel': nivel,
+                'categoria_torneo': categoria_torneo,
+                'pareja': jugador2 if nombre == jugador1 else jugador1,
+                'ronda': instancia,
+                'puntos': puntos_por_jugador
+            })
+
+        # Si uno fue omitido en un torneo anterior, agregamos el historial que falta
+        for nombre in [jugador1, jugador2]:
+            otro = jugador2 if nombre == jugador1 else jugador1
+            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+            if not any(h['torneo'] == torneo and h['fecha'] == fecha for h in jugador.get('historial', [])):
+                jugador['historial'].append({
                     'torneo': torneo,
                     'fecha': fecha,
                     'nivel': nivel,
                     'categoria_torneo': categoria_torneo,
-                    'pareja': jugador2 if nombre == jugador1 else jugador1,
+                    'pareja': otro,
                     'ronda': instancia,
                     'puntos': puntos_por_jugador
                 })
@@ -315,6 +320,7 @@ def importar_resultado_externo_mejorado():
     actualizar_ranking_json(jugadores)
     guardar_jugadores_en_json()
     return redirect(url_for('index'))
+
 
 @app.route('/eliminar_jugador/<nombre>')
 def eliminar_jugador(nombre):
