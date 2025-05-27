@@ -1929,7 +1929,7 @@
     {
         "nombre": "ELOSEGUI,VALENTIN",
         "categoria": "3RA CAB",
-        "puntos": 0,
+        "puntos": 500.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1941,13 +1941,13 @@
                 "puntos": 500.0
             }
         ],
-        "localidad": "Sin especificar",
-        "provincia": "Sin especificar"
+        "localidad": "Choele Choel",
+        "provincia": "Rio Negro"
     },
     {
         "nombre": "ORAZI, JUAN MARIA",
         "categoria": "3RA CAB",
-        "puntos": 0,
+        "puntos": 500.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
