@@ -537,19 +537,22 @@ def listar_torneos():
     except FileNotFoundError:
         resultados = []
 
-    # Extraer torneos únicos por nombre + fecha + categoría
-    torneos_unicos = []
-    vistos = set()
+    torneos_dict = {}
+
     for r in resultados:
         clave = (r['torneo'], r['fecha'], r.get('categoria_torneo', 'SIN CATEGORIA'))
-        if clave not in vistos:
-            torneos_unicos.append({
+        if clave not in torneos_dict:
+            torneos_dict[clave] = {
                 'torneo': r['torneo'],
                 'fecha': r['fecha'],
                 'nivel': r['nivel'],
-                'categoria_torneo': r.get('categoria_torneo', 'SIN CATEGORIA')
-            })
-            vistos.add(clave)
+                'categoria_torneo': r.get('categoria_torneo', 'SIN CATEGORIA'),
+                'parejas': 1  # opcional: cantidad de parejas
+            }
+        else:
+            torneos_dict[clave]['parejas'] += 1  # opcional: contás cuántas parejas tiene
+
+    torneos_unicos = sorted(torneos_dict.values(), key=lambda x: x['fecha'], reverse=True)
 
     return render_template('torneos.html', torneos=torneos_unicos)
 

@@ -1927,12 +1927,12 @@
         "provincia": "Sin especificar"
     },
     {
-        "nombre": "ELOSEGUI, VALENTIN",
+        "nombre": "ELOSEGUI,VALENTIN",
         "categoria": "3RA CAB",
-        "puntos": 500.0,
+        "puntos": 0,
         "historial": [
             {
-                "torneo": "Padel Animales (C.N. FAP)",
+                "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-09",
                 "nivel": "A",
                 "categoria_torneo": "3RA CAB",
@@ -1947,14 +1947,14 @@
     {
         "nombre": "ORAZI, JUAN MARIA",
         "categoria": "3RA CAB",
-        "puntos": 500.0,
+        "puntos": 0,
         "historial": [
             {
-                "torneo": "Padel Animales (C.N. FAP)",
+                "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-09",
                 "nivel": "A",
                 "categoria_torneo": "3RA CAB",
-                "pareja": "ELOSEGUI, VALENTIN",
+                "pareja": "ELOSEGUI,VALENTIN",
                 "ronda": "Campeon",
                 "puntos": 500.0
             }

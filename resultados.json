@@ -1077,18 +1077,5 @@
         ],
         "puntos_totales": 27.0,
         "puntos_por_jugador": 13.5
-    },
-    {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "instancia": "Campeon",
-        "jugadores": [
-            "ORAZI, JUAN MARIA",
-            "ELOSEGUI, VALENTIN"
-        ],
-        "puntos_totales": 1000.0,
-        "puntos_por_jugador": 500.0
     }
 ]
