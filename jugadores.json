@@ -1,2791 +1,2783 @@
 [
-  {
-    "nombre": "BOIOCCHI, GIULIANO",
-    "categoria": "4TA CAB",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "ERMANTRAU, MARCELO",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "ERMANTRAU, MARCELO",
-    "categoria": "4TA CAB",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "BOIOCCHI, GIULIANO",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "SIERRA, SEBASTIAN",
-    "categoria": "4TA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "PULICHINO, EXEQUIEL",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "PULICHINO, EXEQUIEL",
-    "categoria": "4TA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "SIERRA, SEBASTIAN",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PAREDES, JONATHAN",
-    "categoria": "4TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "DIAZ, EMANUEL",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "DIAZ, EMANUEL",
-    "categoria": "4TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "PAREDES, JONATHAN",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "HOLGADO, ALAN",
-    "categoria": "4TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "CASTILLO, MAXIMO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CASTILLO, MAXIMO",
-    "categoria": "4TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "HOLGADO, ALAN",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GORRITI, SILVIO",
-    "categoria": "4TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "RICHMOND, MARIANO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "RICHMOND, MARIANO",
-    "categoria": "4TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "GORRITI, SILVIO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "BARRIOS, ANGEL",
-    "categoria": "4TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "MARTINEZ, JOAQUIN",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MARTINEZ, JOAQUIN",
-    "categoria": "4TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "4TA CAB",
-        "pareja": "BARRIOS, ANGEL",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "FORCHINO, GABRIELA",
-    "categoria": "7MA DAM",
-    "puntos": 270.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "LE FEUVRE,",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      },
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "LE FEUVRE, JEANETTE",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "VERDINELLI, MARINA",
-    "categoria": "7MA DAM",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "GORRITI, FLORENCIA",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "GORRITI, FLORENCIA",
-    "categoria": "7MA DAM",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "VERDINELLI, MARINA",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "MU\u00d1OZ, MAGDALENA",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "ACOSTA, NATALIA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ACOSTA, NATALIA",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "MU\u00d1OZ, MAGDALENA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "LUCERO, AMALIA",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "MUSSI, FANY",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MUSSI, FANY",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "LUCERO, AMALIA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GARCIA, FERNANDA",
-    "categoria": "7MA DAM",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "MALDONADO, BELEN",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MALDONADO, BELEN",
-    "categoria": "7MA DAM",
-    "puntos": 375.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "GARCIA, FERNANDA",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      },
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "CENDRA, FERNANDA",
-        "ronda": "Campeon",
-        "puntos": 75.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PROST, ROSA",
-    "categoria": "7MA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "FERNANDEZ, JULIANA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "FERNANDEZ, JULIANA",
-    "categoria": "7MA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "PROST, ROSA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "LE FEUVRE, JEANETTE",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "FORCHINO, GABRIELA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MOYANO, LETICIA",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "MORTADA, JAZMIN",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MORTADA, JAZMIN",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "MOYANO, LETICIA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "SANDOVAL, JESSICA",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "ZALAZAR, MAYRA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ZALAZAR, MAYRA",
-    "categoria": "7MA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "SANDOVAL, JESSICA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MENECHELLA, JOSEFINA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "PUGNANOLI, JULIANA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PUGNANOLI, JULIANA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "MENECHELLA, JOSEFINA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "BICHARA, EUGENIA",
-    "categoria": "5TA DAM",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "BICHARA, CECILIA",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "BICHARA, CECILIA",
-    "categoria": "5TA DAM",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "BICHARA, EUGENIA",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "DEL CARRIL, MARCELA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "RIFFO, DAIANA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "RIFFO, DAIANA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "DEL CARRIL, MARCELA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CALVO, JESSICA",
-    "categoria": "5TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "QUILEN,JANET",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "QUILEN,JANET",
-    "categoria": "5TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "CALVO, JESSICA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "HUENTELAF, MAYRA",
-    "categoria": "5TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "MORENO, MARIA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MORENO, MARIA",
-    "categoria": "5TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "HUENTELAF, MAYRA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "FRANCIONI, LUISINA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "LARRALDE,SOLEDAD",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "LARRALDE,SOLEDAD",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "FRANCIONI, LUISINA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GIORDANO, LUCIA",
-    "categoria": "5TA DAM",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "CAMPORA, DESIRE",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "CAMPORA, DESIRE",
-    "categoria": "5TA DAM",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "GIORDANO, LUCIA",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "SANTAMARINA, VANESA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "PITTO, PAULA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PITTO, PAULA",
-    "categoria": "5TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA DAM",
-        "pareja": "SANTAMARINA, VANESA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MARINO, NICOLAS",
-    "categoria": "5TA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MARCELETTI, MAURICIO",
-    "categoria": "5TA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PERALTA,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "IURINO,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "IURINO,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "PERALTA,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ALONSO,",
-    "categoria": "5TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "CALVO,",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CALVO,",
-    "categoria": "5TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "ALONSO,",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "KUCICH,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "SACHETI,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "SACHETI,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "KUCICH,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "DEL CASTILLO, GUSTAVO",
-    "categoria": "5TA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "LAMAS, NICOLAS",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "LAMAS, NICOLAS",
-    "categoria": "5TA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "DEL CASTILLO, GUSTAVO",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "RODRIGUEZ,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "PULICHINO,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PULICHINO,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "RODRIGUEZ,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MALICKI, LUIS",
-    "categoria": "5TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "SCARPINO, IGNACIO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "SCARPINO, IGNACIO",
-    "categoria": "5TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "MALICKI, LUIS",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Carmen de Patagones",
-    "provincia": "Buenos Aires"
-  },
-  {
-    "nombre": "RODRIGUEZ,G",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "GIANI,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GIANI,",
-    "categoria": "5TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "5TA CAB",
-        "pareja": "RODRIGUEZ,G",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "BERNARDI",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MARADONA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "REYES, GASTON",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MILLER, JORGE",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ANDRACA, CHRISTIAN",
-    "categoria": "7MA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "CALFIN",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "CALFIN",
-    "categoria": "7MA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "ANDRACA, CHRISTIAN",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CONTRERAS",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MELLAMACI",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MELLAMACI",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "CONTRERAS",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "KREITZ, JUAN",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "GARCIA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GARCIA",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "KREITZ, JUAN",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ARGUELLES, JOAQUIN",
-    "categoria": "7MA CAB",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "GALLARDO, PABLO",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "GALLARDO, PABLO",
-    "categoria": "7MA CAB",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "ARGUELLES, JOAQUIN",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "CARDENAS,",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "NAVARRETE",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "NAVARRETE",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "CARDENAS,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "RAFFLER",
-    "categoria": "7MA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "PICAVIA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PICAVIA, ARIEL",
-    "categoria": "7MA CAB",
-    "puntos": 193.5,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "RAFFLER",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      },
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "FIORI, JULIO",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "HERRERA J.",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "torneos": [],
-    "evolucion": []
-  },
-  {
-    "nombre": "MEYADO",
-    "categoria": "7MA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "HERRERA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CASAS",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "LOPEZ",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "LOPEZ",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "CASAS",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PALAVECINO",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "\u00d1ANCO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "\u00d1ANCO",
-    "categoria": "7MA CAB",
-    "puntos": 117.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "PALAVECINO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      },
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "GOMEZ, DAMIAN",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "FORNASIER, SILVIO",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GUZMAN, SEBASTIAN",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MATUCCI",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "FURCH",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "FURCH",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MATUCCI",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PORCEL, MARCOS",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "LUQUET, ALFREDO",
-    "categoria": "7MA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CENTENO",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "PINCHULEF",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PINCHULEF",
-    "categoria": "7MA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "CENTENO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "HEREDIA",
-    "categoria": "7MA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MENENDEZ",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MENENDEZ",
-    "categoria": "7MA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-10",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "HEREDIA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "STABILE, NASIF",
-    "categoria": "6TA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "STABILE, PASCUAL",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "STABILE, PASCUAL",
-    "categoria": "6TA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "STABILE, NASIF",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "OVIEDO, SEBASTIAN",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "DEL CASTILLO, ANIBAL",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "DEL CASTILLO, ANIBAL",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "OVIEDO, SEBASTIAN",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "AYALEF, JUAN CARLOS",
-    "categoria": "6TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "HERRERA, GABRIEL",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "HERRERA, GABRIEL",
-    "categoria": "6TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "AYALEF, JUAN CARLOS",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ARENA, FELIPE",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "RAMUNDINI,",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "RAMUNDINI,",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "ARENA, FELIPE",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CALDERON",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "ROUMEC",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ROUMEC",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "CALDERON",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "CARDENAS",
-    "categoria": "6TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "NEME",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "NEME",
-    "categoria": "6TA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "CARDENAS",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "PENDRAGA",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "ARCE",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ARCE",
-    "categoria": "6TA CAB",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "PENDRAGA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "SEGURA, HORACIO",
-    "categoria": "6TA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "MORAN, MIGUEL",
-    "categoria": "6TA CAB",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "SEGURA",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "OTERMIN, JOSE",
-    "categoria": "3RA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "RODRIGUEZ, KEVIN",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "RODRIGUEZ, KEVIN",
-    "categoria": "3RA CAB",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "OTERMIN, JOSE",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "VELASQUEZ, RODRIGO",
-    "categoria": "3RA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "LOPEZ, FERNANDO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "LOPEZ, FERNANDO",
-    "categoria": "3RA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "VELASQUEZ, RODRIGO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ELOSEGUI, VALENTIN",
-    "categoria": "3RA CAB",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ORAZI, JUAN MARIA",
-    "categoria": "3RA CAB",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "ELOSEGUI,",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "ORTIZ, LEAN",
-    "categoria": "3RA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "ROMERO, TITO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ROMERO, TITO",
-    "categoria": "3RA CAB",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "3RA CAB",
-        "pareja": "ORTIZ, LEAN",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "VEGA, JULIETA",
-    "categoria": "6TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "ANAYA, GABRIELA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ANAYA, GABRIELA",
-    "categoria": "6TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "VEGA, JULIETA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "TREJO",
-    "categoria": "6TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "STANGEN, ERIKA",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "STANGEN, ERIKA",
-    "categoria": "6TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "TREJO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Viedma",
-    "provincia": "Rio Negro"
-  },
-  {
-    "nombre": "BLACKHALL",
-    "categoria": "6TA DAM",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "SANDOVAL, 6TA DAMA",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "SANDOVAL, 6TA DAMA",
-    "categoria": "6TA DAM",
-    "puntos": 300.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "BLACKHALL",
-        "ronda": "Finalista",
-        "puntos": 300.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MONTENEGRO",
-    "categoria": "6TA DAM",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "ESANDI",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ESANDI",
-    "categoria": "6TA DAM",
-    "puntos": 500.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "MONTENEGRO",
-        "ronda": "Campeon",
-        "puntos": 500.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MIRANDA",
-    "categoria": "6TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "MARCANTONI",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MARCANTONI",
-    "categoria": "6TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "MIRANDA",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "GARAT",
-    "categoria": "6TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "ESTEFENELLI",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ESTEFENELLI",
-    "categoria": "6TA DAM",
-    "puntos": 180.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "GARAT",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "DIAZ",
-    "categoria": "6TA DAM",
-    "puntos": 90.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "ALEJANDRO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ALEJANDRO, FERNANDA",
-    "categoria": "6TA DAM",
-    "puntos": 0,
-    "historial": [],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "FISCHOV",
-    "categoria": "6TA DAM",
-    "puntos": 270.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "MIRANO",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      },
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "MIRANO",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "MIRANO",
-    "categoria": "6TA DAM",
-    "puntos": 270.0,
-    "historial": [
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "FISCHOV",
-        "ronda": "Semifinalista",
-        "puntos": 180.0
-      },
-      {
-        "torneo": "Padel Animales (C.N. PAF)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "6TA DAM",
-        "pareja": "FISCHOV",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "localidad": "Sin especificar",
-    "provincia": "Sin especificar"
-  },
-  {
-    "nombre": "ALONSO, OMAR",
-    "categoria": "6TA CAB",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "TEVES, TOMAS",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "TEVES, TOMAS",
-    "categoria": "6TA CAB",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "ALONSO, OMAR",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "QUINI, FABIAN",
-    "categoria": "6TA CAB",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 75.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "HERRERA, J",
-        "ronda": "Campeon",
-        "puntos": 75.0
-      }
-    ]
-  },
-  {
-    "nombre": "GOMEZ, DAMIAN",
-    "categoria": "6TA CAB",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "6TA CAB",
-        "pareja": "\u00d1ANCO",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "GATICA, PAOLA",
-    "categoria": "4TA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 0,
-    "historial": []
-  },
-  {
-    "nombre": "BONGIOVANNI, ROSANA",
-    "categoria": "4TA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 0,
-    "historial": []
-  },
-  {
-    "nombre": "CERDA, VERONICA",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 45.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "IBA\u00d1EZ, MAUREN",
-        "ronda": "Finalista",
-        "puntos": 45.0
-      }
-    ]
-  },
-  {
-    "nombre": "IBA\u00d1EZ, MAUREN",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 45.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "CERDA, VERONICA",
-        "ronda": "Finalista",
-        "puntos": 45.0
-      }
-    ]
-  },
-  {
-    "nombre": "VILLALBA, A",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "FERNANDEZ VILLALBA, ANA",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "FERNANDEZ VILLALBA, ANA",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "VILLALBA, A",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "DORADO, DALMA",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "CARRA, R",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "CARRA, R",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "DORADO, DALMA",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "CENDRA, FERNANDA",
-    "categoria": "7MA DAM",
-    "localidad": "Rio Colorado",
-    "provincia": "Rio Negro",
-    "puntos": 75.0,
-    "historial": [
-      {
-        "torneo": "La Costa Padel",
-        "fecha": "2025-05-16",
-        "nivel": "D",
-        "categoria_torneo": "7MA DAM",
-        "pareja": "MALDONADO, BELEN",
-        "ronda": "Campeon",
-        "puntos": 75.0
-      }
-    ]
-  },
-  {
-    "nombre": "FIORI, JULIO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "PICAVIA, ARIEL",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "MALASPINA, SANTIAGO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 75.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "BENITEZ, CIELO",
-        "ronda": "Campeon",
-        "puntos": 75.0
-      }
-    ]
-  },
-  {
-    "nombre": "BENITEZ, CIELO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 75.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MALASPINA, SANTIAGO",
-        "ronda": "Campeon",
-        "puntos": 75.0
-      }
-    ]
-  },
-  {
-    "nombre": "GARAT, FRANCO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "RUIZ, JUAN IGNACIO",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "RUIZ, JUAN IGNACIO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "GARAT, FRANCO",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "LEONARDI, DANIEL",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "LEONARDI, NICOLAS",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "LEONARDI, NICOLAS",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "LEONARDI, DANIEL",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "MU\u00d1OZ, JAVIER",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "SANCHEZ, ELIAS",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "SANCHEZ, ELIAS",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MU\u00d1OZ, JAVIER",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "MARADONA, JOAN",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 117.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "CAMPETTI, LEO",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      },
-      {
-        "torneo": "Padel Animales (C.N. FAP)",
-        "fecha": "2025-05-09",
-        "nivel": "A",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "BERNARDI",
-        "ronda": "Cuartos",
-        "puntos": 90.0
-      }
-    ],
-    "torneos": [],
-    "evolucion": []
-  },
-  {
-    "nombre": "CAMPETTI, LEO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 27.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MARADONA, JOAN",
-        "ronda": "Semifinalista",
-        "puntos": 27.0
-      }
-    ]
-  },
-  {
-    "nombre": "FLEHR, AXEL",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "MERI\u00d1O, BRIAN",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "MERI\u00d1O, BRIAN",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 13.5,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "FLEHR, AXEL",
-        "ronda": "Cuartos",
-        "puntos": 13.5
-      }
-    ]
-  },
-  {
-    "nombre": "GOLDARACENA, JULIAN",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 45.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "BOUHABEN, FEDERICO",
-        "ronda": "Finalista",
-        "puntos": 45.0
-      }
-    ]
-  },
-  {
-    "nombre": "BOUHABEN, FEDERICO",
-    "categoria": "7MA CAB",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "puntos": 45.0,
-    "historial": [
-      {
-        "torneo": "Guanches Padel",
-        "fecha": "2025-05-23",
-        "nivel": "D",
-        "categoria_torneo": "7MA CAB",
-        "pareja": "GOLDARACENA, JULIAN",
-        "ronda": "Finalista",
-        "puntos": 45.0
-      }
-    ]
-  }
+    {
+        "nombre": "BOIOCCHI, GIULIANO",
+        "categoria": "4TA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "ERMANTRAU, MARCELO",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "ERMANTRAU, MARCELO",
+        "categoria": "4TA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "BOIOCCHI, GIULIANO",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "SIERRA, SEBASTIAN",
+        "categoria": "4TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "PULICHINO, EXEQUIEL",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "PULICHINO, EXEQUIEL",
+        "categoria": "4TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "SIERRA, SEBASTIAN",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PAREDES, JONATHAN",
+        "categoria": "4TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "DIAZ, EMANUEL",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "DIAZ, EMANUEL",
+        "categoria": "4TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "PAREDES, JONATHAN",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "HOLGADO, ALAN",
+        "categoria": "4TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "CASTILLO, MAXIMO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CASTILLO, MAXIMO",
+        "categoria": "4TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "HOLGADO, ALAN",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GORRITI, SILVIO",
+        "categoria": "4TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "RICHMOND, MARIANO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "RICHMOND, MARIANO",
+        "categoria": "4TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "GORRITI, SILVIO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "BARRIOS, ANGEL",
+        "categoria": "4TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "MARTINEZ, JOAQUIN",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MARTINEZ, JOAQUIN",
+        "categoria": "4TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "4TA CAB",
+                "pareja": "BARRIOS, ANGEL",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "FORCHINO, GABRIELA",
+        "categoria": "7MA DAM",
+        "puntos": 270.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "LE FEUVRE,",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            },
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "LE FEUVRE, JEANETTE",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "VERDINELLI, MARINA",
+        "categoria": "7MA DAM",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "GORRITI, FLORENCIA",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "GORRITI, FLORENCIA",
+        "categoria": "7MA DAM",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "VERDINELLI, MARINA",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "MU\u00d1OZ, MAGDALENA",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "ACOSTA, NATALIA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ACOSTA, NATALIA",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MU\u00d1OZ, MAGDALENA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "LUCERO, AMALIA",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MUSSI, FANY",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MUSSI, FANY",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "LUCERO, AMALIA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GARCIA, FERNANDA",
+        "categoria": "7MA DAM",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MALDONADO, BELEN",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MALDONADO, BELEN",
+        "categoria": "7MA DAM",
+        "puntos": 375.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "GARCIA, FERNANDA",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            },
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CENDRA, FERNANDA",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PROST, ROSA",
+        "categoria": "7MA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "FERNANDEZ, JULIANA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "FERNANDEZ, JULIANA",
+        "categoria": "7MA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "PROST, ROSA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "LE FEUVRE, JEANETTE",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "FORCHINO, GABRIELA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MOYANO, LETICIA",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MORTADA, JAZMIN",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MORTADA, JAZMIN",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MOYANO, LETICIA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "SANDOVAL, JESSICA",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "ZALAZAR, MAYRA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ZALAZAR, MAYRA",
+        "categoria": "7MA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "SANDOVAL, JESSICA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MENECHELLA, JOSEFINA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "PUGNANOLI, JULIANA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PUGNANOLI, JULIANA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "MENECHELLA, JOSEFINA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "BICHARA, EUGENIA",
+        "categoria": "5TA DAM",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "BICHARA, CECILIA",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "BICHARA, CECILIA",
+        "categoria": "5TA DAM",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "BICHARA, EUGENIA",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "DEL CARRIL, MARCELA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "RIFFO, DAIANA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "RIFFO, DAIANA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "DEL CARRIL, MARCELA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CALVO, JESSICA",
+        "categoria": "5TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "QUILEN,JANET",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "QUILEN,JANET",
+        "categoria": "5TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "CALVO, JESSICA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "HUENTELAF, MAYRA",
+        "categoria": "5TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "MORENO, MARIA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MORENO, MARIA",
+        "categoria": "5TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "HUENTELAF, MAYRA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "FRANCIONI, LUISINA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "LARRALDE,SOLEDAD",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "LARRALDE,SOLEDAD",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "FRANCIONI, LUISINA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GIORDANO, LUCIA",
+        "categoria": "5TA DAM",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "CAMPORA, DESIRE",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "CAMPORA, DESIRE",
+        "categoria": "5TA DAM",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "GIORDANO, LUCIA",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "SANTAMARINA, VANESA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "PITTO, PAULA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PITTO, PAULA",
+        "categoria": "5TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA DAM",
+                "pareja": "SANTAMARINA, VANESA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MARINO, NICOLAS",
+        "categoria": "5TA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MARCELETTI, MAURICIO",
+        "categoria": "5TA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PERALTA,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "IURINO,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "IURINO,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "PERALTA,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ALONSO,",
+        "categoria": "5TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "CALVO,",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CALVO,",
+        "categoria": "5TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "ALONSO,",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "KUCICH,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "SACHETI,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "SACHETI,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "KUCICH,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "DEL CASTILLO, GUSTAVO",
+        "categoria": "5TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "LAMAS, NICOLAS",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "LAMAS, NICOLAS",
+        "categoria": "5TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "DEL CASTILLO, GUSTAVO",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "RODRIGUEZ,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "PULICHINO,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PULICHINO,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "RODRIGUEZ,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MALICKI, LUIS",
+        "categoria": "5TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "SCARPINO, IGNACIO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "SCARPINO, IGNACIO",
+        "categoria": "5TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "MALICKI, LUIS",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Carmen de Patagones",
+        "provincia": "Buenos Aires"
+    },
+    {
+        "nombre": "RODRIGUEZ,G",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "GIANI,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GIANI,",
+        "categoria": "5TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "RODRIGUEZ,G",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "BERNARDI",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MARADONA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "REYES, GASTON",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MILLER, JORGE",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ANDRACA, CHRISTIAN",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CALFIN",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "CALFIN",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "ANDRACA, CHRISTIAN",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CONTRERAS",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MELLAMACI",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MELLAMACI",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CONTRERAS",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "KREITZ, JUAN",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "GARCIA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GARCIA",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "KREITZ, JUAN",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ARGUELLES, JOAQUIN",
+        "categoria": "7MA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "GALLARDO, PABLO",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "GALLARDO, PABLO",
+        "categoria": "7MA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "ARGUELLES, JOAQUIN",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "CARDENAS,",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "NAVARRETE",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "NAVARRETE",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CARDENAS,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "RAFFLER",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PICAVIA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PICAVIA, ARIEL",
+        "categoria": "7MA CAB",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "FIORI, JULIO",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "HERRERA J.",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "torneos": [],
+        "evolucion": []
+    },
+    {
+        "nombre": "MEYADO",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "HERRERA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CASAS",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "LOPEZ",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "LOPEZ",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CASAS",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PALAVECINO",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "\u00d1ANCO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "\u00d1ANCO",
+        "categoria": "7MA CAB",
+        "puntos": 117.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PALAVECINO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            },
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "GOMEZ, DAMIAN",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "FORNASIER, SILVIO",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GUZMAN, SEBASTIAN",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MATUCCI",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "FURCH",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "FURCH",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MATUCCI",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PORCEL, MARCOS",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "LUQUET, ALFREDO",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CENTENO",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PINCHULEF",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PINCHULEF",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CENTENO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "HEREDIA",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MENENDEZ",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MENENDEZ",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "HEREDIA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "STABILE, NASIF",
+        "categoria": "6TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "STABILE, PASCUAL",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "STABILE, PASCUAL",
+        "categoria": "6TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "STABILE, NASIF",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "OVIEDO, SEBASTIAN",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "DEL CASTILLO, ANIBAL",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "DEL CASTILLO, ANIBAL",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "OVIEDO, SEBASTIAN",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "AYALEF, JUAN CARLOS",
+        "categoria": "6TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "HERRERA, GABRIEL",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "HERRERA, GABRIEL",
+        "categoria": "6TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "AYALEF, JUAN CARLOS",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ARENA, FELIPE",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "RAMUNDINI,",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "RAMUNDINI,",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "ARENA, FELIPE",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CALDERON",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "ROUMEC",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ROUMEC",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "CALDERON",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "CARDENAS",
+        "categoria": "6TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "NEME",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "NEME",
+        "categoria": "6TA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "CARDENAS",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "PENDRAGA",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "ARCE",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ARCE",
+        "categoria": "6TA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "PENDRAGA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "SEGURA, HORACIO",
+        "categoria": "6TA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "MORAN, MIGUEL",
+        "categoria": "6TA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "SEGURA",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "OTERMIN, JOSE",
+        "categoria": "3RA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "RODRIGUEZ, KEVIN",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "RODRIGUEZ, KEVIN",
+        "categoria": "3RA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "OTERMIN, JOSE",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "VELASQUEZ, RODRIGO",
+        "categoria": "3RA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "LOPEZ, FERNANDO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "LOPEZ, FERNANDO",
+        "categoria": "3RA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "VELASQUEZ, RODRIGO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ELOSEGUI, VALENTIN",
+        "categoria": "3RA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "ORAZI, JUAN MARIA",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ORAZI, JUAN MARIA",
+        "categoria": "3RA CAB",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. FAP)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "ELOSEGUI, VALENTIN",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "ORTIZ, LEAN",
+        "categoria": "3RA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "ROMERO, TITO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ROMERO, TITO",
+        "categoria": "3RA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "3RA CAB",
+                "pareja": "ORTIZ, LEAN",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "VEGA, JULIETA",
+        "categoria": "6TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "ANAYA, GABRIELA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ANAYA, GABRIELA",
+        "categoria": "6TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "VEGA, JULIETA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "TREJO",
+        "categoria": "6TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "STANGEN, ERIKA",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "STANGEN, ERIKA",
+        "categoria": "6TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "TREJO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "BLACKHALL",
+        "categoria": "6TA DAM",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "SANDOVAL, 6TA DAMA",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "SANDOVAL, 6TA DAMA",
+        "categoria": "6TA DAM",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "BLACKHALL",
+                "ronda": "Finalista",
+                "puntos": 300.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MONTENEGRO",
+        "categoria": "6TA DAM",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "ESANDI",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ESANDI",
+        "categoria": "6TA DAM",
+        "puntos": 500.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "MONTENEGRO",
+                "ronda": "Campeon",
+                "puntos": 500.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MIRANDA",
+        "categoria": "6TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "MARCANTONI",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MARCANTONI",
+        "categoria": "6TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "MIRANDA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "GARAT",
+        "categoria": "6TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "ESTEFENELLI",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ESTEFENELLI",
+        "categoria": "6TA DAM",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "GARAT",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "DIAZ",
+        "categoria": "6TA DAM",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "ALEJANDRO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ALEJANDRO, FERNANDA",
+        "categoria": "6TA DAM",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "FISCHOV",
+        "categoria": "6TA DAM",
+        "puntos": 270.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "MIRANO",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            },
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "MIRANO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "MIRANO",
+        "categoria": "6TA DAM",
+        "puntos": 270.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "FISCHOV",
+                "ronda": "Semifinalista",
+                "puntos": 180.0
+            },
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "6TA DAM",
+                "pareja": "FISCHOV",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Sin especificar",
+        "provincia": "Sin especificar"
+    },
+    {
+        "nombre": "ALONSO, OMAR",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "TEVES, TOMAS",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "TEVES, TOMAS",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "ALONSO, OMAR",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "QUINI, FABIAN",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 75.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "HERRERA, J",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ]
+    },
+    {
+        "nombre": "GOMEZ, DAMIAN",
+        "categoria": "6TA CAB",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "\u00d1ANCO",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "GATICA, PAOLA",
+        "categoria": "4TA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 0,
+        "historial": []
+    },
+    {
+        "nombre": "BONGIOVANNI, ROSANA",
+        "categoria": "4TA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 0,
+        "historial": []
+    },
+    {
+        "nombre": "CERDA, VERONICA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "IBA\u00d1EZ, MAUREN",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
+    },
+    {
+        "nombre": "IBA\u00d1EZ, MAUREN",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CERDA, VERONICA",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
+    },
+    {
+        "nombre": "VILLALBA, A",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "FERNANDEZ VILLALBA, ANA",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "FERNANDEZ VILLALBA, ANA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "VILLALBA, A",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "DORADO, DALMA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CARRA, R",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "CARRA, R",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "DORADO, DALMA",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "CENDRA, FERNANDA",
+        "categoria": "7MA DAM",
+        "localidad": "Rio Colorado",
+        "provincia": "Rio Negro",
+        "puntos": 75.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "MALDONADO, BELEN",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ]
+    },
+    {
+        "nombre": "FIORI, JULIO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PICAVIA, ARIEL",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "MALASPINA, SANTIAGO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 75.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "BENITEZ, CIELO",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ]
+    },
+    {
+        "nombre": "BENITEZ, CIELO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 75.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MALASPINA, SANTIAGO",
+                "ronda": "Campeon",
+                "puntos": 75.0
+            }
+        ]
+    },
+    {
+        "nombre": "GARAT, FRANCO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "RUIZ, JUAN IGNACIO",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "RUIZ, JUAN IGNACIO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "GARAT, FRANCO",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "LEONARDI, DANIEL",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "LEONARDI, NICOLAS",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "LEONARDI, NICOLAS",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "LEONARDI, DANIEL",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "MU\u00d1OZ, JAVIER",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "SANCHEZ, ELIAS",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "SANCHEZ, ELIAS",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MU\u00d1OZ, JAVIER",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "MARADONA, JOAN",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CAMPETTI, LEO",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ],
+        "torneos": [],
+        "evolucion": []
+    },
+    {
+        "nombre": "CAMPETTI, LEO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MARADONA, JOAN",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ]
+    },
+    {
+        "nombre": "FLEHR, AXEL",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "MERI\u00d1O, BRIAN",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "MERI\u00d1O, BRIAN",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "FLEHR, AXEL",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
+    },
+    {
+        "nombre": "GOLDARACENA, JULIAN",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "BOUHABEN, FEDERICO",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
+    },
+    {
+        "nombre": "BOUHABEN, FEDERICO",
+        "categoria": "7MA CAB",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "GOLDARACENA, JULIAN",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
+    }
 ]
