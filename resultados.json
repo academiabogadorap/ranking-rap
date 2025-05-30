@@ -305,8 +305,8 @@
         "categoria_torneo": "5TA CAB",
         "instancia": "Campeon",
         "jugadores": [
-            "MARINO,",
-            "MARCELETTI,"
+            "MARINO, NICOLAS",
+            "MARCELETTI, MAURICIO"
         ],
         "puntos_totales": 1000.0,
         "puntos_por_jugador": 500.0
@@ -422,8 +422,8 @@
         "categoria_torneo": "7MA CAB",
         "instancia": "Finalista",
         "jugadores": [
-            "REYES",
-            "MILLER"
+            "REYES, GASTON",
+            "MILLER, JORGE"
         ],
         "puntos_totales": 600.0,
         "puntos_por_jugador": 300.0
@@ -513,8 +513,8 @@
         "categoria_torneo": "7MA CAB",
         "instancia": "Campeon",
         "jugadores": [
-            "PORCEL",
-            "LUQUET"
+            "PORCEL, MARCOS",
+            "LUQUET, ALFREDO"
         ],
         "puntos_totales": 1000.0,
         "puntos_por_jugador": 500.0
@@ -526,8 +526,8 @@
         "categoria_torneo": "7MA CAB",
         "instancia": "Finalista",
         "jugadores": [
-            "FORNASIER",
-            "GUZMAN"
+            "FORNASIER, SILVIO",
+            "GUZMAN, SEBASTIAN"
         ],
         "puntos_totales": 600.0,
         "puntos_por_jugador": 300.0
@@ -539,7 +539,7 @@
         "categoria_torneo": "7MA CAB",
         "instancia": "Semifinalista",
         "jugadores": [
-            "HERRERA",
+            "HERRERA J.",
             "MEYADO"
         ],
         "puntos_totales": 360.0,
@@ -618,7 +618,7 @@
         "instancia": "Campeon",
         "jugadores": [
             "MORAN, MIGUEL",
-            "SEGURA"
+            "SEGURA, HORACIO"
         ],
         "puntos_totales": 1000.0,
         "puntos_por_jugador": 500.0
@@ -826,7 +826,7 @@
         "instancia": "Cuartos",
         "jugadores": [
             "DIAZ",
-            "ALEJANDRO"
+            "ALEJANDRO, FERNANDA"
         ],
         "puntos_totales": 180.0,
         "puntos_por_jugador": 90.0
