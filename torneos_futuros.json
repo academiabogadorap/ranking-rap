@@ -22,5 +22,13 @@
         "provincia": "Rio Negro",
         "instagram": "@lacosta.padel",
         "nivel": "B"
+    },
+    {
+        "nombre": "UJAMA Padel",
+        "fecha": "2025-06-13",
+        "localidad": "Pedro Luro",
+        "provincia": "Buenos Aires",
+        "instagram": "@ujamapadel",
+        "nivel": "C"
     }
 ]
