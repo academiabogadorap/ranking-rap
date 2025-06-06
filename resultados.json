@@ -1077,5 +1077,187 @@
         ],
         "puntos_totales": 27.0,
         "puntos_por_jugador": 13.5
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "GALLARDO, PABLO",
+            "PACHECO, JESUS"
+        ],
+        "puntos_totales": 300.0,
+        "puntos_por_jugador": 150.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Finalista",
+        "jugadores": [
+            "FERNANDEZ, WALTER",
+            "PAZOS"
+        ],
+        "puntos_totales": 180.0,
+        "puntos_por_jugador": 90.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "CORINITI",
+            "TEJERINA"
+        ],
+        "puntos_totales": 108.0,
+        "puntos_por_jugador": 54.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "CAMPETTI, LEO",
+            "HEREDIA"
+        ],
+        "puntos_totales": 108.0,
+        "puntos_por_jugador": 54.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "PEREYRA",
+            "HUINCA"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "PLANES, LUCIANO",
+            "LOPEZ (COPA LA CAROLINA)"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "RAFFLER",
+            "IBA\u00d1EZ (COPA LA CAROLINA)"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "7MA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "FRANCIONI (COPA LA CAROLINA)",
+            "BARI"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Campeon",
+        "jugadores": [
+            "ILGNER, FELIPE",
+            "CURIPAN, GASTON"
+        ],
+        "puntos_totales": 300.0,
+        "puntos_por_jugador": 150.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "GARATE",
+            "ACOSTA"
+        ],
+        "puntos_totales": 108.0,
+        "puntos_por_jugador": 54.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "SACHETI,",
+            "KUCICH,"
+        ],
+        "puntos_totales": 108.0,
+        "puntos_por_jugador": 54.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "MALICKI, LUIS",
+            "NEGRO, JOAQUIN"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "LLAMBAY, NADIR",
+            "DEL CASTILLO, ANIBAL"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "Copa La Carolina",
+        "fecha": "2025-05-30",
+        "nivel": "C",
+        "categoria_torneo": "5TA CAB",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "VIDELA",
+            "ARENA, FELIPE"
+        ],
+        "puntos_totales": 54.0,
+        "puntos_por_jugador": 27.0
     }
 ]

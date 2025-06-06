@@ -156,6 +156,16 @@
                 "pareja": "RICHMOND, MARIANO",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "GARIGLIO",
+                "ronda": "Cuartos",
+                "puntos": 0,
+                "observacion": "No v\u00e1lido: un jugador estaba en categor\u00eda inferior (pareja penalizada)"
             }
         ],
         "localidad": "Sin especificar",
@@ -192,6 +202,16 @@
                 "pareja": "MARTINEZ, JOAQUIN",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "FURG, JONY",
+                "ronda": "Finalista",
+                "puntos": 0,
+                "observacion": "No v\u00e1lido: un jugador estaba en categor\u00eda inferior (pareja penalizada)"
             }
         ],
         "localidad": "Sin especificar",
@@ -920,7 +940,7 @@
     {
         "nombre": "KUCICH,",
         "categoria": "5TA CAB",
-        "puntos": 90.0,
+        "puntos": 144.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -930,6 +950,15 @@
                 "pareja": "SACHETI,",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "SACHETI,",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
             }
         ],
         "localidad": "Sin especificar",
@@ -938,7 +967,7 @@
     {
         "nombre": "SACHETI,",
         "categoria": "5TA CAB",
-        "puntos": 90.0,
+        "puntos": 144.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -948,6 +977,15 @@
                 "pareja": "KUCICH,",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "KUCICH,",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
             }
         ],
         "localidad": "Sin especificar",
@@ -1028,7 +1066,7 @@
     {
         "nombre": "MALICKI, LUIS",
         "categoria": "5TA CAB",
-        "puntos": 180.0,
+        "puntos": 207.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1038,6 +1076,15 @@
                 "pareja": "SCARPINO, IGNACIO",
                 "ronda": "Semifinalista",
                 "puntos": 180.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "NEGRO, JOAQUIN",
+                "ronda": "Cuartos",
+                "puntos": 27.0
             }
         ],
         "localidad": "Viedma",
@@ -1280,7 +1327,7 @@
     {
         "nombre": "GALLARDO, PABLO",
         "categoria": "7MA CAB",
-        "puntos": 500.0,
+        "puntos": 650.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. FAP)",
@@ -1290,6 +1337,15 @@
                 "pareja": "ARGUELLES, JOAQUIN",
                 "ronda": "Campeon",
                 "puntos": 500.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PACHECO, JESUS",
+                "ronda": "Campeon",
+                "puntos": 150.0
             }
         ],
         "localidad": "Viedma",
@@ -1334,7 +1390,7 @@
     {
         "nombre": "RAFFLER",
         "categoria": "7MA CAB",
-        "puntos": 180.0,
+        "puntos": 207.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. FAP)",
@@ -1344,6 +1400,15 @@
                 "pareja": "PICAVIA",
                 "ronda": "Semifinalista",
                 "puntos": 180.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "IBA\u00d1EZ (COPA LA CAROLINA)",
+                "ronda": "Cuartos",
+                "puntos": 27.0
             }
         ],
         "localidad": "Sin especificar",
@@ -1489,7 +1554,7 @@
     {
         "nombre": "FORNASIER, SILVIO",
         "categoria": "7MA CAB",
-        "puntos": 500.0,
+        "puntos": 300.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1507,7 +1572,7 @@
     {
         "nombre": "GUZMAN, SEBASTIAN",
         "categoria": "7MA CAB",
-        "puntos": 500.0,
+        "puntos": 300.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1564,7 +1629,7 @@
         "puntos": 500.0,
         "historial": [
             {
-                "torneo": "Padel Animales (C.N. FAP)",
+                "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-10",
                 "nivel": "A",
                 "categoria_torneo": "7MA CAB",
@@ -1582,7 +1647,7 @@
         "puntos": 500.0,
         "historial": [
             {
-                "torneo": "Padel Animales (C.N. FAP)",
+                "torneo": "Padel Animales (C.N. PAF)",
                 "fecha": "2025-05-10",
                 "nivel": "A",
                 "categoria_torneo": "7MA CAB",
@@ -1633,7 +1698,7 @@
     {
         "nombre": "HEREDIA",
         "categoria": "7MA CAB",
-        "puntos": 180.0,
+        "puntos": 234.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1643,6 +1708,15 @@
                 "pareja": "MENENDEZ",
                 "ronda": "Semifinalista",
                 "puntos": 180.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CAMPETTI, LEO",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
             }
         ],
         "localidad": "Sin especificar",
@@ -1723,7 +1797,7 @@
     {
         "nombre": "DEL CASTILLO, ANIBAL",
         "categoria": "6TA CAB",
-        "puntos": 90.0,
+        "puntos": 117.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1733,6 +1807,15 @@
                 "pareja": "OVIEDO, SEBASTIAN",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "LLAMBAY, NADIR",
+                "ronda": "Cuartos",
+                "puntos": 27.0
             }
         ],
         "localidad": "Viedma",
@@ -1777,7 +1860,7 @@
     {
         "nombre": "ARENA, FELIPE",
         "categoria": "6TA CAB",
-        "puntos": 90.0,
+        "puntos": 117.0,
         "historial": [
             {
                 "torneo": "Padel Animales (C.N. PAF)",
@@ -1787,6 +1870,15 @@
                 "pareja": "RAMUNDINI,",
                 "ronda": "Cuartos",
                 "puntos": 90.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "VIDELA",
+                "ronda": "Cuartos",
+                "puntos": 27.0
             }
         ],
         "localidad": "Sin especificar",
@@ -1928,7 +2020,7 @@
                 "fecha": "2025-05-09",
                 "nivel": "A",
                 "categoria_torneo": "6TA CAB",
-                "pareja": "MORAN, MIGEUL",
+                "pareja": "MORAN, MIGUEL",
                 "ronda": "Campeon",
                 "puntos": 500.0
             }
@@ -2805,7 +2897,7 @@
         "categoria": "7MA CAB",
         "localidad": "Viedma",
         "provincia": "Rio Negro",
-        "puntos": 27.0,
+        "puntos": 81.0,
         "historial": [
             {
                 "torneo": "Guanches Padel",
@@ -2815,6 +2907,15 @@
                 "pareja": "MARADONA, JOAN",
                 "ronda": "Semifinalista",
                 "puntos": 27.0
+            },
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "HEREDIA",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
             }
         ]
     },
@@ -2889,5 +2990,355 @@
                 "puntos": 45.0
             }
         ]
+    },
+    {
+        "nombre": "PACHECO, JESUS",
+        "categoria": "7MA CAB",
+        "puntos": 150.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "GALLARDO, PABLO",
+                "ronda": "Campeon",
+                "puntos": 150.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "FERNANDEZ, WALTER",
+        "categoria": "7MA CAB",
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PAZOS",
+                "ronda": "Finalista",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "LOPEZ (COPA LA CAROLINA)",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PLANES, LUCIANO",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "CORNITTI",
+        "categoria": "7MA CAB",
+        "puntos": 0,
+        "historial": [],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "TEJERINA",
+        "categoria": "7MA CAB",
+        "puntos": 54.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "CORINITI",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "FRANCIONI (COPA LA CAROLINA)",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "BARI",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "BARI",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "FRANCIONI (COPA LA CAROLINA)",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "IBA\u00d1EZ (COPA LA CAROLINA)",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "RAFFLER",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "PLANES, LUCIANO",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "LOPEZ (COPA LA CAROLINA)",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "PEREYRA",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "HUINCA",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "HUINCA",
+        "categoria": "7MA CAB",
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PEREYRA",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "PAZOS",
+        "categoria": "7MA CAB",
+        "puntos": 180.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "FERNANDEZ, WALTER",
+                "ronda": "Finalista",
+                "puntos": 90.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "CORINITI",
+        "categoria": "7MA CAB",
+        "puntos": 108.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "TEJERINA",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "ILGNER, FELIPE",
+        "categoria": "5TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "CURIPAN, GASTON",
+                "ronda": "Campeon",
+                "puntos": 150.0
+            }
+        ],
+        "localidad": "Villalonga",
+        "provincia": "Buenos Aires"
+    },
+    {
+        "nombre": "CURIPAN, GASTON",
+        "categoria": "5TA CAB",
+        "puntos": 300.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "ILGNER, FELIPE",
+                "ronda": "Campeon",
+                "puntos": 150.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "GARATE, MAXIMILIANO",
+        "categoria": "4TA CAB",
+        "puntos": 108.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "ACOSTA",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "ACOSTA",
+        "categoria": "5TA CAB",
+        "puntos": 108.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "GARATE",
+                "ronda": "Semifinalista",
+                "puntos": 54.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "NEGRO, JOAQUIN",
+        "categoria": "4TA CAB",
+        "puntos": 54.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "MALICKI, LUIS",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "LLAMBAY, NADIR",
+        "categoria": "6TA CAB",
+        "puntos": 54.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "DEL CASTILLO, ANIBAL",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
+    },
+    {
+        "nombre": "VIDELA",
+        "categoria": "5TA CAB",
+        "puntos": 54.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "5TA CAB",
+                "pareja": "ARENA, FELIPE",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
+        "localidad": "Viedma",
+        "provincia": "Rio Negro"
     }
 ]
