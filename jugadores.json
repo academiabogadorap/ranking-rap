@@ -156,16 +156,6 @@
                 "pareja": "RICHMOND, MARIANO",
                 "ronda": "Cuartos",
                 "puntos": 90.0
-            },
-            {
-                "torneo": "Copa La Carolina",
-                "fecha": "2025-05-30",
-                "nivel": "C",
-                "categoria_torneo": "5TA CAB",
-                "pareja": "GARIGLIO",
-                "ronda": "Cuartos",
-                "puntos": 0,
-                "observacion": "No v\u00e1lido: un jugador estaba en categor\u00eda inferior (pareja penalizada)"
             }
         ],
         "localidad": "Sin especificar",
@@ -202,16 +192,6 @@
                 "pareja": "MARTINEZ, JOAQUIN",
                 "ronda": "Cuartos",
                 "puntos": 90.0
-            },
-            {
-                "torneo": "Copa La Carolina",
-                "fecha": "2025-05-30",
-                "nivel": "C",
-                "categoria_torneo": "5TA CAB",
-                "pareja": "FURG, JONY",
-                "ronda": "Finalista",
-                "puntos": 0,
-                "observacion": "No v\u00e1lido: un jugador estaba en categor\u00eda inferior (pareja penalizada)"
             }
         ],
         "localidad": "Sin especificar",
@@ -790,8 +770,8 @@
                 "puntos": 500.0
             }
         ],
-        "localidad": "Sin especificar",
-        "provincia": "Sin especificar"
+        "localidad": "Villalonga",
+        "provincia": "Buenos Aires"
     },
     {
         "nombre": "SANTAMARINA, VANESA",
@@ -3182,7 +3162,7 @@
     {
         "nombre": "PAZOS",
         "categoria": "7MA CAB",
-        "puntos": 180.0,
+        "puntos": 90.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3200,7 +3180,7 @@
     {
         "nombre": "CORINITI",
         "categoria": "7MA CAB",
-        "puntos": 108.0,
+        "puntos": 54.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3218,7 +3198,7 @@
     {
         "nombre": "ILGNER, FELIPE",
         "categoria": "5TA CAB",
-        "puntos": 300.0,
+        "puntos": 150.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3236,7 +3216,7 @@
     {
         "nombre": "CURIPAN, GASTON",
         "categoria": "5TA CAB",
-        "puntos": 300.0,
+        "puntos": 150.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3254,25 +3234,15 @@
     {
         "nombre": "GARATE, MAXIMILIANO",
         "categoria": "4TA CAB",
-        "puntos": 108.0,
-        "historial": [
-            {
-                "torneo": "Copa La Carolina",
-                "fecha": "2025-05-30",
-                "nivel": "C",
-                "categoria_torneo": "5TA CAB",
-                "pareja": "ACOSTA",
-                "ronda": "Semifinalista",
-                "puntos": 54.0
-            }
-        ],
+        "puntos": 0,
+        "historial": [],
         "localidad": "Viedma",
         "provincia": "Rio Negro"
     },
     {
         "nombre": "ACOSTA",
         "categoria": "5TA CAB",
-        "puntos": 108.0,
+        "puntos": 54.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3290,7 +3260,7 @@
     {
         "nombre": "NEGRO, JOAQUIN",
         "categoria": "4TA CAB",
-        "puntos": 54.0,
+        "puntos": 27.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3308,7 +3278,7 @@
     {
         "nombre": "LLAMBAY, NADIR",
         "categoria": "6TA CAB",
-        "puntos": 54.0,
+        "puntos": 27.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",
@@ -3326,7 +3296,7 @@
     {
         "nombre": "VIDELA",
         "categoria": "5TA CAB",
-        "puntos": 54.0,
+        "puntos": 27.0,
         "historial": [
             {
                 "torneo": "Copa La Carolina",

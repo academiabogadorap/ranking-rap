@@ -184,8 +184,19 @@
                 </thead>
                 <tbody>
                     {% for jugador in jugadores %}
-                    <tr>
-                        <td>{{ loop.index }}</td>
+                    <tr class="{% if loop.index <= 5 %}table-warning fw-bold{% endif %}">
+                        <td>
+    {% if loop.index == 1 %}
+        🥇
+    {% elif loop.index == 2 %}
+        🥈
+    {% elif loop.index == 3 %}
+        🥉
+    {% else %}
+        {{ loop.index }}
+    {% endif %}
+</td>
+
                         <td>{{ jugador.nombre }}</td>
                         <td>{{ jugador.categoria }}</td>
                         <td>{{ jugador.localidad or '-' }}</td>
@@ -238,6 +249,7 @@
                 <li><a href="{{ url_for('calendario_torneos') }}" class="link-success">🗓️ Calendario de torneos futuros</a></li>
                 <li><a href="{{ url_for('criterios_rap') }}" class="link-primary">📘 Ver criterios de Torneos RAP</a></li>
                 <li><a href="/reglamento" class="link-danger">📘 Reglamento oficial del sistema RAP</a></li>
+                <li><a href="{{ url_for('revisar_jugadores') }}" class="link-warning">🔍 Revisar jugadores sin categoría</a></li>
             </ul>
         </div>
 

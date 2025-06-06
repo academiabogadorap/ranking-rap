@@ -203,9 +203,21 @@ def importar_resultado_externo_mejorado():
     fecha = request.form['fecha'].strip()
     nivel = request.form['nivel'].strip().upper()
     categoria_torneo = request.form['categoria_torneo'].strip().upper()
+    
+    # FASE 1: Detectar si es un torneo tipo SUMA
+    tipo_suma = False
+    limite_suma = None
+    if "SUMA" in categoria_torneo:
+        tipo_suma = True
+        try:
+            limite_suma = int(categoria_torneo.replace("SUMA", "").strip())
+            print(f"✅ Torneo compensado detectado: SUMA {limite_suma}")
+        except ValueError:
+            tipo_suma = False
+            print("⚠️ No se pudo interpretar el número en la categoría SUMA")
+    
     instancias_form = request.form.getlist('instancia[]')
     jugadores_form = request.form.getlist('jugadores[]')
-
     coincidencias = []
 
     for i in range(0, len(jugadores_form), 2):
@@ -216,7 +228,11 @@ def importar_resultado_externo_mejorado():
         if not jugador1 or not jugador2:
             continue
 
+        # FASE 3: Puntaje ajustado para torneos SUMA (más bajo)
         puntos_base = niveles.get(nivel, 0)
+        if tipo_suma:
+            puntos_base *= 0.75  # Por ejemplo, 75% del valor normal
+
         multiplicador = mult_puntos.get(instancia, 0)
         puntos_totales = puntos_base * multiplicador
         puntos_por_jugador = puntos_totales / 2
@@ -230,27 +246,54 @@ def importar_resultado_externo_mejorado():
             jugador1_cat = jugador1_data['categoria'].upper() if jugador1_data else "SIN CATEGORIA"
             jugador2_cat = jugador2_data['categoria'].upper() if jugador2_data else "SIN CATEGORIA"
 
-            jugadores_invalidos = []
-            if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
-                jugadores_invalidos.append(jugador1)
-            if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
-                jugadores_invalidos.append(jugador2)
+            # FASE 2: Validar SUMA
+            if tipo_suma and jugador1_cat != "SIN CATEGORIA" and jugador2_cat != "SIN CATEGORIA":
+                try:
+                    num1 = int(''.join(filter(str.isdigit, jugador1_cat)))
+                    num2 = int(''.join(filter(str.isdigit, jugador2_cat)))
+                    suma_categorias = num1 + num2
 
-            if jugadores_invalidos:
-                for nombre in [jugador1, jugador2]:
-                    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-                    if jugador:
-                        jugador.setdefault('historial', []).append({
-                            'torneo': torneo,
-                            'fecha': fecha,
-                            'nivel': nivel,
-                            'categoria_torneo': categoria_torneo,
-                            'pareja': jugador2 if nombre == jugador1 else jugador1,
-                            'ronda': instancia,
-                            'puntos': 0,
-                            'observacion': 'No válido: un jugador estaba en categoría inferior (pareja penalizada)'
-                        })
-                continue
+                    if suma_categorias > limite_suma:
+                        for nombre in [jugador1, jugador2]:
+                            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+                            if jugador:
+                                jugador.setdefault('historial', []).append({
+                                    'torneo': torneo,
+                                    'fecha': fecha,
+                                    'nivel': nivel,
+                                    'categoria_torneo': categoria_torneo,
+                                    'pareja': jugador2 if nombre == jugador1 else jugador1,
+                                    'ronda': instancia,
+                                    'puntos': 0,
+                                    'observacion': f'No válido: suma de categorías ({num1}+{num2}={suma_categorias}) excede el límite ({limite_suma})'
+                                })
+                        continue
+                except ValueError:
+                    pass  # continuar normalmente si no se puede interpretar
+
+            # Penalización tradicional (si no es SUMA)
+            jugadores_invalidos = []
+            if not tipo_suma:
+                if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
+                    jugadores_invalidos.append(jugador1)
+                if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
+                    jugadores_invalidos.append(jugador2)
+
+                if jugadores_invalidos:
+                    for nombre in [jugador1, jugador2]:
+                        jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+                        if jugador:
+                            jugador.setdefault('historial', []).append({
+                                'torneo': torneo,
+                                'fecha': fecha,
+                                'nivel': nivel,
+                                'categoria_torneo': categoria_torneo,
+                                'pareja': jugador2 if nombre == jugador1 else jugador1,
+                                'ronda': instancia,
+                                'puntos': 0,
+                                'observacion': 'No válido: un jugador estaba en categoría inferior (pareja penalizada)'
+                            })
+                    continue
 
         # Validar coincidencias por apellido
         for nombre in [jugador1, jugador2]:
@@ -321,6 +364,8 @@ def importar_resultado_externo_mejorado():
     actualizar_ranking_json(jugadores)
     guardar_jugadores_en_json()
     return redirect(url_for('index'))
+
+
 
 
 @app.route('/eliminar_jugador/<nombre>')
@@ -876,6 +921,21 @@ def verificar_instagram():
         session['sigue_instagram'] = True  # guardamos que ya "sigue"
         return redirect(url_for('index'))  # lo mandamos al ranking
     return render_template('verificar_instagram.html')
+
+@app.route('/revisar_jugadores', methods=['GET', 'POST'])
+def revisar_jugadores():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        nueva_categoria = request.form['categoria']
+        jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+        if jugador:
+            jugador['categoria'] = nueva_categoria
+            guardar_jugadores_en_json()
+        return redirect(url_for('revisar_jugadores'))
+
+    jugadores_sin_categoria = [j for j in jugadores if j.get('categoria', '').upper() == 'SIN CATEGORIA']
+    return render_template('revisar_jugadores.html', jugadores=jugadores_sin_categoria)
+
 
 
 
