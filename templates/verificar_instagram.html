@@ -1,17 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Verificación Instagram</title>
+  <meta charset="UTF-8">
+  <title>Verificación Instagram</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .logo {
+      max-height: 80px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 12px 0;
+    }
+
+    a.button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #e1306c;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #c12760;
+    }
+
+    form button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #22c55e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #16a34a;
+    }
+
+    .powered {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .powered img {
+      height: 20px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 80px;">
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado" class="logo">
     <h2>🚨 Para ver el ranking, primero seguinos en Instagram</h2>
-    <p>Hacelo desde el botón de abajo y después volvé acá.</p>
-    <p style="margin-top: 30px;">
-        👉 <a href="https://instagram.com/academiabogado" target="_blank" style="font-size: 18px;">Ir al perfil de Instagram</a>
-    </p>
-    <form method="POST" style="margin-top: 40px;">
-        <button type="submit" style="padding: 10px 20px; font-size: 18px;">✅ Ya te sigo</button>
+    <p>Hacelo desde el botón de abajo y después volvé acá para continuar.</p>
+
+    <a class="button" href="https://instagram.com/academiabogado" target="_blank">
+      👉 Seguir en Instagram
+    </a>
+
+    <form method="POST">
+      <button type="submit">✅ Ya te sigo</button>
     </form>
+
+    <div class="powered">
+      Potenciado por Render
+      <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="Render Logo">
+    </div>
+  </div>
 </body>
 </html>
