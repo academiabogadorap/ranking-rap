@@ -922,20 +922,13 @@ def verificar_instagram():
         return redirect(url_for('index'))  # lo mandamos al ranking
     return render_template('verificar_instagram.html')
 
-@app.route('/revisar_jugadores', methods=['GET', 'POST'])
+@app.route('/revisar_jugadores')
 def revisar_jugadores():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        nueva_categoria = request.form['categoria']
-        jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-        if jugador:
-            jugador['categoria'] = nueva_categoria
-            guardar_jugadores_en_json()
-        return redirect(url_for('revisar_jugadores'))
+    if not session.get('es_admin'):
+        return redirect(url_for('index'))
 
-    jugadores_sin_categoria = [j for j in jugadores if j.get('categoria', '').upper() == 'SIN CATEGORIA']
+    jugadores_sin_categoria = [j for j in jugadores if j.get('categoria', '').upper() in ('SIN CATEGORIA', '')]
     return render_template('revisar_jugadores.html', jugadores=jugadores_sin_categoria)
-
 
 
 

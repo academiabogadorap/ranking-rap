@@ -249,7 +249,9 @@
                 <li><a href="{{ url_for('calendario_torneos') }}" class="link-success">🗓️ Calendario de torneos futuros</a></li>
                 <li><a href="{{ url_for('criterios_rap') }}" class="link-primary">📘 Ver criterios de Torneos RAP</a></li>
                 <li><a href="/reglamento" class="link-danger">📘 Reglamento oficial del sistema RAP</a></li>
-                <li><a href="{{ url_for('revisar_jugadores') }}" class="link-warning">🔍 Revisar jugadores sin categoría</a></li>
+                {% if session.get('es_admin') %}
+                <li><a href="/revisar_jugadores" class="link-primary">👀 Revisar jugadores sin categoría</a></li>
+                {% endif %}
             </ul>
         </div>
 
