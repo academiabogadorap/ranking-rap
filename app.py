@@ -75,6 +75,10 @@ def calcular_ranking_temporada(jugadores, cantidad_maxima=10, ignorar_liga=False
 
 @app.route('/')
 def index():
+    # 🔐 Verificación Instagram
+    if not session.get('sigue_instagram'):
+        return redirect(url_for('verificar_instagram'))
+
     categoria_filtrada = request.args.get('categoria', default=None)
     provincia_filtrada = request.args.get('provincia', default=None)
     localidad_filtrada = request.args.get('localidad', default=None)
@@ -154,9 +158,6 @@ def index():
         logos_torneos=logos_torneos,
         torneos_futuros=torneos_futuros  # ✅ nuevo
     )
-
-
-
 
 
 @app.route('/agregar_jugador', methods=['POST'])
@@ -868,6 +869,14 @@ def agregar_torneo_futuro():
         return redirect(url_for('calendario_torneos'))
 
     return render_template('agregar_torneo_futuro.html')
+
+@app.route('/verificar_instagram', methods=['GET', 'POST'])
+def verificar_instagram():
+    if request.method == 'POST':
+        session['sigue_instagram'] = True  # guardamos que ya "sigue"
+        return redirect(url_for('index'))  # lo mandamos al ranking
+    return render_template('verificar_instagram.html')
+
 
 
 if __name__ == '__main__':
