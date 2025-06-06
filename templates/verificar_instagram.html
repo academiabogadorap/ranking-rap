@@ -1,107 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Verificación Instagram</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f3f4f6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
       text-align: center;
-      width: 90%;
-      max-width: 500px;
+      padding: 80px 20px;
     }
-
-    .logo {
-      max-height: 80px;
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .boton-instagram {
+      background-color: #E1306C;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
       margin-bottom: 20px;
     }
-
-    h2 {
-      font-size: 26px;
-      margin-bottom: 16px;
+    .boton-instagram:hover {
+      background-color: #c3275e;
     }
-
-    p {
-      font-size: 18px;
-      margin: 12px 0;
-    }
-
-    a.button {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #e1306c;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    a.button:hover {
-      background-color: #c12760;
-    }
-
-    form button {
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #22c55e;
-      color: white;
-      border: none;
-      border-radius: 6px;
+    .boton-verificacion {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px 20px;
+      font-size: 0.9em;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-
-    form button:hover {
-      background-color: #16a34a;
-    }
-
-    .powered {
-      margin-top: 30px;
-      font-size: 12px;
-      color: #999;
-    }
-
-    .powered img {
-      height: 20px;
-      vertical-align: middle;
-      margin-left: 8px;
+    img {
+      max-width: 120px;
+      margin: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado" class="logo">
-    <h2>🚨 Para ver el ranking, primero seguinos en Instagram</h2>
-    <p>Hacelo desde el botón de abajo y después volvé acá para continuar.</p>
+  <img src="{{ url_for('static', filename='img/logo_academia.png') }}" alt="Academia Bogado">
+  <h1>Antes de ver el ranking</h1>
+  <p>Necesitamos que sigas nuestra cuenta de Instagram</p>
+  
+  <a href="https://www.instagram.com/academiabogado" class="boton-instagram" target="_blank">Ir a Instagram</a>
+  
+  <form method="post">
+    <p>Cuando hayas seguido la cuenta, hacé clic acá:</p>
+    <button type="submit" class="boton-verificacion">Ya te sigo</button>
+  </form>
 
-    <a class="button" href="https://instagram.com/academiabogado" target="_blank">
-      👉 Seguir en Instagram
-    </a>
-
-    <form method="POST">
-      <button type="submit">✅ Ya te sigo</button>
-    </form>
-
-    <div class="powered">
-      Potenciado por Render
-      <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="Render Logo">
-    </div>
-  </div>
+  <img src="{{ url_for('static', filename='img/logo_rap.png') }}" alt="Render">
 </body>
 </html>
