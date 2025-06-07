@@ -185,18 +185,21 @@
                 <tbody>
                     {% for jugador in jugadores %}
                     <tr class="{% if loop.index <= 5 %}table-warning fw-bold{% endif %}">
-                        <td>
-    {% if loop.index == 1 %}
-        🥇
-    {% elif loop.index == 2 %}
-        🥈
-    {% elif loop.index == 3 %}
-        🥉
+<td>
+    {% if not nombre_actual %}
+        {% if jugador.posicion_real == 1 %}
+            🥇
+        {% elif jugador.posicion_real == 2 %}
+            🥈
+        {% elif jugador.posicion_real == 3 %}
+            🥉
+        {% else %}
+            {{ jugador.posicion_real }}
+        {% endif %}
     {% else %}
-        {{ loop.index }}
+        {{ jugador.posicion_real }}
     {% endif %}
 </td>
-
                         <td>{{ jugador.nombre }}</td>
                         <td>{{ jugador.categoria }}</td>
                         <td>{{ jugador.localidad or '-' }}</td>
