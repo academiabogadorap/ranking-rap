@@ -95,8 +95,11 @@ def index():
     if nombre_filtrado:
         jugadores_filtrados = [j for j in jugadores_filtrados if nombre_filtrado.lower() in j['nombre'].lower()]
 
-    # 👇 Condición especial: si se está filtrando por nombre, mostrar jugadores tal cual
     if nombre_filtrado:
+        # Ranking completo general para obtener posición real
+        ranking_general = calcular_ranking_temporada(jugadores, cantidad_maxima=6)
+        posiciones = {r['nombre']: i + 1 for i, r in enumerate(ranking_general)}
+
         ranking = []
         anio_actual = datetime.today().year
         for j in jugadores_filtrados:
@@ -113,15 +116,16 @@ def index():
                 "torneos_contados": len(mejores),
                 "mejor_torneo": mejor_torneo,
                 "localidad": j.get("localidad", "–"),
-                "provincia": j.get("provincia", "–")
+                "provincia": j.get("provincia", "–"),
+                "posicion_real": posiciones.get(j["nombre"], "-")
             })
     else:
-        # Ranking tradicional con los mejores 6 torneos
         ranking = calcular_ranking_temporada(jugadores_filtrados, cantidad_maxima=6)
-        for r in ranking:
+        for idx, r in enumerate(ranking, start=1):
             original = next((j for j in jugadores_filtrados if j['nombre'] == r['nombre']), {})
             r['localidad'] = original.get('localidad', '–')
             r['provincia'] = original.get('provincia', '–')
+            r['posicion_real'] = idx
 
     # Filtros disponibles
     categorias_disponibles = sorted(set(j['categoria'] for j in jugadores if j.get('categoria')))
@@ -156,8 +160,9 @@ def index():
         localidad_actual=localidad_filtrada,
         nombre_actual=nombre_filtrado,
         logos_torneos=logos_torneos,
-        torneos_futuros=torneos_futuros  # ✅ nuevo
+        torneos_futuros=torneos_futuros
     )
+
 
 
 @app.route('/agregar_jugador', methods=['POST'])
