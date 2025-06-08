@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from collections import defaultdict
 from datetime import datetime
 import json
@@ -98,7 +98,7 @@ def index():
     if nombre_filtrado:
         # Ranking completo general para obtener posición real
         ranking_general = calcular_ranking_temporada(jugadores, cantidad_maxima=6)
-        posiciones = {r['nombre']: i + 1 for i, r in enumerate(ranking_general)}
+        posiciones = {r['nombre'].strip().lower(): i + 1 for i, r in enumerate(ranking_general)}
 
         ranking = []
         anio_actual = datetime.today().year
@@ -117,7 +117,7 @@ def index():
                 "mejor_torneo": mejor_torneo,
                 "localidad": j.get("localidad", "–"),
                 "provincia": j.get("provincia", "–"),
-                "posicion_real": posiciones.get(j["nombre"], "-")
+                "posicion_real": posiciones.get(j["nombre"].strip().lower(), "-")
             })
     else:
         ranking = calcular_ranking_temporada(jugadores_filtrados, cantidad_maxima=6)
@@ -176,6 +176,7 @@ def index():
 
 
 
+
 @app.route('/agregar_jugador', methods=['POST'])
 def agregar_jugador():
     nombre = request.form['nombre'].strip().upper()
@@ -184,10 +185,67 @@ def agregar_jugador():
     guardar_jugadores_en_json()
     return redirect(url_for('index'))
 
-@app.route('/editar_jugador/<nombre>')
+@app.route('/editar_jugador/<nombre>', methods=['GET', 'POST'])
 def editar_jugador(nombre):
     jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+
+    if not jugador:
+        flash("Jugador no encontrado", "danger")
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        nuevo_nombre = request.form['nombre'].strip()
+        nueva_categoria = request.form['categoria'].strip()
+        nueva_localidad = request.form['localidad'].strip()
+        nueva_provincia = request.form['provincia'].strip()
+
+        # Si el nombre cambió, lo actualizamos en todos los lugares
+        if nuevo_nombre != nombre:
+            print(f"Actualizando nombre de '{nombre}' a '{nuevo_nombre}'")
+
+            # 1. Actualizar en la lista principal
+            jugador['nombre'] = nuevo_nombre
+
+            # 2. Actualizar en historiales de todos los jugadores (por si hubo errores antes)
+            for j in jugadores:
+                if 'historial' in j:
+                    for torneo in j['historial']:
+                        if torneo.get('nombre', '').strip().lower() == nombre.lower():
+                            torneo['nombre'] = nuevo_nombre
+
+            # 3. Actualizar en archivos de torneos
+            carpeta_torneos = 'resultados_torneos'
+            if os.path.exists(carpeta_torneos):
+                for archivo in os.listdir(carpeta_torneos):
+                    if archivo.endswith('.json'):
+                        ruta = os.path.join(carpeta_torneos, archivo)
+                        with open(ruta, 'r', encoding='utf-8') as f:
+                            datos = json.load(f)
+
+                        actualizado = False
+                        for r in datos.get('resultados', []):
+                            if r.get('nombre', '').strip().lower() == nombre.lower():
+                                r['nombre'] = nuevo_nombre
+                                actualizado = True
+
+                        if actualizado:
+                            with open(ruta, 'w', encoding='utf-8') as f:
+                                json.dump(datos, f, indent=2, ensure_ascii=False)
+
+        # Actualizar otros campos
+        jugador['categoria'] = nueva_categoria
+        jugador['localidad'] = nueva_localidad
+        jugador['provincia'] = nueva_provincia
+
+        # Guardar todos los cambios
+        with open('jugadores.json', 'w', encoding='utf-8') as f:
+            json.dump(jugadores, f, indent=2, ensure_ascii=False)
+
+        flash("Jugador actualizado correctamente", "success")
+        return redirect(url_for('index'))
+
     return render_template('editar_jugador.html', jugador=jugador)
+
 
 @app.route('/guardar_edicion_jugador', methods=['POST'])
 def guardar_edicion_jugador():
@@ -945,6 +1003,42 @@ def revisar_jugadores():
 
     jugadores_sin_categoria = [j for j in jugadores if j.get('categoria', '').upper() in ('SIN CATEGORIA', '')]
     return render_template('revisar_jugadores.html', jugadores=jugadores_sin_categoria)
+
+
+@app.route('/editar_jugadores')
+def editar_jugadores():
+    if not session.get('es_admin'):
+        return redirect(url_for('index'))
+
+    nombre = request.args.get('nombre', '').lower()
+    categoria = request.args.get('categoria')
+    provincia = request.args.get('provincia')
+    localidad = request.args.get('localidad')
+
+    filtrados = jugadores
+    if nombre:
+        filtrados = [j for j in filtrados if nombre in j['nombre'].lower()]
+    if categoria:
+        filtrados = [j for j in filtrados if j.get('categoria') == categoria]
+    if provincia:
+        filtrados = [j for j in filtrados if j.get('provincia', '').lower() == provincia.lower()]
+    if localidad:
+        filtrados = [j for j in filtrados if j.get('localidad', '').lower() == localidad.lower()]
+
+    filtrados_ordenados = sorted(filtrados, key=lambda j: j['nombre'].lower())
+
+    categorias = sorted(set(j['categoria'] for j in jugadores if j.get('categoria')))
+    provincias = sorted(set(j['provincia'] for j in jugadores if j.get('provincia')))
+    localidades = sorted(set(j['localidad'] for j in jugadores if j.get('localidad')))
+
+    return render_template(
+        'editar_jugadores.html',
+        jugadores=filtrados_ordenados,
+        categorias=categorias,
+        provincias=provincias,
+        localidades=localidades
+    )
+
 
 
 
