@@ -138,14 +138,24 @@ def index():
     if os.path.exists(ruta_logos):
         logos_torneos = [f for f in os.listdir(ruta_logos) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
 
-    # Torneos futuros
+    # Torneos futuros (filtrar y limpiar el JSON automáticamente)
     try:
         with open('torneos_futuros.json', 'r') as f:
             torneos_futuros = json.load(f)
     except FileNotFoundError:
         torneos_futuros = []
 
-    torneos_futuros = sorted(torneos_futuros, key=lambda x: x['fecha'])
+    hoy = datetime.today().date()
+    torneos_futuros_filtrados = [
+        t for t in torneos_futuros
+        if datetime.strptime(t['fecha'], "%Y-%m-%d").date() >= hoy
+    ]
+
+    if len(torneos_futuros_filtrados) != len(torneos_futuros):
+        with open('torneos_futuros.json', 'w') as f:
+            json.dump(torneos_futuros_filtrados, f, indent=2, ensure_ascii=False)
+
+    torneos_futuros = sorted(torneos_futuros_filtrados, key=lambda x: x['fecha'])
 
     print("LOGOS DETECTADOS:", logos_torneos)
 
@@ -162,6 +172,7 @@ def index():
         logos_torneos=logos_torneos,
         torneos_futuros=torneos_futuros
     )
+
 
 
 
