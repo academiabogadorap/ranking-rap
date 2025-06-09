@@ -255,6 +255,7 @@ def guardar_edicion_jugador():
     nueva_localidad = request.form.get('localidad', '').strip()
     nueva_provincia = request.form.get('provincia', '').strip()
 
+    # Actualizar en jugadores
     for j in jugadores:
         if j['nombre'] == nombre_original:
             j['nombre'] = nuevo_nombre
@@ -264,7 +265,26 @@ def guardar_edicion_jugador():
             break
 
     guardar_jugadores_en_json()
+
+    # 🔁 También actualizar el nombre en los torneos
+    try:
+        with open('historial_torneos.json', 'r', encoding='utf-8') as f:
+            historial_torneos = json.load(f)
+    except FileNotFoundError:
+        historial_torneos = []
+
+    for torneo in historial_torneos:
+        for resultado in torneo.get('resultados', []):
+            if resultado.get('nombre') == nombre_original:
+                resultado['nombre'] = nuevo_nombre
+
+    with open('historial_torneos.json', 'w', encoding='utf-8') as f:
+        json.dump(historial_torneos, f, indent=2, ensure_ascii=False)
+
+    flash("Jugador actualizado correctamente", "success")
     return redirect(url_for('index'))
+
+
 
 
 @app.route('/importar_resultado_externo', methods=['GET'])
