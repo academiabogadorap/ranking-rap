@@ -347,7 +347,7 @@ def importar_resultado_externo_mejorado():
                     num2 = int(''.join(filter(str.isdigit, jugador2_cat)))
                     suma_categorias = num1 + num2
 
-                    if suma_categorias > limite_suma:
+                    if suma_categorias < limite_suma:
                         for nombre in [jugador1, jugador2]:
                             jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
                             if jugador:
@@ -759,49 +759,53 @@ def borrar_torneo(nombre, fecha, categoria):
 def mostrar_formulario_jugadores():
     return render_template('agregar_jugadores.html')
 
-@app.route('/agregar_jugadores', methods=['POST']) 
+@app.route('/agregar_jugadores', methods=['GET', 'POST'])
 def agregar_jugadores():
-    categoria = request.form['categoria'].strip()
-    localidad = request.form['localidad'].strip()
-    provincia = request.form['provincia'].strip()
-    nombres_raw = request.form['nombres'].strip()
+    if request.method == 'POST':
+        categoria = request.form['categoria'].strip()
+        localidad = request.form['localidad'].strip()
+        provincia = request.form['provincia'].strip()
+        
+        # Ahora tomamos todos los nombres enviados como lista
+        nombres_raw = request.form.getlist('nombres[]')
+        nombres = [n.strip().upper() for n in nombres_raw if n.strip()]
+        
+        nombres_existentes = []
+        nombres_agregados = []
+        posibles_coincidencias = {}
 
-    # Separar por líneas, limpiar y pasar a mayúsculas
-    nombres = [n.strip().upper() for n in nombres_raw.split('\n') if n.strip()]
-    
-    nombres_existentes = []
-    nombres_agregados = []
-    posibles_coincidencias = {}
+        for nombre in nombres:
+            if any(j['nombre'] == nombre for j in jugadores):
+                nombres_existentes.append(nombre)
+                continue
 
-    for nombre in nombres:
-        if any(j['nombre'] == nombre for j in jugadores):
-            nombres_existentes.append(nombre)
-            continue
+            jugadores.append({
+                'nombre': nombre,
+                'categoria': categoria,
+                'localidad': localidad,
+                'provincia': provincia,
+                'puntos': 0,
+                'historial': []
+            })
+            nombres_agregados.append(nombre)
 
-        jugadores.append({
-            'nombre': nombre,
-            'categoria': categoria,
-            'localidad': localidad,
-            'provincia': provincia,
-            'puntos': 0,
-            'historial': []
-        })
-        nombres_agregados.append(nombre)
+            # Coincidencias por apellido
+            if ' ' not in nombre:
+                coincidencias = [j['nombre'] for j in jugadores if nombre in j['nombre'] and j['nombre'] != nombre]
+                if coincidencias:
+                    posibles_coincidencias[nombre] = coincidencias
 
-        # Si se ingresó solo un apellido, buscar coincidencias con jugadores registrados
-        if ' ' not in nombre:  # solo un apellido
-            coincidencias = [j['nombre'] for j in jugadores if nombre in j['nombre'] and j['nombre'] != nombre]
-            if coincidencias:
-                posibles_coincidencias[nombre] = coincidencias
+        guardar_jugadores_en_json()
+        actualizar_ranking_json(jugadores)
 
-    guardar_jugadores_en_json()
-    actualizar_ranking_json(jugadores)
+        session['nombres_existentes'] = nombres_existentes
+        session['nombres_agregados'] = nombres_agregados
+        session['coincidencias_apellido'] = posibles_coincidencias
 
-    session['nombres_existentes'] = nombres_existentes
-    session['nombres_agregados'] = nombres_agregados
-    session['coincidencias_apellido'] = posibles_coincidencias
+        return redirect(url_for('index'))
 
-    return redirect(url_for('index'))
+    # GET → renderiza HTML con jugadores
+    return render_template("agregar_jugadores.html", jugadores=jugadores)
 
 
 @app.route('/corregir_nombre_torneo', methods=['POST'])

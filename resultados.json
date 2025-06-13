@@ -1259,5 +1259,148 @@
         ],
         "puntos_totales": 54.0,
         "puntos_por_jugador": 27.0
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Caballeros)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "PONCE, CAMILO",
+            "CARDENAS, MATIAS"
+        ],
+        "puntos_totales": 162.0,
+        "puntos_por_jugador": 81.0
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Caballeros)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "GRUPICO, GABRIEL",
+            "CANTEROS, VALENTIN"
+        ],
+        "puntos_totales": 81.0,
+        "puntos_por_jugador": 40.5
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Caballeros)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "JARA, JUAN",
+            "CENTENO, HORACIO"
+        ],
+        "puntos_totales": 81.0,
+        "puntos_por_jugador": 40.5
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Caballeros)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "NOGUERA, VALENTIN",
+            "KOKAS, TOMAS"
+        ],
+        "puntos_totales": 81.0,
+        "puntos_por_jugador": 40.5
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Campeon",
+        "jugadores": [
+            "CORNEJO, MABEL",
+            "HUGUES, VANINA"
+        ],
+        "puntos_totales": 450.0,
+        "puntos_por_jugador": 225.0
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Finalista",
+        "jugadores": [
+            "CACERES, ROMINA",
+            "COLIL, VIOLETA"
+        ],
+        "puntos_totales": 270.0,
+        "puntos_por_jugador": 135.0
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "AMBROSSETO, SANDRA",
+            "RODRIGUEZ, PAULA"
+        ],
+        "puntos_totales": 162.0,
+        "puntos_por_jugador": 81.0
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Semifinalista",
+        "jugadores": [
+            "CEDRE, LAURA",
+            "PIGATO, LUCIANA"
+        ],
+        "puntos_totales": 162.0,
+        "puntos_por_jugador": 81.0
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "PEREZ, LORENA",
+            "LINARES, MARIANELA"
+        ],
+        "puntos_totales": 81.0,
+        "puntos_por_jugador": 40.5
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "TORRES, ROMINA",
+            "SACCO, JESICA"
+        ],
+        "puntos_totales": 81.0,
+        "puntos_por_jugador": 40.5
+    },
+    {
+        "torneo": "P\u00e1del Las Grutas (Damas)",
+        "fecha": "2025-06-06",
+        "nivel": "B",
+        "categoria_torneo": "SUMA 14",
+        "instancia": "Cuartos",
+        "jugadores": [
+            "SOSA, MACARENA",
+            "DOMINGUEZ, MARTA VIVIANA"
+        ],
+        "puntos_totales": 81.0,
+        "puntos_por_jugador": 40.5
     }
 ]
