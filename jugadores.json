@@ -281,8 +281,18 @@
     {
         "nombre": "MU\u00d1OZ, MAGDALENA",
         "categoria": "7MA DAM",
-        "puntos": 0,
-        "historial": [],
+        "puntos": 90.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-09",
+                "nivel": "A",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "ACOSTA, NATALIA",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            }
+        ],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -1497,8 +1507,27 @@
     {
         "nombre": "\u00d1ANCO",
         "categoria": "7MA CAB",
-        "puntos": 0,
-        "historial": [],
+        "puntos": 117.0,
+        "historial": [
+            {
+                "torneo": "Padel Animales (C.N. PAF)",
+                "fecha": "2025-05-10",
+                "nivel": "A",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "PALAVECINO",
+                "ronda": "Cuartos",
+                "puntos": 90.0
+            },
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "6TA CAB",
+                "pareja": "GOMEZ, DAMIAN",
+                "ronda": "Semifinalista",
+                "puntos": 27.0
+            }
+        ],
         "localidad": "Sin especificar",
         "provincia": "Sin especificar"
     },
@@ -2540,8 +2569,18 @@
         "categoria": "7MA DAM",
         "localidad": "Rio Colorado",
         "provincia": "Rio Negro",
-        "puntos": 0,
-        "historial": []
+        "puntos": 45.0,
+        "historial": [
+            {
+                "torneo": "La Costa Padel",
+                "fecha": "2025-05-16",
+                "nivel": "D",
+                "categoria_torneo": "7MA DAM",
+                "pareja": "CERDA, VERONICA",
+                "ronda": "Finalista",
+                "puntos": 45.0
+            }
+        ]
     },
     {
         "nombre": "VILLALBA, A",
@@ -2764,8 +2803,18 @@
         "categoria": "7MA CAB",
         "localidad": "Viedma",
         "provincia": "Rio Negro",
-        "puntos": 0,
-        "historial": []
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "SANCHEZ, ELIAS",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
     },
     {
         "nombre": "SANCHEZ, ELIAS",
@@ -2844,7 +2893,7 @@
                 "fecha": "2025-05-23",
                 "nivel": "D",
                 "categoria_torneo": "7MA CAB",
-                "pareja": "MERI\u00d1O, BRIAN",
+                "pareja": "MERI\u00c3\u2018O, BRIAN",
                 "ronda": "Cuartos",
                 "puntos": 13.5
             }
@@ -2855,8 +2904,18 @@
         "categoria": "7MA CAB",
         "localidad": "Viedma",
         "provincia": "Rio Negro",
-        "puntos": 0,
-        "historial": []
+        "puntos": 13.5,
+        "historial": [
+            {
+                "torneo": "Guanches Padel",
+                "fecha": "2025-05-23",
+                "nivel": "D",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "FLEHR, AXEL",
+                "ronda": "Cuartos",
+                "puntos": 13.5
+            }
+        ]
     },
     {
         "nombre": "GOLDARACENA, JULIAN",
@@ -3013,8 +3072,18 @@
     {
         "nombre": "IBA\u00d1EZ (COPA LA CAROLINA)",
         "categoria": "7MA CAB",
-        "puntos": 0,
-        "historial": [],
+        "puntos": 27.0,
+        "historial": [
+            {
+                "torneo": "Copa La Carolina",
+                "fecha": "2025-05-30",
+                "nivel": "C",
+                "categoria_torneo": "7MA CAB",
+                "pareja": "RAFFLER",
+                "ronda": "Cuartos",
+                "puntos": 27.0
+            }
+        ],
         "localidad": "Viedma",
         "provincia": "Rio Negro"
     },
@@ -3351,7 +3420,7 @@
                 "pareja": "GARRIDO, FACUNDO",
                 "ronda": "Semifinalista",
                 "puntos": 0,
-                "observacion": "No v\u00e1lido: suma de categor\u00edas (6+7=13) excede el l\u00edmite (14)"
+                "observacion": "No v\u00e1lido: suma de categor\u00edas (7+6=13) excede el l\u00edmite (14)"
             }
         ]
     },
@@ -3370,7 +3439,7 @@
                 "pareja": "BUENO, MARTIN",
                 "ronda": "Semifinalista",
                 "puntos": 0,
-                "observacion": "No v\u00e1lido: suma de categor\u00edas (6+7=13) excede el l\u00edmite (14)"
+                "observacion": "No v\u00e1lido: suma de categor\u00edas (7+6=13) excede el l\u00edmite (14)"
             }
         ]
     },
@@ -3389,7 +3458,7 @@
                 "pareja": "HUARACAN, MARCELO",
                 "ronda": "Cuartos",
                 "puntos": 0,
-                "observacion": "No v\u00e1lido: suma de categor\u00edas (7+6=13) excede el l\u00edmite (14)"
+                "observacion": "No v\u00e1lido: suma de categor\u00edas (6+7=13) excede el l\u00edmite (14)"
             }
         ]
     },
@@ -3408,7 +3477,7 @@
                 "pareja": "MARIU, ENZO",
                 "ronda": "Cuartos",
                 "puntos": 0,
-                "observacion": "No v\u00e1lido: suma de categor\u00edas (7+6=13) excede el l\u00edmite (14)"
+                "observacion": "No v\u00e1lido: suma de categor\u00edas (6+7=13) excede el l\u00edmite (14)"
             }
         ]
     },
@@ -3471,7 +3540,7 @@
         "categoria": "7MA CAB",
         "localidad": "Viedma",
         "provincia": "Rio Negro",
-        "puntos": 130.5,
+        "puntos": 40.5,
         "historial": [
             {
                 "torneo": "P\u00e1del Las Grutas (Caballeros)",
@@ -3481,15 +3550,6 @@
                 "pareja": "JARA, JUAN",
                 "ronda": "Cuartos",
                 "puntos": 40.5
-            },
-            {
-                "torneo": "Padel Animales (C.N. PAF)",
-                "fecha": "2025-05-10",
-                "nivel": "A",
-                "categoria_torneo": "7MA CAB",
-                "pareja": "PINCHULEF",
-                "ronda": "Cuartos",
-                "puntos": 90.0
             }
         ],
         "torneos": [],
