@@ -1,34 +1,18 @@
 [
-    {
-        "nombre": "LA LIGA PADELERA",
-        "fecha": "2025-06-13",
-        "localidad": "Viedma",
-        "provincia": "Rio Negro",
-        "instagram": "@ligapadelera",
-        "nivel": "A"
-    },
-    {
-        "nombre": "EL 4TO SET",
-        "fecha": "2025-07-04",
-        "localidad": "Viedma",
-        "provincia": "Rio Negro",
-        "instagram": "@elcuartoset.torneosviedma",
-        "nivel": "B"
-    },
-    {
-        "nombre": "UJAMA Padel",
-        "fecha": "2025-06-13",
-        "localidad": "Pedro Luro",
-        "provincia": "Buenos Aires",
-        "instagram": "@ujamapadel",
-        "nivel": "C"
-    },
-    {
-        "nombre": "UJAMA",
-        "fecha": "2025-07-04",
-        "localidad": "Pedro Luro",
-        "provincia": "Buenos Aires",
-        "instagram": "@ujamapadel",
-        "nivel": "C"
-    }
+  {
+    "nombre": "EL 4TO SET",
+    "fecha": "2025-07-04",
+    "localidad": "Viedma",
+    "provincia": "Rio Negro",
+    "instagram": "@elcuartoset.torneosviedma",
+    "nivel": "B"
+  },
+  {
+    "nombre": "UJAMA",
+    "fecha": "2025-07-04",
+    "localidad": "Pedro Luro",
+    "provincia": "Buenos Aires",
+    "instagram": "@ujamapadel",
+    "nivel": "C"
+  }
 ]

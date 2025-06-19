@@ -37,14 +37,12 @@
                 </thead>
                 <tbody>
                     {% for p in participantes %}
-                        {% for j in p.jugadores %}
-                        <tr>
-                            <td>{{ j }}</td>
-                            <td>{{ p.jugadores[1] if j == p.jugadores[0] else p.jugadores[0] }}</td>
-                            <td>{{ p.instancia }}</td>
-                            <td>{{ p.puntos_por_jugador }}</td>
-                        </tr>
-                        {% endfor %}
+                    <tr>
+                        <td>{{ p.jugador }}</td>
+                        <td>{{ p.pareja if p.pareja else '-' }}</td>
+                        <td>{{ p.ronda }}</td>
+                        <td>{{ p.puntos }}</td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>

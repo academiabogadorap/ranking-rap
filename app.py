@@ -3,6 +3,144 @@ from collections import defaultdict
 from datetime import datetime
 import json
 import os
+import sqlite3
+
+
+def get_db_connection():
+    db_path = os.path.join(os.path.dirname(__file__), 'database.db')
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+
+def importar_historial_desde_json():
+    if not os.path.exists('jugadores.json'):
+        print("⚠️ Archivo jugadores.json no encontrado.")
+        return
+
+    with open('jugadores.json', 'r', encoding='utf-8') as f:
+        datos_json = json.load(f)
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    actualizados = 0
+    for jugador in datos_json:
+        nombre = jugador.get("nombre", "").strip()
+        historial = jugador.get("historial", [])
+
+        if not nombre:
+            continue
+
+        historial_str = json.dumps(historial, ensure_ascii=False)
+
+        cursor.execute("""
+            UPDATE jugadores
+            SET historial = ?
+            WHERE LOWER(TRIM(nombre)) = LOWER(TRIM(?))
+        """, (historial_str, nombre))
+
+        if cursor.rowcount > 0:
+            actualizados += 1
+
+    conn.commit()
+    conn.close()
+    print(f"✅ Historial importado en {actualizados} jugadores.")
+
+
+def crear_tabla_jugadores():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS jugadores (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre TEXT UNIQUE,
+            categoria TEXT,
+            localidad TEXT,
+            provincia TEXT,
+            puntos INTEGER DEFAULT 0,
+            historial TEXT
+        )
+    ''')
+    conn.commit()
+    conn.close()
+    print("🛠️ Se creó o confirmó la tabla 'jugadores'")
+
+def crear_tabla_resultados():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+      CREATE TABLE IF NOT EXISTS resultados (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        torneo TEXT,
+        fecha TEXT,
+        nivel TEXT,
+        categoria_torneo TEXT,
+        jugador TEXT,
+        pareja TEXT,
+        ronda TEXT,
+        puntos REAL,
+        observacion TEXT
+      )
+    ''')
+    conn.commit()
+    conn.close()
+    print("🛠️ Se creó o confirmó la tabla 'resultados'")
+
+
+def asegurar_columnas_localidad_provincia():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("ALTER TABLE jugadores ADD COLUMN localidad TEXT DEFAULT ''")
+    except sqlite3.OperationalError:
+        # ya existía
+        pass
+    try:
+        cursor.execute("ALTER TABLE jugadores ADD COLUMN provincia TEXT DEFAULT ''")
+    except sqlite3.OperationalError:
+        # ya existía
+        pass
+    conn.commit()
+    conn.close()
+
+def migrar_jugadores_json_a_sqlite():
+    if not os.path.exists('jugadores.json'):
+        print("⚠️ No se encontró jugadores.json. No se migró nada.")
+        return
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT COUNT(*) FROM jugadores')
+    if cursor.fetchone()[0] > 0:
+        print("ℹ️ Jugadores ya cargados en la base. No se migró para evitar duplicados.")
+        conn.close()
+        return
+
+    with open('jugadores.json', 'r', encoding='utf-8') as f:
+        datos = json.load(f)
+
+    for jugador in datos:
+        cursor.execute('''
+            INSERT INTO jugadores (nombre, categoria, localidad, provincia, puntos, historial)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ''', (
+            jugador.get('nombre'),
+            jugador.get('categoria', ''),
+            jugador.get('localidad', ''),
+            jugador.get('provincia', ''),
+            jugador.get('puntos', 0),
+            json.dumps(jugador.get('historial', []), ensure_ascii=False)
+        ))
+
+    conn.commit()
+    conn.close()
+    print(f"✅ Se migraron {len(datos)} jugadores desde jugadores.json a SQLite.")
+
+
+
 
 app = Flask(__name__)
 app.secret_key = 'clave_super_secreta'
@@ -24,24 +162,51 @@ mult_puntos = {
     "Primera ronda": 0.0
 }
 
-def calcular_ranking_temporada(jugadores, cantidad_maxima=10, ignorar_liga=False):
+def calcular_ranking_temporada(jugadores_data=None, cantidad_maxima=10, ignorar_liga=False):
+    """
+    Calcula el ranking anual de los jugadores.
+    - jugadores_data: lista opcional de dicts con keys "nombre","categoria","historial".
+                      Si no se provee, se extrae de la BD.
+    - cantidad_maxima: cuántos torneos mejores contar (por default 10).
+    - ignorar_liga: si True, excluye los torneos de categoría "LIGA" al seleccionar los mejores.
+    """
+    # 1) Cargar lista de jugadores (ya filtrada o desde la BD)
+    if jugadores_data is None:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT nombre, categoria, historial FROM jugadores")
+        rows = cursor.fetchall()
+        conn.close()
+
+        jugadores = []
+        for row in rows:
+            historial = json.loads(row["historial"]) if row["historial"] else []
+            jugadores.append({
+                "nombre": row["nombre"],
+                "categoria": row["categoria"],
+                "historial": historial
+            })
+    else:
+        jugadores = jugadores_data
+
+    # 2) Calcular ranking para el año en curso
     ranking = []
     anio_actual = datetime.today().year
 
     for jugador in jugadores:
         historial = jugador.get("historial", [])
 
-        # Torneos del año actual
+        # Filtrar solo torneos de este año
         anuales = [
             h for h in historial
             if datetime.strptime(h["fecha"], "%Y-%m-%d").year == anio_actual
         ]
 
-        # Separar LIGA y no-LIGA si se necesita
+        # Separar LIGA y no-LIGA
         torneos_no_liga = [h for h in anuales if h.get("categoria_torneo", "") != "LIGA"]
         torneos_para_top = torneos_no_liga if ignorar_liga else anuales
 
-        # Mejores torneos (para puntos principales del ranking)
+        # Tomar los mejores N torneos
         mejores = sorted(torneos_para_top, key=lambda x: x["puntos"], reverse=True)[:cantidad_maxima]
         total = sum(h["puntos"] for h in mejores)
         mejor_torneo = mejores[0]["puntos"] if mejores else 0
@@ -58,7 +223,7 @@ def calcular_ranking_temporada(jugadores, cantidad_maxima=10, ignorar_liga=False
             "puntos_totales_anuales": puntos_totales_anuales
         })
 
-    # Ordenar el ranking con criterios de desempate
+    # 3) Ordenar con criterios de desempate
     ranking_ordenado = sorted(
         ranking,
         key=lambda x: (
@@ -73,95 +238,135 @@ def calcular_ranking_temporada(jugadores, cantidad_maxima=10, ignorar_liga=False
 
 
 
+
+
 @app.route('/')
 def index():
-    # 🔐 Verificación Instagram
     if not session.get('sigue_instagram'):
         return redirect(url_for('verificar_instagram'))
 
-    categoria_filtrada = request.args.get('categoria', default=None)
-    provincia_filtrada = request.args.get('provincia', default=None)
-    localidad_filtrada = request.args.get('localidad', default=None)
-    nombre_filtrado = request.args.get('nombre', default=None)
+    # Filtros desde query string
+    categoria_filtrada = request.args.get('categoria')
+    provincia_filtrada = request.args.get('provincia')
+    localidad_filtrada = request.args.get('localidad')
+    nombre_filtrado   = request.args.get('nombre')
 
-    # Filtrar por categoría, provincia, localidad y nombre
-    jugadores_filtrados = jugadores
+    # Conexión y consulta
+    conn = get_db_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # 1) Traigo todos los jugadores para construir el ranking global
+    todos_rows = cursor.execute(
+        "SELECT nombre, categoria, provincia, localidad, historial, puntos FROM jugadores"
+    ).fetchall()
+
+    # 2) Traigo también solo los que necesito para poblar los selects y los filtros
+    base_sql = """
+        SELECT id, nombre, categoria, puntos, provincia, localidad, historial
+        FROM jugadores WHERE 1=1
+    """
+    params = []
     if categoria_filtrada:
-        jugadores_filtrados = [j for j in jugadores_filtrados if j['categoria'] == categoria_filtrada]
+        base_sql += " AND categoria = ?"
+        params.append(categoria_filtrada)
     if provincia_filtrada:
-        jugadores_filtrados = [j for j in jugadores_filtrados if j.get('provincia', '').lower() == provincia_filtrada.lower()]
+        base_sql += " AND LOWER(provincia) = ?"
+        params.append(provincia_filtrada.lower())
     if localidad_filtrada:
-        jugadores_filtrados = [j for j in jugadores_filtrados if j.get('localidad', '').lower() == localidad_filtrada.lower()]
+        base_sql += " AND LOWER(localidad) = ?"
+        params.append(localidad_filtrada.lower())
+
+    jugadores_sql = cursor.execute(base_sql, params).fetchall()
+    conn.close()
+
+    # Helper: convertir fila a dict con historial parseado
+    def procesar_fila(row):
+        try:
+            historial = json.loads(row["historial"]) if row["historial"] else []
+        except json.JSONDecodeError:
+            historial = []
+        return {
+            "nombre":    row["nombre"],
+            "categoria": row["categoria"],
+            "puntos":    float(row["puntos"]) if row["puntos"] is not None else 0.0,
+            "provincia": row["provincia"] or "–",
+            "localidad": row["localidad"] or "–",
+            "historial": historial
+        }
+
+    todos_dict          = [procesar_fila(r) for r in todos_rows]
+    jugadores_filtrados = [procesar_fila(r) for r in jugadores_sql]
+
+    # 3) Construir ranking global con total anual y torneos contados
+    anio_actual = datetime.today().year
+    ranking = []
+    for j in todos_dict:
+        historiales_anio = [
+            h for h in j["historial"]
+            if datetime.strptime(h["fecha"], "%Y-%m-%d").year == anio_actual
+        ]
+        mejores = sorted(historiales_anio, key=lambda x: x["puntos"], reverse=True)[:6]
+        total_anual      = sum(h["puntos"] for h in historiales_anio)
+        torneos_contados = len(mejores)
+
+        ranking.append({
+            "nombre":           j["nombre"],
+            "categoria":        j["categoria"],
+            "puntos":           j["puntos"],
+            "total_anual":      total_anual,
+            "torneos_contados": torneos_contados,
+            "provincia":        j["provincia"],
+            "localidad":        j["localidad"],
+            "posicion_real":    None
+        })
+
+    # 4) Ordenar por puntos y asignar posición_real
+    ranking.sort(key=lambda x: x["puntos"], reverse=True)
+    for idx, jugador in enumerate(ranking, start=1):
+        jugador["posicion_real"] = idx
+
+    # 5) Aplicar filtros sobre el ranking ya ordenado
+    filtered = ranking
     if nombre_filtrado:
-        jugadores_filtrados = [j for j in jugadores_filtrados if nombre_filtrado.lower() in j['nombre'].lower()]
+        nf = nombre_filtrado.strip().lower()
+        filtered = [r for r in filtered if nf in r["nombre"].lower()]
+    if categoria_filtrada:
+        filtered = [r for r in filtered if r["categoria"] == categoria_filtrada]
+    if provincia_filtrada:
+        filtered = [r for r in filtered if r["provincia"].lower() == provincia_filtrada.lower()]
+    if localidad_filtrada:
+        filtered = [r for r in filtered if r["localidad"].lower() == localidad_filtrada.lower()]
 
-    if nombre_filtrado:
-        # Ranking completo general para obtener posición real
-        ranking_general = calcular_ranking_temporada(jugadores, cantidad_maxima=6)
-        posiciones = {r['nombre'].strip().lower(): i + 1 for i, r in enumerate(ranking_general)}
+    # 6) Preparar opciones de filtros (desde todos_dict)
+    categorias_disponibles  = sorted({j["categoria"] for j in todos_dict if j["categoria"]})
+    provincias_disponibles  = sorted({j["provincia"]  for j in todos_dict if j["provincia"]})
+    localidades_disponibles = sorted({j["localidad"] for j in todos_dict if j["localidad"]})
 
-        ranking = []
-        anio_actual = datetime.today().year
-        for j in jugadores_filtrados:
-            historial = j.get("historial", [])
-            anuales = [h for h in historial if datetime.strptime(h["fecha"], "%Y-%m-%d").year == anio_actual]
-            mejores = sorted(anuales, key=lambda x: x["puntos"], reverse=True)[:6]
-            total = sum(h["puntos"] for h in mejores)
-            mejor_torneo = mejores[0]["puntos"] if mejores else 0
-
-            ranking.append({
-                "nombre": j["nombre"],
-                "categoria": j["categoria"],
-                "puntos": total,
-                "torneos_contados": len(mejores),
-                "mejor_torneo": mejor_torneo,
-                "localidad": j.get("localidad", "–"),
-                "provincia": j.get("provincia", "–"),
-                "posicion_real": posiciones.get(j["nombre"].strip().lower(), "-")
-            })
-    else:
-        ranking = calcular_ranking_temporada(jugadores_filtrados, cantidad_maxima=6)
-        for idx, r in enumerate(ranking, start=1):
-            original = next((j for j in jugadores_filtrados if j['nombre'] == r['nombre']), {})
-            r['localidad'] = original.get('localidad', '–')
-            r['provincia'] = original.get('provincia', '–')
-            r['posicion_real'] = idx
-
-    # Filtros disponibles
-    categorias_disponibles = sorted(set(j['categoria'] for j in jugadores if j.get('categoria')))
-    provincias_disponibles = sorted(set(j.get('provincia') for j in jugadores if j.get('provincia')))
-    localidades_disponibles = sorted(set(j.get('localidad') for j in jugadores if j.get('localidad')))
-
-    # Logos de torneos
-    ruta_logos = os.path.join('static', 'img', 'torneos')
+    # 7) Logos de torneos
+    ruta_logos = os.path.join('static','img','torneos')
     logos_torneos = []
     if os.path.exists(ruta_logos):
-        logos_torneos = [f for f in os.listdir(ruta_logos) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
+        logos_torneos = [f for f in os.listdir(ruta_logos)
+                         if f.lower().endswith(('.png','.jpg','.jpeg','.webp'))]
 
-    # Torneos futuros (filtrar y limpiar el JSON automáticamente)
+    # 8) Torneos futuros
     try:
-        with open('torneos_futuros.json', 'r') as f:
+        with open('torneos_futuros.json','r',encoding='utf-8') as f:
             torneos_futuros = json.load(f)
     except FileNotFoundError:
         torneos_futuros = []
 
     hoy = datetime.today().date()
-    torneos_futuros_filtrados = [
+    torneos_futuros = [
         t for t in torneos_futuros
-        if datetime.strptime(t['fecha'], "%Y-%m-%d").date() >= hoy
+        if datetime.strptime(t["fecha"], "%Y-%m-%d").date() >= hoy
     ]
-
-    if len(torneos_futuros_filtrados) != len(torneos_futuros):
-        with open('torneos_futuros.json', 'w') as f:
-            json.dump(torneos_futuros_filtrados, f, indent=2, ensure_ascii=False)
-
-    torneos_futuros = sorted(torneos_futuros_filtrados, key=lambda x: x['fecha'])
-
-    print("LOGOS DETECTADOS:", logos_torneos)
 
     return render_template(
         'index.html',
-        jugadores=ranking,
+        year=datetime.today().year,
+        jugadores=filtered,
         categorias=categorias_disponibles,
         provincias=provincias_disponibles,
         localidades=localidades_disponibles,
@@ -177,96 +382,86 @@ def index():
 
 
 
+
+
+
 @app.route('/agregar_jugador', methods=['POST'])
 def agregar_jugador():
     nombre = request.form['nombre'].strip().upper()
     categoria = request.form['categoria'].strip()
-    jugadores.append({"nombre": nombre, "categoria": categoria, "puntos": 0})
-    guardar_jugadores_en_json()
+    localidad = request.form.get('localidad', '').strip()
+    provincia = request.form.get('provincia', '').strip()
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO jugadores (nombre, categoria, localidad, provincia, puntos, historial)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (nombre, categoria, localidad, provincia, 0, json.dumps([])))
+    conn.commit()
+    conn.close()
+
+    flash("Jugador agregado correctamente", "success")
     return redirect(url_for('index'))
+
 
 @app.route('/editar_jugador/<nombre>', methods=['GET', 'POST'])
 def editar_jugador(nombre):
-    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+    conn = get_db_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    jugador = cursor.execute("SELECT * FROM jugadores WHERE LOWER(nombre) = ?", (nombre.lower(),)).fetchone()
 
     if not jugador:
+        conn.close()
         flash("Jugador no encontrado", "danger")
         return redirect(url_for('index'))
 
     if request.method == 'POST':
         nuevo_nombre = request.form['nombre'].strip()
         nueva_categoria = request.form['categoria'].strip()
-        nueva_localidad = request.form['localidad'].strip()
-        nueva_provincia = request.form['provincia'].strip()
+        nueva_localidad = request.form.get('localidad', '').strip()
+        nueva_provincia = request.form.get('provincia', '').strip()
 
-        # Si el nombre cambió, lo actualizamos en todos los lugares
-        if nuevo_nombre != nombre:
-            print(f"Actualizando nombre de '{nombre}' a '{nuevo_nombre}'")
-
-            # 1. Actualizar en la lista principal
-            jugador['nombre'] = nuevo_nombre
-
-            # 2. Actualizar en historiales de todos los jugadores (por si hubo errores antes)
-            for j in jugadores:
-                if 'historial' in j:
-                    for torneo in j['historial']:
-                        if torneo.get('nombre', '').strip().lower() == nombre.lower():
-                            torneo['nombre'] = nuevo_nombre
-
-            # 3. Actualizar en archivos de torneos
-            carpeta_torneos = 'resultados_torneos'
-            if os.path.exists(carpeta_torneos):
-                for archivo in os.listdir(carpeta_torneos):
-                    if archivo.endswith('.json'):
-                        ruta = os.path.join(carpeta_torneos, archivo)
-                        with open(ruta, 'r', encoding='utf-8') as f:
-                            datos = json.load(f)
-
-                        actualizado = False
-                        for r in datos.get('resultados', []):
-                            if r.get('nombre', '').strip().lower() == nombre.lower():
-                                r['nombre'] = nuevo_nombre
-                                actualizado = True
-
-                        if actualizado:
-                            with open(ruta, 'w', encoding='utf-8') as f:
-                                json.dump(datos, f, indent=2, ensure_ascii=False)
-
-        # Actualizar otros campos
-        jugador['categoria'] = nueva_categoria
-        jugador['localidad'] = nueva_localidad
-        jugador['provincia'] = nueva_provincia
-
-        # Guardar todos los cambios
-        with open('jugadores.json', 'w', encoding='utf-8') as f:
-            json.dump(jugadores, f, indent=2, ensure_ascii=False)
+        cursor.execute("""
+            UPDATE jugadores
+            SET nombre = ?, categoria = ?, localidad = ?, provincia = ?
+            WHERE LOWER(nombre) = ?
+        """, (nuevo_nombre, nueva_categoria, nueva_localidad, nueva_provincia, nombre.lower()))
+        conn.commit()
+        conn.close()
 
         flash("Jugador actualizado correctamente", "success")
         return redirect(url_for('index'))
 
-    return render_template('editar_jugador.html', jugador=jugador)
+    jugador_dict = dict(jugador)
+    conn.close()
+    return render_template('editar_jugador.html', jugador=jugador_dict)
+
+
 
 
 @app.route('/guardar_edicion_jugador', methods=['POST'])
 def guardar_edicion_jugador():
-    nombre_original = request.form['nombre_original']
+    nombre_original = request.form['nombre_original'].strip()
     nuevo_nombre = request.form['nombre'].strip().upper()
     nueva_categoria = request.form['categoria'].strip()
     nueva_localidad = request.form.get('localidad', '').strip()
     nueva_provincia = request.form.get('provincia', '').strip()
 
-    # Actualizar en jugadores
-    for j in jugadores:
-        if j['nombre'] == nombre_original:
-            j['nombre'] = nuevo_nombre
-            j['categoria'] = nueva_categoria
-            j['localidad'] = nueva_localidad
-            j['provincia'] = nueva_provincia
-            break
+    # Actualizar jugador en SQLite
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        UPDATE jugadores
+        SET nombre = ?, categoria = ?, localidad = ?, provincia = ?
+        WHERE LOWER(nombre) = ?
+    """, (nuevo_nombre, nueva_categoria, nueva_localidad, nueva_provincia, nombre_original.lower()))
+    conn.commit()
+    conn.close()
 
-    guardar_jugadores_en_json()
-
-    # 🔁 También actualizar el nombre en los torneos
+    # 🔁 También actualizar el nombre en historial_torneos.json
     try:
         with open('historial_torneos.json', 'r', encoding='utf-8') as f:
             historial_torneos = json.load(f)
@@ -284,12 +479,14 @@ def guardar_edicion_jugador():
     flash("Jugador actualizado correctamente", "success")
     return redirect(url_for('index'))
 
+@app.route('/importar_resultados_externos', methods=['GET'])
+def mostrar_formulario_importar():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    jugadores = cursor.execute("SELECT nombre FROM jugadores").fetchall()
+    conn.close()
+    return render_template('importar_resultados_externos.html', jugadores=jugadores)
 
-
-
-@app.route('/importar_resultado_externo', methods=['GET'])
-def mostrar_importar_resultado():
-    return render_template('importar_resultado.html', jugadores=jugadores)
 
 @app.route('/importar_resultado_externo_mejorado', methods=['POST'])
 def importar_resultado_externo_mejorado():
@@ -297,22 +494,23 @@ def importar_resultado_externo_mejorado():
     fecha = request.form['fecha'].strip()
     nivel = request.form['nivel'].strip().upper()
     categoria_torneo = request.form['categoria_torneo'].strip().upper()
-    
-    # FASE 1: Detectar si es un torneo tipo SUMA
-    tipo_suma = False
+
+    tipo_suma = "SUMA" in categoria_torneo
     limite_suma = None
-    if "SUMA" in categoria_torneo:
-        tipo_suma = True
+    if tipo_suma:
         try:
             limite_suma = int(categoria_torneo.replace("SUMA", "").strip())
             print(f"✅ Torneo compensado detectado: SUMA {limite_suma}")
         except ValueError:
             tipo_suma = False
             print("⚠️ No se pudo interpretar el número en la categoría SUMA")
-    
+
     instancias_form = request.form.getlist('instancia[]')
     jugadores_form = request.form.getlist('jugadores[]')
     coincidencias = []
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
     for i in range(0, len(jugadores_form), 2):
         jugador1 = jugadores_form[i].strip().upper()
@@ -322,122 +520,134 @@ def importar_resultado_externo_mejorado():
         if not jugador1 or not jugador2:
             continue
 
-        # FASE 3: Puntaje ajustado para torneos SUMA (más bajo)
+        # Calcular puntos
         puntos_base = niveles.get(nivel, 0)
         if tipo_suma:
-            puntos_base *= 0.75  # Por ejemplo, 75% del valor normal
-
+            puntos_base *= 0.75
         multiplicador = mult_puntos.get(instancia, 0)
         puntos_totales = puntos_base * multiplicador
         puntos_por_jugador = puntos_totales / 2
 
-        torneo_es_liga = categoria_torneo == "LIGA"
+        # Consultar categorías actuales
+        j1 = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (jugador1,)).fetchone()
+        j2 = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (jugador2,)).fetchone()
+        jugador1_cat = j1["categoria"].upper() if j1 and j1["categoria"] else "SIN CATEGORIA"
+        jugador2_cat = j2["categoria"].upper() if j2 and j2["categoria"] else "SIN CATEGORIA"
 
-        if not torneo_es_liga:
-            jugador1_data = next((j for j in jugadores if j['nombre'] == jugador1), None)
-            jugador2_data = next((j for j in jugadores if j['nombre'] == jugador2), None)
-
-            jugador1_cat = jugador1_data['categoria'].upper() if jugador1_data else "SIN CATEGORIA"
-            jugador2_cat = jugador2_data['categoria'].upper() if jugador2_data else "SIN CATEGORIA"
-
-            # FASE 2: Validar SUMA
-            if tipo_suma and jugador1_cat != "SIN CATEGORIA" and jugador2_cat != "SIN CATEGORIA":
-                try:
-                    num1 = int(''.join(filter(str.isdigit, jugador1_cat)))
-                    num2 = int(''.join(filter(str.isdigit, jugador2_cat)))
-                    suma_categorias = num1 + num2
-
-                    if suma_categorias < limite_suma:
-                        for nombre in [jugador1, jugador2]:
-                            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-                            if jugador:
-                                jugador.setdefault('historial', []).append({
-                                    'torneo': torneo,
-                                    'fecha': fecha,
-                                    'nivel': nivel,
-                                    'categoria_torneo': categoria_torneo,
-                                    'pareja': jugador2 if nombre == jugador1 else jugador1,
-                                    'ronda': instancia,
-                                    'puntos': 0,
-                                    'observacion': f'No válido: suma de categorías ({num1}+{num2}={suma_categorias}) excede el límite ({limite_suma})'
-                                })
-                        continue
-                except ValueError:
-                    pass  # continuar normalmente si no se puede interpretar
-
-            # Penalización tradicional (si no es SUMA)
-            jugadores_invalidos = []
-            if not tipo_suma:
-                if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
-                    jugadores_invalidos.append(jugador1)
-                if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
-                    jugadores_invalidos.append(jugador2)
-
-                if jugadores_invalidos:
-                    for nombre in [jugador1, jugador2]:
-                        jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-                        if jugador:
-                            jugador.setdefault('historial', []).append({
-                                'torneo': torneo,
-                                'fecha': fecha,
-                                'nivel': nivel,
-                                'categoria_torneo': categoria_torneo,
-                                'pareja': jugador2 if nombre == jugador1 else jugador1,
-                                'ronda': instancia,
-                                'puntos': 0,
-                                'observacion': 'No válido: un jugador estaba en categoría inferior (pareja penalizada)'
-                            })
+        # --- Validar torneo SUMA ---
+        if tipo_suma and jugador1_cat != "SIN CATEGORIA" and jugador2_cat != "SIN CATEGORIA":
+            try:
+                num1 = int(''.join(filter(str.isdigit, jugador1_cat)))
+                num2 = int(''.join(filter(str.isdigit, jugador2_cat)))
+                suma_categorias = num1 + num2
+                if suma_categorias < limite_suma:
+                    for nombre in (jugador1, jugador2):
+                        fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (nombre,)).fetchone()
+                        pareja = jugador2 if nombre == jugador1 else jugador1
+                        historial = json.loads(fila['historial']) if fila and fila['historial'] else []
+                        historial.append({
+                            'torneo': torneo,
+                            'fecha': fecha,
+                            'nivel': nivel,
+                            'categoria_torneo': categoria_torneo,
+                            'pareja': pareja,
+                            'ronda': instancia,
+                            'puntos': 0,
+                            'observacion': f'No válido: suma de categorías ({num1}+{num2}={suma_categorias}) excede el límite ({limite_suma})'
+                        })
+                        cursor.execute("UPDATE jugadores SET historial = ? WHERE id = ?",
+                                       (json.dumps(historial, ensure_ascii=False), fila['id']))
+                    conn.commit()
                     continue
+            except ValueError:
+                pass
 
-        # Validar coincidencias por apellido
-        for nombre in [jugador1, jugador2]:
-            apellido_ingresado = nombre.split()[-1]
-            similares = [j['nombre'] for j in jugadores if apellido_ingresado in j['nombre'] and j['nombre'] != nombre]
+        # --- Penalización tradicional ---
+        if not tipo_suma:
+            invalidos = []
+            if jugador1_cat != "SIN CATEGORIA" and jugador1_cat < categoria_torneo:
+                invalidos.append(jugador1)
+            if jugador2_cat != "SIN CATEGORIA" and jugador2_cat < categoria_torneo:
+                invalidos.append(jugador2)
+            if invalidos:
+                for nombre in (jugador1, jugador2):
+                    fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (nombre,)).fetchone()
+                    pareja = jugador2 if nombre == jugador1 else jugador1
+                    historial = json.loads(fila['historial']) if fila and fila['historial'] else []
+                    historial.append({
+                        'torneo': torneo,
+                        'fecha': fecha,
+                        'nivel': nivel,
+                        'categoria_torneo': categoria_torneo,
+                        'pareja': pareja,
+                        'ronda': instancia,
+                        'puntos': 0,
+                        'observacion': 'No válido: un jugador estaba en categoría inferior'
+                    })
+                    cursor.execute("UPDATE jugadores SET historial = ? WHERE id = ?",
+                                   (json.dumps(historial, ensure_ascii=False), fila['id']))
+                conn.commit()
+                continue
+
+        # --- Coincidencias por apellido ---
+        for nombre in (jugador1, jugador2):
+            apellido = nombre.split()[-1]
+            similares = cursor.execute(
+                "SELECT nombre FROM jugadores WHERE nombre LIKE ? AND UPPER(nombre) != ?",
+                (f"%{apellido}%", nombre)
+            ).fetchall()
             if similares:
                 coincidencias.append({
                     "nombre_ingresado": nombre,
-                    "coincidencias": similares
+                    "coincidencias": [s['nombre'] for s in similares]
                 })
 
-        # Asignar puntos e historial
-        for nombre in [jugador1, jugador2]:
-            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+        # --- Guardar en historial y actualizar puntos ---
+        for nombre in (jugador1, jugador2):
+            pareja = jugador2 if nombre == jugador1 else jugador1
+            fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (nombre,)).fetchone()
+            historial = json.loads(fila['historial']) if fila and fila['historial'] else []
 
-            if not jugador:
-                jugador = {
-                    'nombre': nombre,
-                    'categoria': 'Sin categoría',
-                    'puntos': puntos_por_jugador,
-                    'historial': []
-                }
-                jugadores.append(jugador)
-
-            jugador['puntos'] += puntos_por_jugador
-            jugador.setdefault('historial', []).append({
+            historial.append({
                 'torneo': torneo,
                 'fecha': fecha,
                 'nivel': nivel,
                 'categoria_torneo': categoria_torneo,
-                'pareja': jugador2 if nombre == jugador1 else jugador1,
+                'pareja': pareja,
                 'ronda': instancia,
                 'puntos': puntos_por_jugador
             })
 
-        # Si uno fue omitido en un torneo anterior, agregamos el historial que falta
-        for nombre in [jugador1, jugador2]:
-            otro = jugador2 if nombre == jugador1 else jugador1
-            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-            if not any(h['torneo'] == torneo and h['fecha'] == fecha for h in jugador.get('historial', [])):
-                jugador['historial'].append({
-                    'torneo': torneo,
-                    'fecha': fecha,
-                    'nivel': nivel,
-                    'categoria_torneo': categoria_torneo,
-                    'pareja': otro,
-                    'ronda': instancia,
-                    'puntos': puntos_por_jugador
-                })
+            if not fila:
+                # Inserto jugador nuevo si no existía
+                cursor.execute("""
+                    INSERT INTO jugadores (nombre, categoria, puntos, historial)
+                    VALUES (?, ?, ?, ?)
+                """, (
+                    nombre,
+                    'Sin categoría',
+                    puntos_por_jugador,
+                    json.dumps([historial[-1]], ensure_ascii=False)
+                ))
+            else:
+                # Me aseguro de sumar como float
+                try:
+                    existentes = float(fila['puntos'])
+                except (TypeError, ValueError):
+                    existentes = 0.0
+                nuevo_total = existentes + puntos_por_jugador
+                cursor.execute("""
+                    UPDATE jugadores
+                    SET puntos = ?, historial = ?
+                    WHERE id = ?
+                """, (
+                    nuevo_total,
+                    json.dumps(historial, ensure_ascii=False),
+                    fila['id']
+                ))
+            conn.commit()
 
+        # --- Guardar también en tabla resultados ---
         resultado = {
             "torneo": torneo,
             "fecha": fecha,
@@ -450,143 +660,136 @@ def importar_resultado_externo_mejorado():
         }
         guardar_resultado_en_historial(resultado)
 
+    conn.close()
+
     if coincidencias:
         session['coincidencias_apellido'] = coincidencias
     else:
         session.pop('coincidencias_apellido', None)
 
-    actualizar_ranking_json(jugadores)
-    guardar_jugadores_en_json()
     return redirect(url_for('index'))
+
+
+
+@app.route('/importar_resultado_externo')
+def redireccion_legacy():
+    return redirect(url_for('mostrar_formulario_importar'))
 
 
 
 
 @app.route('/eliminar_jugador/<nombre>')
 def eliminar_jugador(nombre):
-    global jugadores
-    jugadores = [j for j in jugadores if j['nombre'] != nombre]
-    guardar_jugadores_en_json()
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    # Buscar por nombre exacto sin importar mayúsculas/minúsculas
+    cursor.execute("DELETE FROM jugadores WHERE LOWER(nombre) = ?", (nombre.lower(),))
+    conn.commit()
+    conn.close()
+
+    flash("Jugador eliminado correctamente", "success")
     return redirect(url_for('index'))
 
-@app.route('/historial/<nombre>')
-def historial(nombre):
-    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-    historial = jugador.get('historial', []) if jugador else []
-    return render_template('historial.html', jugador=jugador, historial=historial)
+
+def guardar_resultado_en_historial(resultado):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    # Espera que resultado tenga estas claves:
+    # 'torneo', 'fecha', 'nivel', 'categoria_torneo', 'instancia', 'jugadores', 'puntos_totales', 'puntos_por_jugador'
+    torneo = resultado.get('torneo')
+    fecha = resultado.get('fecha')
+    nivel = resultado.get('nivel')
+    categoria_torneo = resultado.get('categoria_torneo')
+    instancia = resultado.get('instancia')
+    jugadores = resultado.get('jugadores', [])
+    puntos_por_jugador = resultado.get('puntos_por_jugador', 0)
+    observacion = resultado.get('observacion', None)
+
+    for jugador in jugadores:
+        pareja = jugadores[1] if jugador == jugadores[0] else jugadores[0]
+        cursor.execute('''
+            INSERT INTO resultados (
+                torneo, fecha, nivel, categoria_torneo,
+                jugador, pareja, ronda, puntos, observacion
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            torneo, fecha, nivel, categoria_torneo,
+            jugador, pareja, instancia, puntos_por_jugador, observacion
+        ))
+
+    conn.commit()
+    conn.close()
 
 
-@app.route('/torneo_academia/<int:id>/generar_cuadro_final', methods=['POST'])
-def generar_cuadro_final(id):
-    torneo = next((t for t in torneos_academia if t["id"] == id), None)
-    if not torneo:
-        return redirect(url_for('index'))
+def actualizar_ranking_sqlite(archivo='ranking.json'):
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-    # Calculamos primeros y segundos por zona
-    primeros = []
-    segundos = []
+    cursor.execute("SELECT nombre, puntos FROM jugadores ORDER BY puntos DESC")
+    rows = cursor.fetchall()
 
-    for zona in torneo["zonas"]:
-        zona_partidos = [p for p in torneo["partidos"] if p["zona"] == zona["nombre"]]
-        tabla = calcular_tabla_posiciones(zona, zona_partidos)
-        if len(tabla) >= 1:
-            primeros.append(tabla[0]["pareja"])
-        if len(tabla) >= 2:
-            segundos.append(tabla[1]["pareja"])
+    ranking = {row['nombre']: row['puntos'] for row in rows}
 
-    # Emparejamiento cruzado: 1° de una zona vs 2° de otra zona
-    semifinales = []
-    for i in range(min(len(primeros), len(segundos))):
-        pareja1 = primeros[i]
-        pareja2 = segundos[(i + 1) % len(segundos)]
-        semifinales.append({
-            "zona": "Cuadro Final",
-            "pareja1": pareja1,
-            "pareja2": pareja2,
-            "ronda": "Semifinal",
-            "resultado": None
-        })
-
-    # Agregamos la final vacía (espera resultados de semifinales)
-    final = {
-        "zona": "Cuadro Final",
-        "pareja1": ["Ganador", "SF1"],
-        "pareja2": ["Ganador", "SF2"],
-        "ronda": "Final",
-        "resultado": None
-    }
-
-    torneo["partidos"].extend(semifinales + [final])
-    return redirect(url_for('gestionar_torneo_academia', id=id))
-
-def siguiente_ronda_nombre(ronda):
-    orden = ["16avos", "Octavos", "Cuartos", "Semifinal", "Final"]
-    if ronda in orden:
-        idx = orden.index(ronda)
-        return orden[idx + 1] if idx + 1 < len(orden) else "Final"
-    return "Eliminación"
-
-def guardar_resultado_en_historial(resultado, archivo='resultados.json'):
-    try:
-        with open(archivo, 'r') as f:
-            data = json.load(f)
-    except FileNotFoundError:
-        data = []
-
-    data.append(resultado)
-
-    with open(archivo, 'w') as f:
-        json.dump(data, f, indent=4)
-
-def actualizar_ranking_json(jugadores, archivo='ranking.json'):
-    ranking = {}
-    for j in jugadores:
-        ranking[j['nombre']] = j['puntos']
     with open(archivo, 'w') as f:
         json.dump(ranking, f, indent=4)
 
+    conn.close()
+
+
 def guardar_jugadores_en_json(archivo='jugadores.json'):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM jugadores")
+    rows = cursor.fetchall()
+    
+    jugadores_export = []
+    for row in rows:
+        jugadores_export.append({
+            'nombre': row['nombre'],
+            'categoria': row['categoria'],
+            'localidad': row['localidad'],
+            'provincia': row['provincia'],
+            'puntos': row['puntos'],
+            'historial': json.loads(row['historial']) if row['historial'] else []
+        })
+
     with open(archivo, 'w') as f:
-        json.dump(jugadores, f, indent=4)
+        json.dump(jugadores_export, f, indent=4)
+
+    conn.close()
+
 
 def cargar_jugadores_desde_json(archivo='jugadores.json'):
-    global jugadores
     try:
         with open(archivo, 'r') as f:
             jugadores = json.load(f)
     except FileNotFoundError:
-        jugadores = []
+        print("Archivo jugadores.json no encontrado")
+        return
 
-    # Leer resultados guardados
-    try:
-        with open('resultados.json', 'r') as f:
-            resultados = json.load(f)
-    except FileNotFoundError:
-        resultados = []
+    # Limpiar tabla
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM jugadores")
 
-    # Vaciar historial antes de reconstruirlo
     for j in jugadores:
-        j['historial'] = []
+        cursor.execute("""
+            INSERT INTO jugadores (nombre, categoria, localidad, provincia, puntos, historial)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (
+            j.get('nombre', ''),
+            j.get('categoria', 'Sin categoría'),
+            j.get('localidad', ''),
+            j.get('provincia', ''),
+            j.get('puntos', 0),
+            json.dumps(j.get('historial', []))
+        ))
 
-    # Agregar los resultados al historial de cada jugador
-    for resultado in resultados:
-        for nombre in resultado['jugadores']:
-            jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
-            if jugador:
-                pareja = next(n for n in resultado['jugadores'] if n != nombre)
-                jugador['historial'].append({
-                    'torneo': resultado['torneo'],
-                    'fecha': resultado['fecha'],
-                    'nivel': resultado['nivel'],
-                    'categoria_torneo': resultado.get('categoria_torneo', 'SIN CATEGORIA'),
-                    'pareja': pareja,
-                    'ronda': resultado['instancia'],
-                    'puntos': resultado['puntos_por_jugador']
-                })
-
-    # Recalcular puntos totales para cada jugador
-    for j in jugadores:
-        j['puntos'] = sum(item['puntos'] for item in j['historial'])
+    conn.commit()
+    conn.close()
+    print("Jugadores importados desde JSON a la base de datos")
 
 
 @app.route('/login_admin', methods=['GET', 'POST'])
@@ -603,28 +806,56 @@ def login_admin():
 
 @app.route('/ranking/<categoria>')
 def ranking_por_categoria(categoria):
-    jugadores_categoria = [j for j in jugadores if j['categoria'] == categoria]
+    conn = get_db_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
 
+    # Traer jugadores de esa categoría
+    cursor.execute("SELECT * FROM jugadores WHERE categoria = ?", (categoria,))
+    rows = cursor.fetchall()
+    conn.close()
+
+    jugadores_categoria = []
+    for row in rows:
+        historial = json.loads(row['historial']) if row['historial'] else []
+        jugadores_categoria.append({
+            'nombre': row['nombre'],
+            'categoria': row['categoria'],
+            'localidad': row['localidad'],
+            'provincia': row['provincia'],
+            'puntos': row['puntos'],
+            'historial': historial
+        })
+
+    # Calculamos el ranking temporal ignorando torneos tipo liga
     ranking_base = calcular_ranking_temporada(jugadores_categoria, cantidad_maxima=6, ignorar_liga=True)
 
-    # Agregar localidad y provincia al ranking final
-    for r in ranking_base:
-        jugador_original = next((j for j in jugadores if j['nombre'] == r['nombre']), {})
-        r['localidad'] = jugador_original.get('localidad', '–')
-        r['provincia'] = jugador_original.get('provincia', '–')
-
+    # Ya viene todo (nombre, puntos, localidad, provincia) en el mismo dict
     return render_template('ranking_categoria.html', jugadores=ranking_base, categoria_actual=categoria)
+
 
 
 @app.route('/editar_historial/<nombre>/<int:index>', methods=['GET', 'POST'])
 def editar_historial(nombre, index):
-    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+    conn = get_db_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
 
-    if not jugador or index >= len(jugador.get('historial', [])):
+    row = cursor.execute("SELECT * FROM jugadores WHERE nombre = ?", (nombre,)).fetchone()
+
+    if not row:
+        conn.close()
+        flash("Jugador no encontrado", "danger")
+        return redirect(url_for('index'))
+
+    historial = json.loads(row['historial']) if row['historial'] else []
+
+    if index >= len(historial):
+        conn.close()
+        flash("Índice fuera de rango en historial", "danger")
         return redirect(url_for('historial', nombre=nombre))
 
     if request.method == 'POST':
-        # Datos del formulario
         torneo = request.form['torneo'].strip()
         fecha = request.form['fecha'].strip()
         nivel = request.form['nivel'].strip().upper()
@@ -637,7 +868,7 @@ def editar_historial(nombre, index):
         puntos_calculados = puntos_base * multiplicador / 2
 
         # Actualizar historial
-        jugador['historial'][index] = {
+        historial[index] = {
             'torneo': torneo,
             'fecha': fecha,
             'nivel': nivel,
@@ -646,157 +877,215 @@ def editar_historial(nombre, index):
             'puntos': puntos_calculados
         }
 
-        # Recalcular puntos totales del jugador
-        jugador['puntos'] = sum(item['puntos'] for item in jugador['historial'])
+        # Recalcular puntos totales
+        nuevos_puntos = sum(item['puntos'] for item in historial)
 
-        guardar_jugadores_en_json()
-        actualizar_ranking_json(jugadores)
+        # Guardar en base
+        cursor.execute("""
+            UPDATE jugadores SET historial = ?, puntos = ? WHERE id = ?
+        """, (json.dumps(historial), nuevos_puntos, row['id']))
+        conn.commit()
+        conn.close()
+
+        flash("Historial actualizado correctamente", "success")
         return redirect(url_for('historial', nombre=nombre))
 
-    item = jugador['historial'][index]
-    return render_template('editar_historial.html', jugador=jugador, item=item, index=index)
+    item = historial[index]
+    jugador_dict = dict(row)
+    jugador_dict['historial'] = historial
+    conn.close()
+    return render_template('editar_historial.html', jugador=jugador_dict, item=item, index=index)
+
 
 @app.route('/borrar_historial_item/<nombre>/<int:index>', methods=['GET'])
 def borrar_historial_item(nombre, index):
-    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+    conn = get_db_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
 
-    if jugador and index < len(jugador.get('historial', [])):
-        jugador['historial'].pop(index)
-        jugador['puntos'] = sum(item['puntos'] for item in jugador['historial'])
+    row = cursor.execute("SELECT * FROM jugadores WHERE nombre = ?", (nombre,)).fetchone()
 
-        guardar_jugadores_en_json()
-        actualizar_ranking_json(jugadores)
+    if row:
+        historial = json.loads(row['historial']) if row['historial'] else []
 
+        if index < len(historial):
+            historial.pop(index)
+            nuevos_puntos = sum(item['puntos'] for item in historial)
+
+            cursor.execute("""
+                UPDATE jugadores
+                SET historial = ?, puntos = ?
+                WHERE id = ?
+            """, (json.dumps(historial), nuevos_puntos, row['id']))
+            conn.commit()
+
+    conn.close()
     return redirect(url_for('historial', nombre=nombre))
+
 
 @app.route('/torneos')
 def listar_torneos():
-    try:
-        with open('resultados.json', 'r') as f:
-            resultados = json.load(f)
-    except FileNotFoundError:
-        resultados = []
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-    torneos_dict = {}
+    cursor.execute("""
+        SELECT torneo, fecha, categoria_torneo, nivel, COUNT(*) as parejas
+        FROM resultados
+        GROUP BY torneo, fecha, categoria_torneo, nivel
+        ORDER BY fecha DESC
+    """)
+    
+    torneos = [
+        {
+            'torneo': row[0],
+            'fecha': row[1],
+            'categoria_torneo': row[2] if row[2] else 'SIN CATEGORIA',
+            'nivel': row[3],
+            'parejas': row[4]
+        }
+        for row in cursor.fetchall()
+    ]
 
-    for r in resultados:
-        clave = (r['torneo'], r['fecha'], r.get('categoria_torneo', 'SIN CATEGORIA'))
-        if clave not in torneos_dict:
-            torneos_dict[clave] = {
-                'torneo': r['torneo'],
-                'fecha': r['fecha'],
-                'nivel': r['nivel'],
-                'categoria_torneo': r.get('categoria_torneo', 'SIN CATEGORIA'),
-                'parejas': 1  # opcional: cantidad de parejas
-            }
-        else:
-            torneos_dict[clave]['parejas'] += 1  # opcional: contás cuántas parejas tiene
+    conn.close()
+    return render_template('torneos.html', torneos=torneos)
 
-    torneos_unicos = sorted(torneos_dict.values(), key=lambda x: x['fecha'], reverse=True)
-
-    return render_template('torneos.html', torneos=torneos_unicos)
 
 
 @app.route('/torneo/<nombre>/<fecha>/<categoria>')
 def ver_torneo(nombre, fecha, categoria):
-    try:
-        with open('resultados.json', 'r') as f:
-            resultados = json.load(f)
-    except FileNotFoundError:
-        resultados = []
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT jugador, pareja, ronda, puntos, nivel
+        FROM resultados
+        WHERE torneo = ? AND fecha = ? AND categoria_torneo = ?
+    """, (nombre, fecha, categoria))
 
     participantes = [
-        r for r in resultados
-        if r['torneo'] == nombre and r['fecha'] == fecha and r.get('categoria_torneo') == categoria
+        {
+            'jugador': row['jugador'],
+            'pareja': row['pareja'],
+            'ronda': row['ronda'],
+            'puntos': row['puntos'],
+            'nivel': row['nivel']
+        }
+        for row in cursor.fetchall()
     ]
 
-    return render_template('ver_torneo.html', nombre=nombre, fecha=fecha, categoria=categoria, participantes=participantes)
+    conn.close()
+    return render_template(
+        'ver_torneo.html',
+        nombre=nombre,
+        fecha=fecha,
+        categoria=categoria,
+        participantes=participantes
+    )
 
 
 @app.route('/borrar_torneo/<nombre>/<fecha>/<categoria>', methods=['GET'])
 def borrar_torneo(nombre, fecha, categoria):
-    global jugadores
+    conn = get_db_connection()
+    cursor = conn.cursor()
 
-    # 1. Eliminar del archivo de resultados
-    try:
-        with open('resultados.json', 'r') as f:
-            resultados = json.load(f)
-    except FileNotFoundError:
-        resultados = []
+    # 1. Verificar si hay resultados que coincidan
+    cursor.execute("""
+        SELECT COUNT(*) FROM resultados
+        WHERE torneo = ? AND fecha = ? AND UPPER(categoria_torneo) = ?
+    """, (nombre, fecha, categoria.upper()))
+    cantidad = cursor.fetchone()[0]
 
-    nuevos_resultados = [
-        r for r in resultados
-        if not (
-            r['torneo'] == nombre and
-            r['fecha'] == fecha and
-            r.get('categoria_torneo', '').upper() == categoria.upper()
-        )
-    ]
+    if cantidad == 0:
+        conn.close()
+        flash("No se encontraron resultados para ese torneo.", "warning")
+        return redirect(url_for('listar_torneos'))
 
-    with open('resultados.json', 'w') as f:
-        json.dump(nuevos_resultados, f, indent=4)
+    # 2. Borrar los resultados del torneo
+    cursor.execute("""
+        DELETE FROM resultados
+        WHERE torneo = ? AND fecha = ? AND UPPER(categoria_torneo) = ?
+    """, (nombre, fecha, categoria.upper()))
+    conn.commit()
 
-    # 2. Eliminar del historial de cada jugador
-    for j in jugadores:
-        original = len(j.get('historial', []))
-        j['historial'] = [
-            h for h in j.get('historial', [])
-            if not (
-                h['torneo'] == nombre and
-                h['fecha'] == fecha and
-                h.get('categoria_torneo', '').upper() == categoria.upper()
-            )
-        ]
-        if len(j['historial']) < original:
-            j['puntos'] = sum(h['puntos'] for h in j['historial'])
+    # 3. Recalcular puntos e historial de todos los jugadores
+    cursor.execute("SELECT * FROM jugadores")
+    jugadores_rows = cursor.fetchall()
 
-    guardar_jugadores_en_json()
-    actualizar_ranking_json(jugadores)
+    for row in jugadores_rows:
+        nombre_jugador = row['nombre']
+        cursor.execute("""
+            SELECT * FROM resultados
+            WHERE jugador = ?
+        """, (nombre_jugador,))
+        historial = [dict(h) for h in cursor.fetchall()]  # Convertir a diccionarios
 
+        historial_json = []
+        total_puntos = 0
+
+        for h in historial:
+            historial_json.append({
+                'torneo': h.get('torneo', ''),
+                'fecha': h.get('fecha', ''),
+                'nivel': h.get('nivel', ''),
+                'categoria_torneo': h.get('categoria_torneo', 'SIN CATEGORIA'),
+                'pareja': h.get('pareja', ''),
+                'ronda': h.get('ronda', ''),
+                'puntos': h.get('puntos', 0)
+            })
+            total_puntos += h.get('puntos', 0)
+
+        cursor.execute("""
+            UPDATE jugadores
+            SET puntos = ?, historial = ?
+            WHERE id = ?
+        """, (total_puntos, json.dumps(historial_json, ensure_ascii=False), row['id']))
+
+    conn.commit()
+    conn.close()
     return redirect(url_for('listar_torneos'))
 
-@app.route('/agregar_jugadores', methods=['GET'])
-def mostrar_formulario_jugadores():
-    return render_template('agregar_jugadores.html')
 
 @app.route('/agregar_jugadores', methods=['GET', 'POST'])
 def agregar_jugadores():
     if request.method == 'POST':
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
         categoria = request.form['categoria'].strip()
         localidad = request.form['localidad'].strip()
         provincia = request.form['provincia'].strip()
-        
-        # Ahora tomamos todos los nombres enviados como lista
         nombres_raw = request.form.getlist('nombres[]')
         nombres = [n.strip().upper() for n in nombres_raw if n.strip()]
-        
+
         nombres_existentes = []
         nombres_agregados = []
         posibles_coincidencias = {}
 
         for nombre in nombres:
-            if any(j['nombre'] == nombre for j in jugadores):
+            # Verificamos si ya existe
+            cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (nombre,))
+            existente = cursor.fetchone()
+
+            if existente:
                 nombres_existentes.append(nombre)
                 continue
 
-            jugadores.append({
-                'nombre': nombre,
-                'categoria': categoria,
-                'localidad': localidad,
-                'provincia': provincia,
-                'puntos': 0,
-                'historial': []
-            })
+            # Insertamos nuevo jugador
+            cursor.execute("""
+                INSERT INTO jugadores (nombre, categoria, localidad, provincia, puntos, historial)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (nombre, categoria, localidad, provincia, 0, json.dumps([])))
             nombres_agregados.append(nombre)
 
-            # Coincidencias por apellido
+            # Buscar coincidencias por apellido
             if ' ' not in nombre:
-                coincidencias = [j['nombre'] for j in jugadores if nombre in j['nombre'] and j['nombre'] != nombre]
+                cursor.execute("SELECT nombre FROM jugadores WHERE nombre LIKE ? AND UPPER(nombre) != ?", (f"%{nombre}%", nombre))
+                coincidencias = [row[0] for row in cursor.fetchall()]
                 if coincidencias:
                     posibles_coincidencias[nombre] = coincidencias
 
-        guardar_jugadores_en_json()
-        actualizar_ranking_json(jugadores)
+        conn.commit()
+        conn.close()
 
         session['nombres_existentes'] = nombres_existentes
         session['nombres_agregados'] = nombres_agregados
@@ -804,8 +1093,9 @@ def agregar_jugadores():
 
         return redirect(url_for('index'))
 
-    # GET → renderiza HTML con jugadores
-    return render_template("agregar_jugadores.html", jugadores=jugadores)
+    # GET → Mostrar formulario
+    return render_template("agregar_jugadores.html")
+
 
 
 @app.route('/corregir_nombre_torneo', methods=['POST'])
@@ -815,28 +1105,34 @@ def corregir_nombre_torneo():
 
     # 1. Actualizar en resultados.json
     try:
-        with open('resultados.json', 'r') as f:
+        with open('resultados.json', 'r', encoding='utf-8') as f:
             resultados = json.load(f)
     except FileNotFoundError:
         resultados = []
 
+    cambios_realizados = 0
     for r in resultados:
-        if r['torneo'] == nombre_actual:
+        if r.get('torneo') == nombre_actual:
             r['torneo'] = nombre_nuevo
+            cambios_realizados += 1
 
-    with open('resultados.json', 'w') as f:
-        json.dump(resultados, f, indent=4)
+    with open('resultados.json', 'w', encoding='utf-8') as f:
+        json.dump(resultados, f, indent=4, ensure_ascii=False)
 
-    # 2. Actualizar en historial de jugadores
+    # 2. Actualizar en historial de jugadores (lista global en memoria)
+    cambios_historial = 0
     for jugador in jugadores:
         for h in jugador.get('historial', []):
-            if h['torneo'] == nombre_actual:
+            if h.get('torneo') == nombre_actual:
                 h['torneo'] = nombre_nuevo
+                cambios_historial += 1
 
     guardar_jugadores_en_json()
     actualizar_ranking_json(jugadores)
 
-    return f"Torneo '{nombre_actual}' fue corregido a '{nombre_nuevo}' exitosamente."
+    mensaje = f"Torneo actualizado: '{nombre_actual}' → '{nombre_nuevo}'. Se actualizaron {cambios_realizados} resultados y {cambios_historial} items de historial."
+    flash(mensaje, "success")
+    return redirect(url_for('index'))
 
 @app.route('/corregir_nombre_torneo_form', methods=['GET'])
 def corregir_nombre_torneo_form():
@@ -849,28 +1145,35 @@ def corregir_categoria_torneo():
 
     # 1. Corregir en resultados.json
     try:
-        with open('resultados.json', 'r') as f:
+        with open('resultados.json', 'r', encoding='utf-8') as f:
             resultados = json.load(f)
     except FileNotFoundError:
         resultados = []
 
+    cambios_resultados = 0
     for r in resultados:
         if r.get('categoria_torneo', '').upper() == categoria_actual.upper():
             r['categoria_torneo'] = categoria_nueva
+            cambios_resultados += 1
 
-    with open('resultados.json', 'w') as f:
-        json.dump(resultados, f, indent=4)
+    with open('resultados.json', 'w', encoding='utf-8') as f:
+        json.dump(resultados, f, indent=4, ensure_ascii=False)
 
     # 2. Corregir en historial de jugadores
+    cambios_historial = 0
     for jugador in jugadores:
         for h in jugador.get('historial', []):
             if h.get('categoria_torneo', '').upper() == categoria_actual.upper():
                 h['categoria_torneo'] = categoria_nueva
+                cambios_historial += 1
 
     guardar_jugadores_en_json()
     actualizar_ranking_json(jugadores)
 
-    return f"Categoría '{categoria_actual}' fue corregida a '{categoria_nueva}' exitosamente."
+    mensaje = f"Categoría actualizada: '{categoria_actual}' → '{categoria_nueva}'. Se modificaron {cambios_resultados} resultados y {cambios_historial} en historial."
+    flash(mensaje, "success")
+    return redirect(url_for('index'))
+
 
 @app.route('/unificar_jugadores', methods=['GET', 'POST'])
 def unificar_jugadores():
@@ -882,12 +1185,13 @@ def unificar_jugadores():
         duplicado = next((j for j in jugadores if j['nombre'] == nombre_duplicado), None)
 
         if not base or not duplicado:
-            return render_template('unificar_jugadores.html', jugadores=jugadores, error="Jugador no encontrado")
+            flash("Jugador no encontrado", "danger")
+            return render_template('unificar_jugadores.html', jugadores=jugadores)
 
         # Sumar puntos
         base['puntos'] = base.get('puntos', 0) + duplicado.get('puntos', 0)
 
-        # Unificar historial sin duplicados (comparando por torneo + fecha)
+        # Unificar historial sin duplicados
         base_historial = base.get('historial', [])
         duplicado_historial = duplicado.get('historial', [])
         claves_existentes = {(h['torneo'], h['fecha']) for h in base_historial}
@@ -900,46 +1204,63 @@ def unificar_jugadores():
         # Unificar evolución (si existe)
         base['evolucion'] = base.get('evolucion', []) + duplicado.get('evolucion', []) if base.get('evolucion') or duplicado.get('evolucion') else []
 
-        # Unificar campos faltantes: categoría, localidad, provincia
+        # Completar campos faltantes
         for campo in ['categoria', 'localidad', 'provincia']:
             if not base.get(campo) and duplicado.get(campo):
                 base[campo] = duplicado[campo]
 
-        # Eliminar jugador duplicado
+        # Eliminar duplicado
         jugadores.remove(duplicado)
 
         # Guardar cambios
-        with open('jugadores.json', 'w') as f:
-            json.dump(jugadores, f, indent=2)
+        guardar_jugadores_en_json()
+        actualizar_ranking_json(jugadores)
 
-        return render_template('unificar_jugadores.html', jugadores=jugadores, success="Jugadores unificados con éxito")
+        flash("Jugadores unificados con éxito", "success")
+        return redirect(url_for('unificar_jugadores'))
 
     return render_template('unificar_jugadores.html', jugadores=jugadores)
-
 
 
 @app.route('/actualizar_jugadores_localidad_provincia')
 def actualizar_jugadores_localidad_provincia():
     cambios = 0
     for jugador in jugadores:
-        if 'localidad' not in jugador:
+        if 'localidad' not in jugador or not jugador['localidad']:
             jugador['localidad'] = 'Sin especificar'
             cambios += 1
-        if 'provincia' not in jugador:
+        if 'provincia' not in jugador or not jugador['provincia']:
             jugador['provincia'] = 'Sin especificar'
             cambios += 1
 
     guardar_jugadores_en_json()
+    actualizar_ranking_json(jugadores)
     return f"✅ Jugadores actualizados correctamente. Se realizaron {cambios} cambios."
+
 
 
 @app.route('/perfil/<nombre>')
 def perfil_jugador(nombre):
-    jugador = next((j for j in jugadores if j['nombre'] == nombre), None)
+    conn = get_db_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # Normalización para evitar errores con tildes, mayúsculas, etc.
+    nombre_normalizado = nombre.strip().lower()
+
+    jugadores = cursor.execute("SELECT * FROM jugadores").fetchall()
+    jugador = next((j for j in jugadores if j['nombre'].strip().lower() == nombre_normalizado), None)
+
     if not jugador:
+        conn.close()
         return "Jugador no encontrado", 404
 
-    historial = sorted(jugador.get('historial', []), key=lambda x: x['fecha'])
+    # Cargar historial desde la base (guardado como JSON string)
+    historial_json = jugador["historial"]
+    historial = json.loads(historial_json) if historial_json else []
+
+    # Ordenar historial por fecha
+    historial = sorted(historial, key=lambda x: x['fecha'])
     fechas = [h['fecha'] for h in historial]
 
     acumulado = []
@@ -952,6 +1273,8 @@ def perfil_jugador(nombre):
     mejor_torneo = max((h['puntos'] for h in historial), default=0)
     torneos_jugados = len(historial)
 
+    conn.close()
+
     return render_template('perfil_jugador.html',
                            jugador=jugador,
                            historial=historial,
@@ -960,7 +1283,6 @@ def perfil_jugador(nombre):
                            puntos_totales=puntos_totales,
                            mejor_torneo=mejor_torneo,
                            torneos_jugados=torneos_jugados)
-
 
 @app.route('/criterios_rap')
 def criterios_rap():
@@ -982,6 +1304,7 @@ def calendario_torneos():
     torneos = sorted(torneos, key=lambda x: x['fecha'])
 
     return render_template('calendario.html', torneos=torneos)
+
 
 @app.route('/agregar_torneo_futuro', methods=['GET', 'POST'])
 def agregar_torneo_futuro():
@@ -1020,13 +1343,35 @@ def verificar_instagram():
         return redirect(url_for('index'))  # lo mandamos al ranking
     return render_template('verificar_instagram.html')
 
-@app.route('/revisar_jugadores')
+@app.route('/revisar_jugadores', methods=['GET', 'POST'])
 def revisar_jugadores():
     if not session.get('es_admin'):
         return redirect(url_for('index'))
 
-    jugadores_sin_categoria = [j for j in jugadores if j.get('categoria', '').upper() in ('SIN CATEGORIA', '')]
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        nueva_categoria = request.form['categoria']
+        cursor.execute("UPDATE jugadores SET categoria = ? WHERE nombre = ?", (nueva_categoria, nombre))
+        conn.commit()
+
+    # Capturar todas las variantes posibles de "sin categoría"
+    cursor.execute("""
+        SELECT nombre, categoria
+        FROM jugadores
+        WHERE categoria IS NULL
+           OR TRIM(categoria) = ''
+           OR LOWER(REPLACE(categoria, 'í', 'i')) = 'sin categoria'
+    """)
+    jugadores_sin_categoria = cursor.fetchall()
+    conn.close()
+
     return render_template('revisar_jugadores.html', jugadores=jugadores_sin_categoria)
+
+
+
 
 
 @app.route('/editar_jugadores')
@@ -1064,10 +1409,121 @@ def editar_jugadores():
     )
 
 
+def asegurar_columna_historial():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute("ALTER TABLE jugadores ADD COLUMN historial TEXT")
+        conn.commit()
+        print("✅ Se agregó la columna 'historial'")
+    except sqlite3.OperationalError as e:
+        if "duplicate column name" in str(e):
+            print("ℹ️ La columna 'historial' ya existe.")
+        else:
+            print("❌ Error al agregar la columna 'historial':", e)
+
+    conn.close()
+
+
+
+def migrar_puntos_desde_ranking():
+    if not os.path.exists('ranking.json'):
+        print("⚠️ No se encontró ranking.json. No se cargaron puntos.")
+        return
+
+    with open('ranking.json', 'r', encoding='utf-8') as f:
+        ranking = json.load(f)
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    for jugador in ranking:
+        nombre_normalizado = jugador.get('nombre', '').strip().upper()
+        puntos = jugador.get('puntos', 0)
+        cursor.execute("UPDATE jugadores SET puntos = ? WHERE UPPER(nombre) = ?", (puntos, nombre_normalizado))
+
+    conn.commit()
+    conn.close()
+    print("✅ Puntos actualizados desde ranking.json")
+
+@app.route('/historial/<nombre>')
+def historial(nombre):
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    # Buscar jugador exacto
+    cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (nombre.upper(),))
+    jugador = cursor.fetchone()
+
+    if not jugador:
+        conn.close()
+        return f"No se encontró al jugador: {nombre}", 404
+
+    # Cargar historial desde campo JSON
+    try:
+        historial = json.loads(jugador['historial'])
+    except json.JSONDecodeError:
+        historial = []
+
+    conn.close()
+
+    return render_template("historial.html", jugador=jugador, historial=historial)
+
+def migrar_historial_torneos_json():
+    if not os.path.exists('historial_torneos.json'):
+        print("⚠️ No se encontró historial_torneos.json. No se migró nada.")
+        return
+
+    with open('historial_torneos.json', 'r', encoding='utf-8') as f:
+        torneos = json.load(f)
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    migrados = 0
+
+    for t in torneos:
+        torneo = t.get('torneo')
+        fecha = t.get('fecha')
+        for r in t.get('resultados', []):
+            cursor.execute('''
+                INSERT INTO resultados (
+                    torneo, fecha, nivel, categoria_torneo,
+                    jugador, pareja, ronda, puntos, observacion
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (
+                torneo,
+                fecha,
+                r.get('nivel'),
+                r.get('categoria_torneo', ''),
+                r.get('nombre'),
+                r.get('pareja'),
+                r.get('ronda'),
+                r.get('puntos', 0),
+                r.get('observacion')
+            ))
+            migrados += 1
+
+    conn.commit()
+    conn.close()
+    print(f"✅ Se migraron {migrados} resultados desde historial_torneos.json a SQLite.")
+
 
 
 if __name__ == '__main__':
-    cargar_jugadores_desde_json()
+    crear_tabla_jugadores()                  # 🟢 Crea la tabla si no existe
+    crear_tabla_resultados()
+    asegurar_columnas_localidad_provincia()
+    migrar_jugadores_json_a_sqlite()         # 🟢 Inserta jugadores si la tabla está vacía
+    asegurar_columna_historial()             # 🟢 Agrega columna 'historial' si falta
+    migrar_puntos_desde_ranking()            # 🟢 Carga los puntos desde ranking.json
+    migrar_historial_torneos_json()
+
     app.run(debug=True, host='0.0.0.0', port=10000)
+
+
+
+
 
 
