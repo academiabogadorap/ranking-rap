@@ -1181,45 +1181,64 @@ def unificar_jugadores():
         nombre_base = request.form['jugador_base'].strip().upper()
         nombre_duplicado = request.form['jugador_duplicado'].strip().upper()
 
-        base = next((j for j in jugadores if j['nombre'] == nombre_base), None)
-        duplicado = next((j for j in jugadores if j['nombre'] == nombre_duplicado), None)
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # 1) Buscamos ambos jugadores en la base
+        cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (nombre_base,))
+        base = cursor.fetchone()
+        cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (nombre_duplicado,))
+        duplicado = cursor.fetchone()
 
         if not base or not duplicado:
-            flash("Jugador no encontrado", "danger")
-            return render_template('unificar_jugadores.html', jugadores=jugadores)
+            conn.close()
+            flash("Uno de los jugadores no se encontró en la base.", "danger")
+            return redirect(url_for('unificar_jugadores'))
 
-        # Sumar puntos
-        base['puntos'] = base.get('puntos', 0) + duplicado.get('puntos', 0)
+        # 2) Cargamos históricos y puntos
+        historial_base = json.loads(base['historial']) if base['historial'] else []
+        historial_dup  = json.loads(duplicado['historial']) if duplicado['historial'] else []
 
-        # Unificar historial sin duplicados
-        base_historial = base.get('historial', [])
-        duplicado_historial = duplicado.get('historial', [])
-        claves_existentes = {(h['torneo'], h['fecha']) for h in base_historial}
-        nuevo_historial = [h for h in duplicado_historial if (h['torneo'], h['fecha']) not in claves_existentes]
-        base['historial'] = base_historial + nuevo_historial
+        puntos_base = float(base['puntos'] or 0)
+        puntos_dup  = float(duplicado['puntos'] or 0)
 
-        # Unificar torneos (si existen)
-        base['torneos'] = list(set(base.get('torneos', []) + duplicado.get('torneos', []))) if base.get('torneos') or duplicado.get('torneos') else []
+        # 3) Sumamos puntos
+        nuevos_puntos = puntos_base + puntos_dup
 
-        # Unificar evolución (si existe)
-        base['evolucion'] = base.get('evolucion', []) + duplicado.get('evolucion', []) if base.get('evolucion') or duplicado.get('evolucion') else []
+        # 4) Unificamos historial sin duplicar torneos (mismo torneo+fecha)
+        claves = {(h['torneo'], h['fecha']) for h in historial_base}
+        añadidos = [h for h in historial_dup if (h['torneo'], h['fecha']) not in claves]
+        nuevo_historial = historial_base + añadidos
 
-        # Completar campos faltantes
-        for campo in ['categoria', 'localidad', 'provincia']:
-            if not base.get(campo) and duplicado.get(campo):
-                base[campo] = duplicado[campo]
+        # 5) Actualizamos el registro base
+        cursor.execute("""
+            UPDATE jugadores
+            SET puntos = ?, historial = ?
+            WHERE id = ?
+        """, (
+            nuevos_puntos,
+            json.dumps(nuevo_historial, ensure_ascii=False),
+            base['id']
+        ))
 
-        # Eliminar duplicado
-        jugadores.remove(duplicado)
+        # 6) Borramos el registro duplicado
+        cursor.execute("DELETE FROM jugadores WHERE id = ?", (duplicado['id'],))
 
-        # Guardar cambios
-        guardar_jugadores_en_json()
-        actualizar_ranking_json(jugadores)
+        conn.commit()
+        conn.close()
 
-        flash("Jugadores unificados con éxito", "success")
+        flash("Jugadores unificados con éxito.", "success")
         return redirect(url_for('unificar_jugadores'))
 
-    return render_template('unificar_jugadores.html', jugadores=jugadores)
+    # GET → mostramos el formulario con todos los jugadores
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT nombre FROM jugadores ORDER BY nombre")
+    opciones = [row['nombre'] for row in cursor.fetchall()]
+    conn.close()
+
+    return render_template('unificar_jugadores.html', jugadores=opciones)
+
 
 
 @app.route('/actualizar_jugadores_localidad_provincia')
