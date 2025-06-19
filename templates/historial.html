@@ -69,7 +69,9 @@
                     <th>Ronda</th>
                     <th>Puntos</th>
                     <th>Observación</th>
-                    <th>Acciones</th>
+                    {% if session.get('es_admin') %}
+                        <th>Acciones</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -83,6 +85,7 @@
                         <td>{{ h.ronda }}</td>
                         <td>{{ h.puntos }}</td>
                         <td>{{ h.observacion or "-" }}</td>
+                        {% if session.get('es_admin') %}
                         <td class="acciones">
                             <!-- Editar -->
                             <a href="{{ url_for('editar_historial', nombre=jugador['nombre'], index=loop.index0) }}" title="Editar">
@@ -93,6 +96,7 @@
                                 🗑️
                             </a>
                         </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             </tbody>
