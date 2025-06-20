@@ -516,21 +516,18 @@ def importar_resultado_externo_mejorado():
         jugador1 = jugadores_form[i].strip().upper()
         jugador2 = jugadores_form[i + 1].strip().upper()
         instancia = instancias_form[i // 2].strip()
-
         if not jugador1 or not jugador2:
             continue
 
-        # Calcular puntos
-        puntos_base = niveles.get(nivel, 0)
-        if tipo_suma:
-            puntos_base *= 0.75
+        # --- Calcular puntos ---
+        puntos_base = niveles.get(nivel, 0) * (0.75 if tipo_suma else 1)
         multiplicador = mult_puntos.get(instancia, 0)
         puntos_totales = puntos_base * multiplicador
         puntos_por_jugador = puntos_totales / 2
 
-        # Consultar categorías actuales
-        j1 = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (jugador1,)).fetchone()
-        j2 = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (jugador2,)).fetchone()
+        # --- Consultar dos filas ---
+        j1 = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (jugador1,)).fetchone()
+        j2 = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (jugador2,)).fetchone()
         jugador1_cat = j1["categoria"].upper() if j1 and j1["categoria"] else "SIN CATEGORIA"
         jugador2_cat = j2["categoria"].upper() if j2 and j2["categoria"] else "SIN CATEGORIA"
 
@@ -543,8 +540,10 @@ def importar_resultado_externo_mejorado():
                 if suma_categorias < limite_suma:
                     for nombre in (jugador1, jugador2):
                         fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (nombre,)).fetchone()
+                        if not fila:
+                            continue
                         pareja = jugador2 if nombre == jugador1 else jugador1
-                        historial = json.loads(fila['historial']) if fila and fila['historial'] else []
+                        historial = json.loads(fila['historial']) if fila['historial'] else []
                         historial.append({
                             'torneo': torneo,
                             'fecha': fecha,
@@ -555,8 +554,10 @@ def importar_resultado_externo_mejorado():
                             'puntos': 0,
                             'observacion': f'No válido: suma de categorías ({num1}+{num2}={suma_categorias}) excede el límite ({limite_suma})'
                         })
-                        cursor.execute("UPDATE jugadores SET historial = ? WHERE id = ?",
-                                       (json.dumps(historial, ensure_ascii=False), fila['id']))
+                        cursor.execute(
+                            "UPDATE jugadores SET historial=? WHERE id=?",
+                            (json.dumps(historial, ensure_ascii=False), fila['id'])
+                        )
                     conn.commit()
                     continue
             except ValueError:
@@ -572,8 +573,10 @@ def importar_resultado_externo_mejorado():
             if invalidos:
                 for nombre in (jugador1, jugador2):
                     fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (nombre,)).fetchone()
+                    if not fila:
+                        continue
                     pareja = jugador2 if nombre == jugador1 else jugador1
-                    historial = json.loads(fila['historial']) if fila and fila['historial'] else []
+                    historial = json.loads(fila['historial']) if fila['historial'] else []
                     historial.append({
                         'torneo': torneo,
                         'fecha': fecha,
@@ -584,8 +587,10 @@ def importar_resultado_externo_mejorado():
                         'puntos': 0,
                         'observacion': 'No válido: un jugador estaba en categoría inferior'
                     })
-                    cursor.execute("UPDATE jugadores SET historial = ? WHERE id = ?",
-                                   (json.dumps(historial, ensure_ascii=False), fila['id']))
+                    cursor.execute(
+                        "UPDATE jugadores SET historial=? WHERE id=?",
+                        (json.dumps(historial, ensure_ascii=False), fila['id'])
+                    )
                 conn.commit()
                 continue
 
@@ -593,7 +598,7 @@ def importar_resultado_externo_mejorado():
         for nombre in (jugador1, jugador2):
             apellido = nombre.split()[-1]
             similares = cursor.execute(
-                "SELECT nombre FROM jugadores WHERE nombre LIKE ? AND UPPER(nombre) != ?",
+                "SELECT nombre FROM jugadores WHERE nombre LIKE ? AND UPPER(nombre)!=?",
                 (f"%{apellido}%", nombre)
             ).fetchall()
             if similares:
@@ -605,9 +610,18 @@ def importar_resultado_externo_mejorado():
         # --- Guardar en historial y actualizar puntos ---
         for nombre in (jugador1, jugador2):
             pareja = jugador2 if nombre == jugador1 else jugador1
-            fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre) = ?", (nombre,)).fetchone()
-            historial = json.loads(fila['historial']) if fila and fila['historial'] else []
+            fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (nombre,)).fetchone()
 
+            # Si no existe, lo creamos antes de actualizar
+            if not fila:
+                cursor.execute("""
+                    INSERT INTO jugadores (nombre, categoria, localidad, provincia, puntos, historial)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (nombre, 'Sin categoría', '', '', 0.0, json.dumps([])))
+                conn.commit()
+                fila = cursor.execute("SELECT * FROM jugadores WHERE UPPER(nombre)=?", (nombre,)).fetchone()
+
+            historial = json.loads(fila['historial']) if fila['historial'] else []
             historial.append({
                 'torneo': torneo,
                 'fecha': fecha,
@@ -618,36 +632,19 @@ def importar_resultado_externo_mejorado():
                 'puntos': puntos_por_jugador
             })
 
-            if not fila:
-                # Inserto jugador nuevo si no existía
-                cursor.execute("""
-                    INSERT INTO jugadores (nombre, categoria, puntos, historial)
-                    VALUES (?, ?, ?, ?)
-                """, (
-                    nombre,
-                    'Sin categoría',
-                    puntos_por_jugador,
-                    json.dumps([historial[-1]], ensure_ascii=False)
-                ))
-            else:
-                # Me aseguro de sumar como float
-                try:
-                    existentes = float(fila['puntos'])
-                except (TypeError, ValueError):
-                    existentes = 0.0
-                nuevo_total = existentes + puntos_por_jugador
-                cursor.execute("""
-                    UPDATE jugadores
-                    SET puntos = ?, historial = ?
-                    WHERE id = ?
-                """, (
-                    nuevo_total,
-                    json.dumps(historial, ensure_ascii=False),
-                    fila['id']
-                ))
+            existentes = 0.0
+            try:
+                existentes = float(fila['puntos'])
+            except (TypeError, ValueError):
+                pass
+
+            nuevo_total = existentes + puntos_por_jugador
+            cursor.execute("""
+                UPDATE jugadores SET puntos=?, historial=? WHERE id=?
+            """, (nuevo_total, json.dumps(historial, ensure_ascii=False), fila['id']))
             conn.commit()
 
-        # --- Guardar también en tabla resultados ---
+        # --- También guardamos en la tabla resultados ---
         resultado = {
             "torneo": torneo,
             "fecha": fecha,
@@ -661,13 +658,13 @@ def importar_resultado_externo_mejorado():
         guardar_resultado_en_historial(resultado)
 
     conn.close()
-
     if coincidencias:
         session['coincidencias_apellido'] = coincidencias
     else:
         session.pop('coincidencias_apellido', None)
 
     return redirect(url_for('index'))
+
 
 
 

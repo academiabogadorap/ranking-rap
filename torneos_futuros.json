@@ -1,18 +1,34 @@
 [
-  {
-    "nombre": "EL 4TO SET",
-    "fecha": "2025-07-04",
-    "localidad": "Viedma",
-    "provincia": "Rio Negro",
-    "instagram": "@elcuartoset.torneosviedma",
-    "nivel": "B"
-  },
-  {
-    "nombre": "UJAMA",
-    "fecha": "2025-07-04",
-    "localidad": "Pedro Luro",
-    "provincia": "Buenos Aires",
-    "instagram": "@ujamapadel",
-    "nivel": "C"
-  }
+    {
+        "nombre": "EL 4TO SET",
+        "fecha": "2025-07-04",
+        "localidad": "Viedma",
+        "provincia": "Rio Negro",
+        "instagram": "@elcuartoset.torneosviedma",
+        "nivel": "B"
+    },
+    {
+        "nombre": "UJAMA",
+        "fecha": "2025-07-04",
+        "localidad": "Pedro Luro",
+        "provincia": "Buenos Aires",
+        "instagram": "@ujamapadel",
+        "nivel": "C"
+    },
+    {
+        "nombre": "UJAMA Padel",
+        "fecha": "2025-06-27",
+        "localidad": "Pedro Luro",
+        "provincia": "Buenos Aires",
+        "instagram": "@ujamapadel",
+        "nivel": "C"
+    },
+    {
+        "nombre": "Complejo Sur Torneo Inaugural",
+        "fecha": "2025-05-11",
+        "localidad": "San Antonio Oeste",
+        "provincia": "Rio Negro",
+        "instagram": "@complejosurpadel",
+        "nivel": "A"
+    }
 ]
