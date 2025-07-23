@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu video – Padel Analyzer</title>
+</head>
+<body>
+  <h2>Video subido</h2>
+  {% if video_filename %}
+    <video width="640" controls>
+      <source src="{{ url_for('static', filename=video_filename) }}" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+  {% else %}
+    <p>No se encontró ningún video.</p>
+  {% endif %}
+  <p><a href="{{ url_for('upload_video') }}">↻ Subir otro video</a></p>
+  <p><a href="{{ url_for('index') }}">← Volver al inicio</a></p>
+</body>
+</html>

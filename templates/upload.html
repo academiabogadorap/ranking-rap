@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir video – Padel Analyzer</title>
+</head>
+<body>
+  <h2>Subir tu video de golpe</h2>
+  <form action="{{ url_for('upload_video') }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/*" required>
+    <button type="submit">Subir</button>
+  </form>
+  <p><a href="{{ url_for('index') }}">← Volver al inicio</a></p>
+</body>
+</html>
